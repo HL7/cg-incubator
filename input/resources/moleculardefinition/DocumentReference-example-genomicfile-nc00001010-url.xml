@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocumentReference xmlns="http://hl7.org/fhir">
+  <id value="example-genomicfile-nc00001010-url" />
+  <identifier>
+    <system value="http://www.somesystemabc.net/identifiers/files" />
+    <value value="111112" />
+  </identifier>
+  <status value="current" />
+  <docStatus value="preliminary" />
+  <description value="A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline."/>
+  <!-- <securityLabel>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-Confidentiality" />
+      <code value="R" />
+      <display value="Restricted" />
+    </coding>
+  </securityLabel> -->
+  <content>
+    <attachment>
+      <contentType value="text/html" />
+      <url value="https://www.ncbi.nlm.nih.gov/nuccore/224589801" />
+      <title value="Homo sapiens chromosome 10, GRCh37.p13 Primary Assembly" />
+    </attachment>
+  </content>
+</DocumentReference>
