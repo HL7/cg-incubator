@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ciUrl="" defaultVersion="current" defaultWorkgroup="" url="http://hl7.org/fhir/uv/cg-incubator">
+<version code="current" url=""/>
+<artifactPageExtension value="-definitions"/>
+<artifactPageExtension value="-examples"/>
+<artifactPageExtension value="-mappings"/>
+<artifact id="GenomicStudy/example" key="GenomicStudy-example" name=""/>
+<artifact id="GenomicStudy/example-lungMass" key="GenomicStudy-example-lungMass" name=""/>
+<artifact id="GenomicStudy/example-trio2" key="GenomicStudy-example-trio2" name=""/>
+<artifact id="MolecularDefinition/example" key="MolecularDefinition-example" name=""/>
+<artifact id="MolecularDefinition/example-allele1" key="MolecularDefinition-example-allele1" name=""/>
+<artifact id="MolecularDefinition/example-allele2" key="MolecularDefinition-example-allele2" name=""/>
+<artifact id="MolecularDefinition/example-allele3" key="MolecularDefinition-example-allele3" name=""/>
+<artifact id="MolecularDefinition/example-allele4" key="MolecularDefinition-example-allele4" name=""/>
+<artifact id="MolecularDefinition/example-allele5" key="MolecularDefinition-example-allele5" name=""/>
+<artifact id="MolecularDefinition/example-allele6" key="MolecularDefinition-example-allele6" name=""/>
+<artifact id="MolecularDefinition/example-allele7" key="MolecularDefinition-example-allele7" name=""/>
+<artifact id="MolecularDefinition/example-allelesliced-cyp2c19-1016" key="MolecularDefinition-example-allelesliced-cyp2c19-1016" name=""/>
+<artifact id="MolecularDefinition/example-allelesliced-cyp2c19-661" key="MolecularDefinition-example-allelesliced-cyp2c19-661" name=""/>
+<artifact id="MolecularDefinition/example-allelesliced-cyp2c19-literal-only" key="MolecularDefinition-example-allelesliced-cyp2c19-literal-only" name=""/>
+<artifact id="MolecularDefinition/example-allelesliced-hla00381" key="MolecularDefinition-example-allelesliced-hla00381" name=""/>
+<artifact id="MolecularDefinition/example-allelesliced-pgx-var-1011" key="MolecularDefinition-example-allelesliced-pgx-var-1011" name=""/>
+<artifact id="MolecularDefinition/example-allelesliced1" key="MolecularDefinition-example-allelesliced1" name=""/>
+<artifact id="MolecularDefinition/example-genomic-cyp2c19-accession" key="MolecularDefinition-example-genomic-cyp2c19-accession" name=""/>
+<artifact id="MolecularDefinition/example-genotype1" key="MolecularDefinition-example-genotype1" name=""/>
+<artifact id="MolecularDefinition/example-haplotype1" key="MolecularDefinition-example-haplotype1" name=""/>
+<artifact id="MolecularDefinition/example-haplotype2" key="MolecularDefinition-example-haplotype2" name=""/>
+<artifact id="MolecularDefinition/example-replaced-sequence" key="MolecularDefinition-example-replaced-sequence" name=""/>
+<artifact id="MolecularDefinition/example-replacement-sequence" key="MolecularDefinition-example-replacement-sequence" name=""/>
+<artifact id="MolecularDefinition/example-sequence-a" key="MolecularDefinition-example-sequence-a" name=""/>
+<artifact id="MolecularDefinition/example-sequence-a-aa-iupac" key="MolecularDefinition-example-sequence-a-aa-iupac" name=""/>
+<artifact id="MolecularDefinition/example-sequence-a-dna-iupac" key="MolecularDefinition-example-sequence-a-dna-iupac" name=""/>
+<artifact id="MolecularDefinition/example-sequence-af1961831-url" key="MolecularDefinition-example-sequence-af1961831-url" name=""/>
+<artifact id="MolecularDefinition/example-sequence-c" key="MolecularDefinition-example-sequence-c" name=""/>
+<artifact id="MolecularDefinition/example-sequence-cgg" key="MolecularDefinition-example-sequence-cgg" name=""/>
+<artifact id="MolecularDefinition/example-sequence-cyp2c19-Concatenated-regions" key="MolecularDefinition-example-sequence-cyp2c19-Concatenated-regions" name=""/>
+<artifact id="MolecularDefinition/example-sequence-cyp2c19-accession" key="MolecularDefinition-example-sequence-cyp2c19-accession" name=""/>
+<artifact id="MolecularDefinition/example-sequence-cyp2c19-attached" key="MolecularDefinition-example-sequence-cyp2c19-attached" name=""/>
+<artifact id="MolecularDefinition/example-sequence-cyp2c19-downstream-region" key="MolecularDefinition-example-sequence-cyp2c19-downstream-region" name=""/>
+<artifact id="MolecularDefinition/example-sequence-cyp2c19-gene-region" key="MolecularDefinition-example-sequence-cyp2c19-gene-region" name=""/>
+<artifact id="MolecularDefinition/example-sequence-cyp2c19-upstream-region" key="MolecularDefinition-example-sequence-cyp2c19-upstream-region" name=""/>
+<artifact id="MolecularDefinition/example-sequence-cyp2c19-url" key="MolecularDefinition-example-sequence-cyp2c19-url" name=""/>
+<artifact id="MolecularDefinition/example-sequence-fmr1" key="MolecularDefinition-example-sequence-fmr1" name=""/>
+<artifact id="MolecularDefinition/example-sequence-fmr1-cgg-20x-edited-referenced" key="MolecularDefinition-example-sequence-fmr1-cgg-20x-edited-referenced" name=""/>
+<artifact id="MolecularDefinition/example-sequence-fmr1-cgg-20x-repeat" key="MolecularDefinition-example-sequence-fmr1-cgg-20x-repeat" name=""/>
+<artifact id="MolecularDefinition/example-sequence-g" key="MolecularDefinition-example-sequence-g" name=""/>
+<artifact id="MolecularDefinition/example-sequence-ggc" key="MolecularDefinition-example-sequence-ggc" name=""/>
+<artifact id="MolecularDefinition/example-sequence-hla000011" key="MolecularDefinition-example-sequence-hla000011" name=""/>
+<artifact id="MolecularDefinition/example-sequence-lrg584" key="MolecularDefinition-example-sequence-lrg584" name=""/>
+<artifact id="MolecularDefinition/example-sequence-msh2" key="MolecularDefinition-example-sequence-msh2" name=""/>
+<artifact id="MolecularDefinition/example-sequence-nc00001010-url" key="MolecularDefinition-example-sequence-nc00001010-url" name=""/>
+<artifact id="MolecularDefinition/example-sequence-nm0007694-url" key="MolecularDefinition-example-sequence-nm0007694-url" name=""/>
+<artifact id="MolecularDefinition/example-sequence-repeat" key="MolecularDefinition-example-sequence-repeat" name=""/>
+<artifact id="MolecularDefinition/example-sequence-t" key="MolecularDefinition-example-sequence-t" name=""/>
+<artifact id="MolecularDefinition/example-sequence0-2b-concatenated" key="MolecularDefinition-example-sequence0-2b-concatenated" name=""/>
+<artifact id="MolecularDefinition/example-sequence1" key="MolecularDefinition-example-sequence1" name=""/>
+<artifact id="MolecularDefinition/example-sequence1-2b-concatenated" key="MolecularDefinition-example-sequence1-2b-concatenated" name=""/>
+<artifact id="MolecularDefinition/example-sequence2-2b-concatenated" key="MolecularDefinition-example-sequence2-2b-concatenated" name=""/>
+<artifact id="MolecularDefinition/example-starting-sequence-2b-extracted" key="MolecularDefinition-example-starting-sequence-2b-extracted" name=""/>
+<artifact id="MolecularDefinition/example-starting-sequence-2b-relative" key="MolecularDefinition-example-starting-sequence-2b-relative" name=""/>
+<artifact id="MolecularDefinition/example-variation-cyp2c19-1015-spdi" key="MolecularDefinition-example-variation-cyp2c19-1015-spdi" name=""/>
+<artifact id="MolecularDefinition/example-variation-cyp2c19-1015-vrs" key="MolecularDefinition-example-variation-cyp2c19-1015-vrs" name=""/>
+<artifact id="MolecularDefinition/example-variation-cyp2c19-1016-vcf" key="MolecularDefinition-example-variation-cyp2c19-1016-vcf" name=""/>
+<artifact id="MolecularDefinition/example-variation-cyp2c19-661" key="MolecularDefinition-example-variation-cyp2c19-661" name=""/>
+<artifact id="MolecularDefinition/example-variation-cyp2c19-991-hgvs" key="MolecularDefinition-example-variation-cyp2c19-991-hgvs" name=""/>
+<artifact id="MolecularDefinition/example-variation-pgx-var-1011" key="MolecularDefinition-example-variation-pgx-var-1011" name=""/>
+<artifact id="MolecularDefinition/example-variation-pgx-var-1012" key="MolecularDefinition-example-variation-pgx-var-1012" name=""/>
+<artifact id="MolecularDefinition/example-variation-pgx-var-1013" key="MolecularDefinition-example-variation-pgx-var-1013" name=""/>
+<artifact id="MolecularDefinition/example-variation-pgx-var-1014" key="MolecularDefinition-example-variation-pgx-var-1014" name=""/>
+<artifact id="MolecularDefinition/example-variation-pgx-var-1015" key="MolecularDefinition-example-variation-pgx-var-1015" name=""/>
+<artifact id="MolecularDefinition/example-variation-pgx-var-1016" key="MolecularDefinition-example-variation-pgx-var-1016" name=""/>
+<artifact id="MolecularDefinition/example-variation-pgx-var-1017" key="MolecularDefinition-example-variation-pgx-var-1017" name=""/>
+<artifact id="MolecularDefinition/example-variation-pgx-var-1018" key="MolecularDefinition-example-variation-pgx-var-1018" name=""/>
+<artifact id="MolecularDefinition/example-variation-pgx-var-1019" key="MolecularDefinition-example-variation-pgx-var-1019" name=""/>
+<artifact id="MolecularDefinition/example-variation-pgx-var-1020" key="MolecularDefinition-example-variation-pgx-var-1020" name=""/>
+<artifact id="MolecularDefinition/example-variation-pgx-var-1021" key="MolecularDefinition-example-variation-pgx-var-1021" name=""/>
+<artifact id="MolecularDefinition/example-variation1" key="MolecularDefinition-example-variation1" name=""/>
+<artifact id="DocumentReference/CNVAnalysis-called" key="DocumentReference-CNVAnalysis-called" name="CNVAnalysis-called"/>
+<artifact id="Group/groupDenovoFamily" key="Group-groupDenovoFamily" name="Denovo Mutation Example Group"/>
+<artifact id="StructureDefinition/GenomicStudy" key="StructureDefinition-GenomicStudy" name="Genomic Study"/>
+<artifact id="CodeSystem/genomicstudy-changetype" key="CodeSystem-genomicstudy-changetype" name="Genomic Study Change Type"/>
+<artifact id="ValueSet/genomicstudy-changetype-vs" key="ValueSet-genomicstudy-changetype-vs" name="Genomic Study Change Type VS"/>
+<artifact id="CodeSystem/genomicstudy-dataformat" key="CodeSystem-genomicstudy-dataformat" name="Genomic Study Data Format"/>
+<artifact id="ValueSet/genomicstudy-dataformat" key="ValueSet-genomicstudy-dataformat" name="Genomic Study Data Format VS"/>
+<artifact id="CodeSystem/genomicstudy-methodtype" key="CodeSystem-genomicstudy-methodtype" name="Genomic Study Method Type"/>
+<artifact id="ValueSet/genomicstudy-methodtype" key="ValueSet-genomicstudy-methodtype" name="Genomic Study Method Type VS"/>
+<artifact id="CodeSystem/genomicstudy-status" key="CodeSystem-genomicstudy-status" name="Genomic Study Status"/>
+<artifact id="ValueSet/genomicstudy-status" key="ValueSet-genomicstudy-status" name="Genomic Study Status VS"/>
+<artifact id="CodeSystem/genomicstudy-type" key="CodeSystem-genomicstudy-type" name="Genomic Study Type"/>
+<artifact id="ValueSet/genomicstudy-type" key="ValueSet-genomicstudy-type" name="Genomic Study Type VS"/>
+<artifact id="List/GenomicStudy-examples" key="List-GenomicStudy-examples" name="GenomicStudy-examples"/>
+<artifact id="List/GenomicStudy-operations" key="List-GenomicStudy-operations" name="GenomicStudy-operations"/>
+<artifact id="SearchParameter/GenomicStudy-focus" key="SearchParameter-GenomicStudy-focus" name="GenomicStudyFocusSearchParam"/>
+<artifact id="SearchParameter/GenomicStudy-identifier" key="SearchParameter-GenomicStudy-identifier" name="GenomicStudyIdentifierSearchParam"/>
+<artifact id="SearchParameter/GenomicStudy-patient" key="SearchParameter-GenomicStudy-patient" name="GenomicStudyPatientSearchParam"/>
+<artifact id="SearchParameter/GenomicStudy-status" key="SearchParameter-GenomicStudy-status" name="GenomicStudyStatusSearchParam"/>
+<artifact id="SearchParameter/GenomicStudy-subject" key="SearchParameter-GenomicStudy-subject" name="GenomicStudySubjectSearchParam"/>
+<artifact id="StructureDefinition/MolecularDefinition" key="StructureDefinition-MolecularDefinition" name="Molecular Definition"/>
+<artifact id="List/MolecularDefinition-examples" key="List-MolecularDefinition-examples" name="MolecularDefinition-examples"/>
+<artifact id="List/MolecularDefinition-operations" key="List-MolecularDefinition-operations" name="MolecularDefinition-operations"/>
+<artifact id="SearchParameter/MolecularDefinition-identifier" key="SearchParameter-MolecularDefinition-identifier" name="MolecularDefinitionIdentifierSearchParam"/>
+<artifact id="SearchParameter/MolecularDefinition-member" key="SearchParameter-MolecularDefinition-member" name="MolecularDefinitionMemberSearchParam"/>
+<artifact id="SearchParameter/MolecularDefinition-moleculetype" key="SearchParameter-MolecularDefinition-moleculetype" name="MolecularDefinitionMoleculetypeSearchParam"/>
+<artifact id="SearchParameter/MolecularDefinition-topology" key="SearchParameter-MolecularDefinition-topology" name="MolecularDefinitionTopologySearchParam"/>
+<artifact id="SearchParameter/MolecularDefinition-type" key="SearchParameter-MolecularDefinition-type" name="MolecularDefinitionTypeSearchParam"/>
+<artifact id="Device/NGS-device" key="Device-NGS-device" name="NGS-device"/>
+<artifact id="DocumentReference/SimpleVariantAnalysis-called" key="DocumentReference-SimpleVariantAnalysis-called" name="SimpleVariantAnalysis-called"/>
+<artifact id="Device/Triodenovo-SW" key="Device-Triodenovo-SW" name="Triodenovo-SW"/>
+<artifact id="DocumentReference/WES-FullSequencedRegion-GRCh38" key="DocumentReference-WES-FullSequencedRegion-GRCh38" name="WES-FullSequencedRegion-GRCh38"/>
+<artifact id="Specimen/denovo-1" key="Specimen-denovo-1" name="denovo-1"/>
+<artifact id="Specimen/denovo-2" key="Specimen-denovo-2" name="denovo-2"/>
+<artifact id="Specimen/denovo-3" key="Specimen-denovo-3" name="denovo-3"/>
+<artifact id="Patient/denovoChild" key="Patient-denovoChild" name="denovoChild"/>
+<artifact id="Encounter/denovoEncounter" key="Encounter-denovoEncounter" name="denovoEncounter"/>
+<artifact id="Patient/denovoFather" key="Patient-denovoFather" name="denovoFather"/>
+<artifact id="Patient/denovoMother" key="Patient-denovoMother" name="denovoMother"/>
+<artifact id="DocumentReference/example-genomicFile-af1961831-url" key="DocumentReference-example-genomicFile-af1961831-url" name="example-genomicFile-af1961831-url"/>
+<artifact id="DocumentReference/example-genomicFile-cyp2c19-accession" key="DocumentReference-example-genomicFile-cyp2c19-accession" name="example-genomicFile-cyp2c19-accession"/>
+<artifact id="DocumentReference/example-genomicFile-cyp2c19-attached" key="DocumentReference-example-genomicFile-cyp2c19-attached" name="example-genomicFile-cyp2c19-attached"/>
+<artifact id="DocumentReference/example-genomicFile-cyp2c19-url" key="DocumentReference-example-genomicFile-cyp2c19-url" name="example-genomicFile-cyp2c19-url"/>
+<artifact id="DocumentReference/example-genomicFile-hla00001" key="DocumentReference-example-genomicFile-hla00001" name="example-genomicFile-hla00001"/>
+<artifact id="DocumentReference/example-genomicFile-mw7162561" key="DocumentReference-example-genomicFile-mw7162561" name="example-genomicFile-mw7162561"/>
+<artifact id="DocumentReference/example-genomicFile-ng0083843" key="DocumentReference-example-genomicFile-ng0083843" name="example-genomicFile-ng0083843"/>
+<artifact id="DocumentReference/example-genomicFile-nm0002513" key="DocumentReference-example-genomicFile-nm0002513" name="example-genomicFile-nm0002513"/>
+<artifact id="DocumentReference/example-genomicFile-nm0007694" key="DocumentReference-example-genomicFile-nm0007694" name="example-genomicFile-nm0007694"/>
+<artifact id="DocumentReference/example-genomicFile-nm0020245" key="DocumentReference-example-genomicFile-nm0020245" name="example-genomicFile-nm0020245"/>
+<artifact id="Patient/father" key="Patient-father" name="father"/>
+<artifact id="DocumentReference/genomicBEDfile" key="DocumentReference-genomicBEDfile" name="genomicBEDfile"/>
+<artifact id="Encounter/genomicEncounter" key="Encounter-genomicEncounter" name="genomicEncounter"/>
+<artifact id="DocumentReference/genomicFile1" key="DocumentReference-genomicFile1" name="genomicFile1"/>
+<artifact id="DocumentReference/genomicFile2" key="DocumentReference-genomicFile2" name="genomicFile2"/>
+<artifact id="DocumentReference/genomicFile3" key="DocumentReference-genomicFile3" name="genomicFile3"/>
+<artifact id="DocumentReference/genomicFile4" key="DocumentReference-genomicFile4" name="genomicFile4"/>
+<artifact id="DocumentReference/genomicFileFather" key="DocumentReference-genomicFileFather" name="genomicFileFather"/>
+<artifact id="DocumentReference/genomicFileGroupAsSubject" key="DocumentReference-genomicFileGroupAsSubject" name="genomicFileGroupAsSubject"/>
+<artifact id="DocumentReference/genomicFileMother" key="DocumentReference-genomicFileMother" name="genomicFileMother"/>
+<artifact id="DocumentReference/genomicFileProband" key="DocumentReference-genomicFileProband" name="genomicFileProband"/>
+<artifact id="Patient/genomicPatient" key="Patient-genomicPatient" name="genomicPatient"/>
+<artifact id="ServiceRequest/genomicSRFather" key="ServiceRequest-genomicSRFather" name="genomicSRFather"/>
+<artifact id="ServiceRequest/genomicSRMother" key="ServiceRequest-genomicSRMother" name="genomicSRMother"/>
+<artifact id="ServiceRequest/genomicSRProband" key="ServiceRequest-genomicSRProband" name="genomicSRProband"/>
+<artifact id="ServiceRequest/genomicServiceRequest" key="ServiceRequest-genomicServiceRequest" name="genomicServiceRequest"/>
+<artifact id="ServiceRequest/genomicServiceRequest2" key="ServiceRequest-genomicServiceRequest2" name="genomicServiceRequest2"/>
+<artifact id="ServiceRequest/genomicServiceRequest3" key="ServiceRequest-genomicServiceRequest3" name="genomicServiceRequest3"/>
+<artifact id="ServiceRequest/genomicServiceRequest4" key="ServiceRequest-genomicServiceRequest4" name="genomicServiceRequest4"/>
+<artifact id="Specimen/genomicSpecimen" key="Specimen-genomicSpecimen" name="genomicSpecimen"/>
+<artifact id="DocumentReference/genomicVCFfile" key="DocumentReference-genomicVCFfile" name="genomicVCFfile"/>
+<artifact id="DocumentReference/genomicVCFfile-cnv" key="DocumentReference-genomicVCFfile-cnv" name="genomicVCFfile-cnv"/>
+<artifact id="DocumentReference/genomicVCFfile-simple" key="DocumentReference-genomicVCFfile-simple" name="genomicVCFfile-simple"/>
+<artifact id="Patient/mother" key="Patient-mother" name="mother"/>
+<artifact id="Practitioner/practitioner01" key="Practitioner-practitioner01" name="practitioner01"/>
+<artifact id="Practitioner/practitioner02" key="Practitioner-practitioner02" name="practitioner02"/>
+<artifact id="Patient/proband" key="Patient-proband" name="proband"/>
+<artifact id="RelatedPerson/relatedPersonDenovoFather" key="RelatedPerson-relatedPersonDenovoFather" name="relatedPersonDenovoFather"/>
+<artifact id="RelatedPerson/relatedPersonDenovoMother" key="RelatedPerson-relatedPersonDenovoMother" name="relatedPersonDenovoMother"/>
+<artifact id="Specimen/specimenFather" key="Specimen-specimenFather" name="specimenFather"/>
+<artifact id="Specimen/specimenMother" key="Specimen-specimenMother" name="specimenMother"/>
+<artifact id="Specimen/specimenProband" key="Specimen-specimenProband" name="specimenProband"/>
+<page key="NA" name="(NA)"/>
+<page key="many" name="(many)"/>
+<page key="artifacts" name="Artifacts Summary"/>
+<page key="changes" name="Change Log"/>
+<page key="index" name="IG Home"/>
+<page key="toc" name="Table of Contents"/>
+</specification>

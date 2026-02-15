@@ -22,7 +22,7 @@ license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 # EDIT: update the publisher to the correct WG
 publisher:
-  name: HL7 International / Clinical Genomics Work Group
+  name: HL7 International / Clinical Genomics
   url: http://www.hl7.org/Special/committees/cg
   email: clingenomics@lists.hl7.org
 extension:
@@ -40,9 +40,13 @@ extension:
 # EDIT: these are the parameters for your IG, you can add more as needed
 parameters:
   # EDIT: the path-resource parameter specifies the folder where your FHIR additiona resources are located (if you have multiple types of resources, you can list multiple path-resource parameters on separate lines with a dash in front of each)
-  # path-resource: input/resources/sampleadditionalresources
+  path-resource:
+    - input/resources/genomicstudy
+    - input/resources/moleculardefinition
   # EDIT: the additional-resource parameter specifies a specific additional resource to include in your IG (if there is more than one additional resource, list them on separate lines with a dash in front of each)
-  # additional-resource: input/resources/sampleadditionalresources/StructureDefinition-<ResourceName>.xml
+  additional-resource:
+    - input/resources/genomicstudy/StructureDefinition-GenomicStudy.xml
+    - input/resources/moleculardefinition/StructureDefinition-MolecularDefinition.xml
   special-url-base: http://hl7.org/fhir
 
 # EDIT: these are the pages that will be included in your IG, you can add more as needed
