@@ -18,8 +18,8 @@
   </securityLabel> -->
   <content>
     <attachment>
-      <title value="Homo sapiens FMRP translational regulator 1 (FMR1), transcript variant ISO1, mRNA"/>
       <contentType value="text/html"/>
+      <title value="Homo sapiens FMRP translational regulator 1 (FMR1), transcript variant ISO1, mRNA"/>
       <url value="https://www.ncbi.nlm.nih.gov/nuccore/NM_002024.5?report=fasta"/>
     </attachment>
   </content>

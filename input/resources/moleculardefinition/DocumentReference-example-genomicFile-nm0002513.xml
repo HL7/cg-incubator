@@ -18,8 +18,8 @@
   </securityLabel> -->
   <content>
     <attachment>
-      <title value="Homo sapiens mutS homolog 2 (MSH2), transcript variant 1, mRNA"/>
       <contentType value="text/html"/>
+      <title value="Homo sapiens mutS homolog 2 (MSH2), transcript variant 1, mRNA"/>
       <url value="https://www.ncbi.nlm.nih.gov/nuccore/NM_000251.3?report=fasta"/>
     </attachment>
   </content>
