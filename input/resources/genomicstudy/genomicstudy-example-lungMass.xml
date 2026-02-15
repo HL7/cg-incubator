@@ -94,16 +94,16 @@
         <note>
             <text value="For technical reasons, PIK3CB was deemed uncallable using this method."/>
         </note>
-        <regionsStudied>
+        <!-- <regionsStudied>
             <reference value="DocumentReference/WES_FullSequencedRegion_GRCh38"/>
-        </regionsStudied>
-        <regionsCalled>
+        </regionsStudied> -->
+        <!-- <regionsCalled>
             <reference value="DocumentReference/SimpleVariantAnalysis_called"/>
-        </regionsCalled>
+        </regionsCalled> -->
         <output>  <!-- 0..* outputs for the analysis event -->
-            <file>
+            <!-- <file>
                 <reference value="DocumentReference/genomicVCFfile_simple"/>
-            </file>
+            </file> -->
             <type>
                 <coding>
                     <code value="vcf"/>
