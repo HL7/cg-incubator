@@ -24,7 +24,4 @@
       <display value="Software (physical object)"/>
     </coding>
   </type>
-  <version>
-    <value value="0.06"/>
-  </version>
 </Device>
