@@ -9,13 +9,13 @@
   <status value="current"/>
   <docStatus value="preliminary"/>
   <description value="genomicVCFfile_simple: A sample Document Reference instance representing a VCF file that may be used as input or output of a genomic analysis pipeline."/>
-  <securityLabel>
+  <!-- <securityLabel>
     <coding>
       <system value="http://terminology.hl7.org/CodeSystem/v3-Confidentiality"/>
       <code value="R"/>
       <display value="Restricted"/>
     </coding>
-  </securityLabel>
+  </securityLabel> -->
   <content>
     <attachment>
       <url value="https://chat.fhir.org/user_uploads/10155/gdL90-np7lJjGwUxeARapUHB/genomicVCFFile_simple.vcf"/> <!-- This line may need to be changed later -->

@@ -9,13 +9,13 @@
   <status value="current"/>
   <docStatus value="preliminary"/>
   <description value="A sample Document Reference instance representing a BED file that may be used as input or output of a genomic analysis pipeline."/>
-  <securityLabel>
+  <!-- <securityLabel>
     <coding>
       <system value="http://terminology.hl7.org/CodeSystem/v3-Confidentiality"/>
       <code value="R"/>
       <display value="Restricted"/>
     </coding>
-  </securityLabel>
+  </securityLabel> -->
   <content>
     <attachment>
       <url value="http://www.somesystemabc.net/identifiers/files/11114"/>
