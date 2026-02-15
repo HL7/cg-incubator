@@ -9,13 +9,13 @@
   <status value="current"/>
   <docStatus value="preliminary"/>
   <description value="(CYP2C19), mRNA"/>
-  <securityLabel>
+  <!-- <securityLabel>
     <coding>
       <system value="http://terminology.hl7.org/CodeSystem/v3-Confidentiality"/>
       <code value="R"/>
       <display value="Restricted"/>
     </coding>
-  </securityLabel>
+  </securityLabel> -->
   <content>
     <attachment>
       <title value="Homo sapiens cytochrome P450 family 2 subfamily C member 19 (CYP2C19), mRNA"/>

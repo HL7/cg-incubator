@@ -8,13 +8,13 @@
   <status value="current" />
   <docStatus value="preliminary" />
   <description value="A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline. CYP2C19 gene sequence"/>
-  <securityLabel>
+  <!-- <securityLabel>
     <coding>
       <system value="http://terminology.hl7.org/CodeSystem/v3-Confidentiality" />
       <code value="R" />
       <display value="Restricted" />
     </coding>
-  </securityLabel>
+  </securityLabel> -->
   <content>
     <attachment>
       <title value="Homo sapiens cytochrome P450 family 2 subfamily C member 19 (CYP2C19), RefSeqGene (LRG_584) on chromosome 10" />

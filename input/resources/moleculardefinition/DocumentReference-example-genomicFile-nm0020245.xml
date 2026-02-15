@@ -9,13 +9,13 @@
   <status value="current"/>
   <docStatus value="preliminary"/>
   <description value="A sample Document Reference instance representing Homo sapiens FMRP translational regulator 1 (FMR1), transcript variant ISO1, mRNA."/>
-  <securityLabel>
+  <!-- <securityLabel>
     <coding>
       <system value="http://terminology.hl7.org/CodeSystem/v3-Confidentiality"/>
       <code value="R"/>
       <display value="Restricted"/>
     </coding>
-  </securityLabel>
+  </securityLabel> -->
   <content>
     <attachment>
       <title value="Homo sapiens FMRP translational regulator 1 (FMR1), transcript variant ISO1, mRNA"/>
