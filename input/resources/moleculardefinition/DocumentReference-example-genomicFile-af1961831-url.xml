@@ -19,7 +19,7 @@
     <attachment>
       <title value="Homo sapiens MHC class I antigen (HLA-B) gene" />
       <contentType value="text/html" />
-      <url value="https://www.ebi.ac.uk/ena/browser/api/fasta/AF196183.1 " />
+      <url value="https://www.ebi.ac.uk/ena/browser/api/fasta/AF196183.1" />
     </attachment>
   </content>
 </DocumentReference>
