@@ -33,7 +33,7 @@
     </quantity>
     <method>
       <coding>
-        <system value="http://terminology.hl7.org/CodeSystem/v2-0488"/>
+        <!-- <system value="http://terminology.hl7.org/CodeSystem/v2-0488"/> -->
         <code value="LNV"/>
       </coding>
     </method>
