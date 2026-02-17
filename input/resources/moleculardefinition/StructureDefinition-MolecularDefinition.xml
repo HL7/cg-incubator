@@ -18,7 +18,7 @@
     <valueCode value=".status = entered-in-error"/>
   </extension>
 
-  <extension url="http://hl7.org/fhir/build/StructureDefinition/implements-interface">
+  <extension url="http://hl7.org/fhir/build/StructureDefinition/structuredefinition-implements">
     <valueCanonical value="http://hl7.org/fhir/StructureDefinition/CanonicalResource"/>
   </extension>
 
