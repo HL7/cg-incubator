@@ -45,8 +45,8 @@ parameters:
     - input/resources/moleculardefinition
   # EDIT: the additional-resource parameter specifies a specific additional resource to include in your IG (if there is more than one additional resource, list them on separate lines with a dash in front of each)
   additional-resource:
-    - input/resources/genomicstudy/structuredefinition-GenomicStudy.xml
-    - input/resources/moleculardefinition/structuredefinition-MolecularDefinition.xml
+    - input/resources/genomicstudy/StructureDefinition-GenomicStudy.xml
+    - input/resources/moleculardefinition/StructureDefinition-MolecularDefinition.xml
   special-url-base: http://hl7.org/fhir
 
 # EDIT: these are the pages that will be included in your IG, you can add more as needed
