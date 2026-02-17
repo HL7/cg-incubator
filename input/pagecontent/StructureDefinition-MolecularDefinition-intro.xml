@@ -1,11 +1,5 @@
 <div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../schema/fhir-xhtml.xsd" xmlns="http://www.w3.org/1999/xhtml">
   <div>
-    
-    [%stu-note dstu%]
-
-      Molecular Definition resource will replace <a href="molecularsequence.html"> Molecular Sequence</a> resource. Current page of the <a href="molecularsequence.html"> Molecular Sequence</a> is temporarily available for referencing and review purposes.
-
-    [%end-note%]
 
   <h3>Scope and Usage</h3>
   <p>
