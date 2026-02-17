@@ -17,6 +17,11 @@
   <extension url="http://hl7.org/fhir/build/StructureDefinition/entered-in-error-status">
     <valueCode value=".status = entered-in-error"/>
   </extension>
+
+  <!-- <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-implements">
+    <valueCanonical value="http://hl7.org/fhir/StructureDefinition/CanonicalResource"/>
+  </extension> -->
+
   <url value="http://hl7.org/fhir/StructureDefinition/MolecularDefinition"/>
   <identifier>
     <system value="urn:ietf:rfc:3986"/>
