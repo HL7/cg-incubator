@@ -10,17 +10,17 @@
     <valueCode value="cg"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-    <valueCode value="trial-use"/>
+    <valueCode value="draft"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1"/>
   </extension>
-  <url value="http://hl7.org/fhir/genomicstudy-changetype"/>
+  <url value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-changetype"/>
   <identifier>
     <system value="urn:ietf:rfc:3986"/>
     <value value="urn:oid:2.16.840.1.113883.4.642.4.1977"/>
   </identifier>
-  <version value="6.0.0"/>
+  <version value="1.0.0"/>
   <name value="GenomicStudyChangeType"/>
   <title value="Genomic Study Change Type"/>
   <status value="draft"/>
@@ -37,9 +37,15 @@
       <value value="fhir@lists.hl7.org"/>
     </telecom>
   </contact>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/clingenomics"/>
+    </telecom>
+  </contact>
   <description value="The change type relevant to GenomicStudy analysis."/>
   <caseSensitive value="true"/>
-  <valueSet value="http://hl7.org/fhir/ValueSet/genomicstudy-changetype"/>
+  <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/genomicstudy-changetype"/>
   <content value="complete"/>
   <concept>
     <code value="DNA"/>
@@ -53,7 +59,7 @@
   </concept>
   <concept>
     <code value="AA"/>
-    <display value="Protein/amino Acids change "/>
+    <display value="Protein/amino Acids change"/>
     <definition value="Change that involves Amino Acid (AA) or protein sequences."/>
   </concept>
   <concept>

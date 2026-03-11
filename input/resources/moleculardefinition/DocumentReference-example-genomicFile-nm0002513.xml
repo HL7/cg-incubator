@@ -3,7 +3,7 @@
 <DocumentReference xmlns="http://hl7.org/fhir">
   <id value="example-genomicFile-nm0002513"/>
   <identifier>
-    <system value="http://www.somesystemabc.net/identifiers/files"/>
+    <system value="http://example.org/identifiers/files"/>
     <value value="11111"/>
   </identifier>
   <status value="current"/>

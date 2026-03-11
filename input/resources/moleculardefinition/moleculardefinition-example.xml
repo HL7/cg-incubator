@@ -43,8 +43,12 @@ GCCTGTACAGACAGTTAATATCACTGCAGGCTTTCCTGTGGTTGGTCAGAAAGA"/>
                     <text value="0-based interval counting"/>
                 </system>
             </coordinateSystem>
-            <start value="0"/>
-            <end value="745"/>
+            <startQuantity>
+                <value value="0"/>
+            </startQuantity>
+            <endQuantity>
+                <value value="745"/>
+            </endQuantity>
         </coordinateInterval>
 
         <reverseComplement value="false"/>
@@ -93,8 +97,12 @@ GCCTGTACAGACAGTTAATATCACTGCAGGCTTTCCTGTGGTTGGTCAGAAAGA"/>
                         <text value="0-based interval counting"/>
                     </system>
                 </coordinateSystem>
-                <start value="0"/>
-                <end value="745"/>
+                <startQuantity>
+                    <value value="0"/>
+                </startQuantity>
+                <endQuantity>
+                    <value value="745"/>
+                </endQuantity>
             </coordinateInterval>
             <replacementMolecule>
                 <reference value="MolecularDefinition/example-replacement-sequence"/>

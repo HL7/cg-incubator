@@ -3,7 +3,7 @@
 <Specimen xmlns="http://hl7.org/fhir">
   <id value="genomicSpecimen"/>
   <identifier>
-    <system value="http://www.somesystemabc.net/identifiers/specimens"/>
+    <system value="http://example.org/identifiers/specimens"/>
     <value value="4"/>
   </identifier>
   <status value="available"/>

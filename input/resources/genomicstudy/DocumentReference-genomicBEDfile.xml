@@ -3,7 +3,7 @@
 <DocumentReference xmlns="http://hl7.org/fhir">
   <id value="genomicBEDfile"/>
   <identifier>
-    <system value="http://www.somesystemabc.net/identifiers/files"/>
+    <system value="http://example.org/identifiers/files"/>
     <value value="11116"/>
   </identifier>
   <status value="current"/>
@@ -18,7 +18,7 @@
   </securityLabel> -->
   <content>
     <attachment>
-      <url value="http://www.somesystemabc.net/identifiers/files/11114"/>
+      <url value="http://example.org/identifiers/files/11114"/>
       <title value="Sample Genomic BED File"/>
       <creation value="2019-03-01T01:02:01+01:00"/>
     </attachment>

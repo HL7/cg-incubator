@@ -10,17 +10,17 @@
     <valueCode value="cg"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-    <valueCode value="trial-use"/>
+    <valueCode value="draft"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1"/>
   </extension>
-  <url value="http://hl7.org/fhir/genomicstudy-methodtype"/>
+  <url value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-methodtype"/>
   <identifier>
     <system value="urn:ietf:rfc:3986"/>
     <value value="urn:oid:2.16.840.1.113883.4.642.4.1979"/>
   </identifier>
-  <version value="6.0.0"/>
+  <version value="1.0.0"/>
   <name value="GenomicStudyMethodType"/>
   <title value="Genomic Study Method Type"/>
   <status value="draft"/>
@@ -37,332 +37,419 @@
       <value value="fhir@lists.hl7.org"/>
     </telecom>
   </contact>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/clingenomics"/>
+    </telecom>
+  </contact>
   <description value="The method type of the GenomicStudy analysis. These method types and relevant codes were pulled from [National Library of Medicine-Genetic Testing Registry](https://www.ncbi.nlm.nih.gov/gtr/) (NCBI-GTR) values of describing different testing methods on various levels: [major method category](https://ftp.ncbi.nlm.nih.gov/pub/GTR/standard_terms/Major_method_category.txt), [method category](https://ftp.ncbi.nlm.nih.gov/pub/GTR/standard_terms/Method_category.txt), and [primary methodology](https://ftp.ncbi.nlm.nih.gov/pub/GTR/standard_terms/Primary_test_methodology.txt)"/>
   <caseSensitive value="true"/>
-  <valueSet value="http://hl7.org/fhir/ValueSet/genomicstudy-methodtype"/>
+  <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/genomicstudy-methodtype"/>
   <content value="complete"/>
   <concept>
     <code value="biochemical-genetics"/>
     <display value="Biochemical Genetics"/>
+    <definition value="Analysis of biochemical compounds and pathways to detect genetic metabolic disorders."/>
   </concept>
   <concept>
     <code value="cytogenetics"/>
     <display value="Cytogenetics"/>
+    <definition value="Study of chromosome structure and number using microscopy-based methods."/>
   </concept>
   <concept>
     <code value="molecular-genetics"/>
     <display value="Molecular Genetics"/>
+    <definition value="Analysis of DNA and genes using molecular techniques to identify variations and mutations."/>
   </concept>
   <concept>
     <code value="analyte"/>
     <display value="Analyte"/>
+    <definition value="Analysis of biological analytes to detect genetic disorders."/>
   </concept>
   <concept>
     <code value="chromosome-breakage-studies"/>
     <display value="Chromosome breakage studies"/>
+    <definition value="Tests to assess chromosome stability and fragility, often used to detect DNA repair disorders."/>
   </concept>
   <concept>
     <code value="deletion-duplication-analysis"/>
     <display value="Deletion/duplication analysis"/>
+    <definition value="Detection of deletions and duplications in DNA sequences."/>
   </concept>
   <concept>
     <code value="detection-of-homozygosity"/>
     <display value="Detection of homozygosity"/>
+    <definition value="Identification of homozygous regions in the genome."/>
   </concept>
   <concept>
     <code value="enzyme-assay"/>
     <display value="Enzyme assay"/>
+    <definition value="Measurement of enzyme activity to detect genetic metabolic disorders."/>
   </concept>
   <concept>
     <code value="fish-interphase"/>
     <display value="FISH-interphase"/>
+    <definition value="Fluorescence in situ hybridization performed during interphase of the cell cycle."/>
   </concept>
   <concept>
     <code value="fish-metaphase"/>
     <display value="FISH-metaphase"/>
+    <definition value="Fluorescence in situ hybridization performed during metaphase of the cell cycle."/>
   </concept>
   <concept>
     <code value="flow-cytometry"/>
     <display value="Flow cytometry"/>
+    <definition value="Analysis of cells using flow cytometry to assess genetic disorders."/>
   </concept>
   <concept>
     <code value="fish"/>
     <display value="Fluorescence in situ hybridization (FISH)"/>
+    <definition value="Visualization of specific DNA sequences using fluorescent probes."/>
   </concept>
   <concept>
     <code value="immunohistochemistry"/>
     <display value="Immunohistochemistry"/>
+    <definition value="Detection of antigens in tissue samples using antibodies."/>
   </concept>
   <concept>
     <code value="karyotyping"/>
     <display value="Karyotyping"/>
+    <definition value="Visual analysis of chromosome structure and number in metaphase cells."/>
   </concept>
   <concept>
     <code value="linkage-analysis"/>
     <display value="Linkage analysis"/>
+    <definition value="Analysis of genetic markers to identify disease-associated variants in families."/>
   </concept>
   <concept>
     <code value="methylation-analysis"/>
     <display value="Methylation analysis"/>
+    <definition value="Detection of DNA methylation patterns to assess epigenetic modifications."/>
   </concept>
   <concept>
     <code value="msi"/>
     <display value="Microsatellite instability testing (MSI)"/>
+    <definition value="Detection of microsatellite instability to assess DNA mismatch repair function."/>
   </concept>
   <concept>
     <code value="m-fish"/>
     <display value="Multicolor FISH (M-FISH)"/>
+    <definition value="Multiple fluorescent in situ hybridization using multiple probes and colors simultaneously."/>
   </concept>
   <concept>
     <code value="mutation-scanning-of-select-exons"/>
     <display value="Mutation scanning of select exons"/>
+    <definition value="Screening for mutations in specific exons of targeted genes."/>
   </concept>
   <concept>
     <code value="mutation-scanning-of-the-entire-coding-region"/>
     <display value="Mutation scanning of the entire coding region"/>
+    <definition value="Comprehensive screening for mutations throughout the entire coding region of a gene."/>
   </concept>
   <concept>
     <code value="protein-analysis"/>
     <display value="Protein analysis"/>
+    <definition value="Analysis of protein structure and function to detect genetic disorders affecting protein."/>
   </concept>
   <concept>
     <code value="protein-expression"/>
     <display value="Protein expression"/>
+    <definition value="Measurement of protein expression levels to assess genetic effects on protein production."/>
   </concept>
   <concept>
     <code value="rna-analysis"/>
     <display value="RNA analysis"/>
+    <definition value="Analysis of RNA sequences and expression to detect genetic disorders."/>
   </concept>
   <concept>
     <code value="sequence-analysis-of-select-exons"/>
     <display value="Sequence analysis of select exons"/>
+    <definition value="DNA sequencing of specific exons to identify mutations."/>
   </concept>
   <concept>
     <code value="sequence-analysis-of-the-entire-coding-region"/>
     <display value="Sequence analysis of the entire coding region"/>
+    <definition value="Comprehensive DNA sequencing of the entire coding region of a gene."/>
   </concept>
   <concept>
     <code value="sister-chromatid-exchange"/>
     <display value="Sister chromatid exchange"/>
+    <definition value="Assessment of sister chromatid exchange as an indicator of DNA damage and repair."/>
   </concept>
   <concept>
     <code value="targeted-variant-analysis"/>
     <display value="Targeted variant analysis"/>
+    <definition value="Sequencing or genotyping of specific, pre-selected genetic variants."/>
   </concept>
   <concept>
     <code value="udp"/>
     <display value="Uniparental disomy study (UPD)"/>
+    <definition value="Detection of regions where both chromosomes are inherited from a single parent."/>
   </concept>
   <concept>
     <code value="aspe"/>
     <display value="Allele-specific primer extension (ASPE)"/>
+    <definition value="Genotyping method using allele-specific primers to identify genetic variants."/>
   </concept>
   <concept>
     <code value="alternative-splicing-detection"/>
     <display value="Alternative splicing detection"/>
+    <definition value="Detection and analysis of alternative splicing patterns in RNA."/>
   </concept>
   <concept>
     <code value="bi-directional-sanger-sequence-analysis"/>
     <display value="Bi-directional Sanger Sequence Analysis"/>
+    <definition value="DNA sequencing using Sanger method in both forward and reverse directions."/>
   </concept>
   <concept>
     <code value="c-banding"/>
     <display value="C-banding"/>
+    <definition value="Chromosome banding technique visualizing constitutive heterochromatin."/>
   </concept>
   <concept>
     <code value="cia"/>
     <display value="Chemiluminescent Immunoassay (CIA)"/>
+    <definition value="Immunoassay detecting antigens using chemiluminescent reaction."/>
   </concept>
   <concept>
     <code value="chromatin-immunoprecipitation-on-chip"/>
     <display value="Chromatin Immunoprecipitation on ChIP"/>
+    <definition value="ChIP-on-chip analysis combining chromatin immunoprecipitation with microarray."/>
   </concept>
   <concept>
     <code value="comparative-genomic-hybridization"/>
     <display value="Comparative Genomic Hybridization"/>
+    <definition value="Detection of copy number variations by comparison of test and control DNA."/>
   </concept>
   <concept>
     <code value="damid"/>
     <display value="DamID"/>
+    <definition value="DNA Adenine Methyltransferase Identification for mapping protein-DNA interactions."/>
   </concept>
   <concept>
     <code value="digital-virtual-karyotyping"/>
     <display value="Digital / Virtual karyotyping"/>
+    <definition value="Computer-based analysis of chromosome patterns and abnormalities."/>
   </concept>
   <concept>
     <code value="digital-microfluidic-microspheres"/>
     <display value="Digital microfluidic microspheres"/>
+    <definition value="Microfluidic technology using digital control for genetic analysis."/>
   </concept>
   <concept>
     <code value="enzymatic-levels"/>
     <display value="Enzymatic levels"/>
+    <definition value="Measurement of enzyme levels in biological samples."/>
   </concept>
   <concept>
     <code value="enzyme-activity"/>
     <display value="Enzyme activity"/>
+    <definition value="Measurement of enzyme activity levels in biological samples."/>
   </concept>
   <concept>
     <code value="elisa"/>
     <display value="Enzyme-Linked Immunosorbent Assays (ELISA)"/>
+    <definition value="Immunoassay for detecting antigens using enzyme-linked antibodies."/>
   </concept>
   <concept>
     <code value="fluorometry"/>
     <display value="Fluorometry"/>
+    <definition value="Measurement of fluorescence intensity to quantify biological molecules."/>
   </concept>
   <concept>
     <code value="fusion-genes-microarrays"/>
     <display value="Fusion genes microarrays"/>
+    <definition value="Microarray-based detection of gene fusion events."/>
   </concept>
   <concept>
     <code value="g-banding"/>
     <display value="G-banding"/>
+    <definition value="Giemsa staining chromosome banding technique visualizing chromosome structure."/>
   </concept>
   <concept>
     <code value="gc-ms"/>
-    <display value="Gas chromatographyâ€“mass spectrometry (GC-MS)"/>
+    <display value="Gas chromatography mass spectrometry (GC-MS)"/>    
+    <definition value="Technique combining gas chromatography with mass spectrometry for chemical compound separation and identification."/>  
   </concept>
   <concept>
     <code value="gene-expression-profiling"/>
-    <display value="Gene expression profiling"/>
+    <display value="Gene expression profiling"/>    
+    <definition value="Analysis of gene expression patterns using various molecular techniques."/>  
   </concept>
   <concept>
     <code value="gene-id"/>
-    <display value="GeneID"/>
+    <display value="GeneID"/>    
+    <definition value="Identification of genes through sequence comparison or database lookup."/>  
   </concept>
   <concept>
     <code value="gold-nanoparticle-probe-technology"/>
     <display value="Gold nanoparticle probe technology"/>
+    <definition value="Molecular detection technique using gold nanoparticles as probes."/>
   </concept>
   <concept>
     <code value="hplc"/>
-    <display value="High-performance liquid chromatography (HPLC)"/>
+    <display value="High-performance liquid chromatography (HPLC)"/>    
+    <definition value="Separation and analysis technique using high-pressure liquid chromatography."/>  
   </concept>
   <concept>
     <code value="lc-ms"/>
-    <display value="Liquid chromatography mass spectrometry (LC-MS)"/>
+    <display value="Liquid chromatography mass spectrometry (LC-MS)"/>    
+    <definition value="Combined technique using liquid chromatography followed by mass spectrometry."/>  
   </concept>
   <concept>
     <code value="lc-ms-ms"/>
-    <display value="Liquid chromatography-tandem mass spectrometry (LC-MS/MS)"/>
+    <display value="Liquid chromatography-tandem mass spectrometry (LC-MS/MS)"/>    
+    <definition value="Laboratory technique using liquid chromatography with tandem mass spectrometry."/>  
   </concept>
   <concept>
     <code value="metabolite-levels"/>
     <display value="Metabolite levels"/>
+    <definition value="Measurement of metabolite concentrations in biological samples."/>
   </concept>
   <concept>
     <code value="methylation-specific-pcr"/>
     <display value="Methylation-specific PCR"/>
+    <definition value="PCR-based technique detecting DNA methylation patterns at specific loci."/>
   </concept>
   <concept>
     <code value="microarray"/>
     <display value="Microarray"/>
+    <definition value="Molecular technique using arrays of probes to detect DNA sequences or expression levels."/>
   </concept>
   <concept>
     <code value="mlpa"/>
     <display value="Multiplex Ligation-dependent Probe Amplification (MLPA)"/>
+    <definition value="Technique for detecting copy number variations and point mutations."/>
   </concept>
   <concept>
     <code value="ngs-mps"/>
-    <display value="Next-Generation (NGS)/Massively parallel sequencing (MPS)"/>
+    <display value="Next-Generation (NGS)/Massively parallel sequencing (MPS)"/>    
+    <definition value="High-throughput sequencing technology for analyzing genetic variation."/>  
   </concept>
   <concept>
     <code value="ola"/>
     <display value="Oligonucleotide Ligation Assay (OLA)"/>
+    <definition value="DNA sequence detection method using complementary oligonucleotide ligation."/>
   </concept>
   <concept>
     <code value="oligonucleotide-hybridization-based-dna-sequencing"/>
     <display value="Oligonucleotide hybridization-based DNA sequencing"/>
+    <definition value="DNA sequencing using hybridization with oligonucleotide probes."/>
   </concept>
   <concept>
     <code value="other"/>
     <display value="Other"/>
+    <definition value="Other genetic testing method not listed in this code system."/>
   </concept>
   <concept>
     <code value="pcr"/>
     <display value="PCR"/>
+    <definition value="Polymerase Chain Reaction for amplifying and detecting DNA sequences."/>
   </concept>
   <concept>
     <code value="pcr-with-allele-specific-hybridization"/>
-    <display value="PCR with allele specific hybridization"/>
+    <display value="PCR with allele specific hybridization"/>    
+    <definition value="PCR technique combined with allele-specific probe hybridization for variant detection."/>  
   </concept>
   <concept>
     <code value="pcr-rflp-with-southern-hybridization"/>
     <display value="PCR-RFLP with Southern hybridization"/>
+    <definition value="Combination of PCR-RFLP and Southern blot analysis for genetic variation detection."/>
   </concept>
   <concept>
     <code value="protein-truncation-test"/>
-    <display value="Protein truncation test"/>
+    <display value="Protein truncation test"/>    
+    <definition value="Molecular technique detecting premature stop codons and truncated proteins."/>  
   </concept>
   <concept>
     <code value="pyrosequencing"/>
     <display value="Pyrosequencing"/>
+    <definition value="DNA sequencing method based on detection of pyrophosphate release during nucleotide incorporation."/>
   </concept>
   <concept>
     <code value="q-banding"/>
     <display value="Q-banding"/>
+    <definition value="Quinacrine staining chromosome banding technique using fluorescent dye."/>
   </concept>
   <concept>
     <code value="qpcr"/>
     <display value="Quantitative PCR (qPCR)"/>
+    <definition value="Real-time PCR technique for quantifying DNA or RNA sequences."/>
   </concept>
   <concept>
     <code value="r-banding"/>
     <display value="R-banding"/>
+    <definition value="Reverse chromosome banding technique visualizing reverse of normal G-banding pattern."/>
   </concept>
   <concept>
     <code value="rflp"/>
     <display value="RFLP"/>
+    <definition value="Restriction Fragment Length Polymorphism - technique detecting DNA variations via restriction mapping."/>
   </concept>
   <concept>
     <code value="rt-lamp"/>
     <display value="RT-LAMP"/>
+    <definition value="Reverse transcription Loop-mediated Isothermal Amplification for RNA detection."/>
   </concept>
   <concept>
     <code value="rt-pcr"/>
     <display value="RT-PCR"/>
+    <definition value="Reverse transcription PCR for detecting and amplifying RNA sequences."/>
   </concept>
   <concept>
     <code value="rt-pcr-with-gel-analysis"/>
     <display value="RT-PCR with gel analysis"/>
+    <definition value="RT-PCR product analysis using gel electrophoresis for visualization and sizing."/>
   </concept>
   <concept>
     <code value="rt-qpcr"/>
     <display value="RT-qPCR"/>
+    <definition value="Real-time reverse transcription PCR for quantitative RNA detection."/>
   </concept>
   <concept>
     <code value="snp-detection"/>
     <display value="SNP Detection"/>
+    <definition value="Detection of single nucleotide polymorphisms through molecular testing."/>
   </concept>
   <concept>
     <code value="silver-staining"/>
     <display value="Silver staining"/>
+    <definition value="Staining technique used in protein and DNA analysis for visualization."/>
   </concept>
   <concept>
     <code value="sky"/>
     <display value="Spectral karyotyping (SKY)"/>
+    <definition value="Fluorescence in situ hybridization allowing simultaneous visualization of all chromosomes."/>
   </concept>
   <concept>
     <code value="t-banding"/>
     <display value="T-banding"/>
+    <definition value="T-banding chromosome technique visualizing telomeres through staining."/>
   </concept>
   <concept>
     <code value="ms-ms"/>
     <display value="Tandem mass spectrometry (MS/MS)"/>
+    <definition value="Tandem mass spectrometry technique for analyzing molecular structure and mass."/>
   </concept>
   <concept>
     <code value="tetra-nucleotide-repeat-by-pcr-or-southern-blot"/>
     <display value="Tetra-nucleotide repeat by PCR or Southern Blot"/>
+    <definition value="Detection of tetra-nucleotide repeat expansions using PCR or Southern blot analysis."/>
   </concept>
   <concept>
     <code value="tiling-arrays"/>
     <display value="Tiling Arrays"/>
+    <definition value="Microarray technology using overlapping probes to analyze genomic regions."/>
   </concept>
   <concept>
     <code value="trinucleotide-repeat-by-pcr-or-southern-blot"/>
     <display value="Trinucleotide repeat by PCR or Southern Blot"/>
+    <definition value="Detection of trinucleotide repeat expansions using PCR or Southern blot analysis."/>
   </concept>
   <concept>
     <code value="uni-directional-sanger-sequencing"/>
     <display value="Uni-directional Sanger sequencing"/>
+    <definition value="One-directional Sanger sequencing method for DNA sequence determination."/>
   </concept>
 </CodeSystem>

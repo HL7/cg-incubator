@@ -10,7 +10,7 @@
       </coding>
       <text value="Laboratory Accession ID"/>
     </type>
-    <system value="http://www.somesystemabc.net/identifiers/serviceRequests"/>
+    <system value="http://example.org/identifiers/serviceRequests"/>
     <value value="111111111"/>
   </identifier>
   <status value="active"/>

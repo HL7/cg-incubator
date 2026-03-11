@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MolecularDefinition xmlns="http://hl7.org/fhir">
     <id value="example-sequence-a-aa-iupac"/>
+
     <moleculeType>
         <coding>
             <system value="http://hl7.org/fhir/sequence-type"/>
@@ -10,12 +11,7 @@
     </moleculeType>
     <representation>
         <literal>
-            <encoding>
-                <coding>
-                    <code value="aa-1-noamb-20common"/>
-                    <display value="Amino acid, 1 letter, no ambiguity, 20 common"/>
-                </coding>
-            </encoding>
+            <encoding value="aa-1-noamb-20common"/>
             <value value="A"/>
         </literal>
     </representation>

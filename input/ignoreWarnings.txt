@@ -3,3 +3,12 @@
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
+
+# Suppressing various information messages (for now just to keep QA easier to review)
+Pinned the version of http://hl7.org/fhir/%
+Reference to experimental CodeSystem http://hl7.org/fhir/%
+This element does not match any known slice defined in the profile http://hl7.org/fhir/%
+
+# out of our control?
+Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+Reference to draft CodeSystem http://hl7.org/fhir/resource-security-category|5.2.0

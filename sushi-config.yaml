@@ -3,60 +3,374 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-# EDIT: change 'sample-incubator' to the code from your IG Proposal
 id: hl7.fhir.uv.cg-incubator
-# EDIT: change 'sample-incubator' to the code from your IG Proposal
 canonical: http://hl7.org/fhir/uv/cg-incubator
-# EDIT: change 'SampleIncubatorImplementationGuide' to the name of your IG
-name: FHIRGenomicsResourceIncubator
-# EDIT: change 'Sample Incubator Implementation Guide' to the title of your IG
-title: FHIR Genomics Resource Incubator
-# EDIT: update the description to describe your IG
+packageId: hl7.fhir.uv.cg-incubator
+version: 0.1.0-ci-build
+name: CGResourceIncubator
+title: Clinical Genomics Resource Incubator
 description: This incubator defines the usage of the Clinical Genomics FHIR resources which are evolving in their maturity until they are ready for inclusion in the Normative FHIR Core specification.
 status: active # draft | active | retired | unknown
-version: 0.1.0
 fhirVersion: 6.0.0-ballot3
-copyrightYear: 2025+
-releaseLabel: ci-build
+copyrightYear: 2026+
+releaseLabel: CI Build
 license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World" # https://www.hl7.org/fhir/valueset-jurisdiction.html
-# EDIT: update the publisher to the correct WG
 publisher:
   name: HL7 International / Clinical Genomics
-  url: http://www.hl7.org/Special/committees/cg
+  url: http://www.hl7.org/Special/committees/clingenomics
   email: clingenomics@lists.hl7.org
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
     valueCode: trial-use
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
     valueInteger: 1
-# EDIT: update the work group
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: cg
 
-# EDIT: you may need to add dependencies for your IG, see https://fshschool.org/docs/sushi/configuration/#implementationguide for more details
-# dependencies:
+# Dependencies on R5 packages - explicit to avoid canonical URL mismatch with template-injected entries
+#dependencies:
+#  hl7.terminology.r5
+#  hl7.fhir.uv.extensions.r5
+#  hl7.fhir.uv.tools.r5
 
-# EDIT: these are the parameters for your IG, you can add more as needed
 parameters:
-  # EDIT: the path-resource parameter specifies the folder where your FHIR additiona resources are located (if you have multiple types of resources, you can list multiple path-resource parameters on separate lines with a dash in front of each)
+  # the path-resource parameter specifies the folder where your FHIR additional resources are located (if you have multiple types of resources, you can list multiple path-resource parameters on separate lines with a dash in front of each)
   path-resource:
     - input/resources/genomicstudy
     - input/resources/moleculardefinition
-  # EDIT: the additional-resource parameter specifies a specific additional resource to include in your IG (if there is more than one additional resource, list them on separate lines with a dash in front of each)
+  
+  # the additional-resource parameter specifies a specific additional resource to include in your IG (if there is more than one additional resource, list them on separate lines with a dash in front of each)
   additional-resource:
     - input/resources/genomicstudy/StructureDefinition-GenomicStudy.xml
     - input/resources/moleculardefinition/StructureDefinition-MolecularDefinition.xml
+  
   special-url-base: http://hl7.org/fhir
 
-# EDIT: these are the pages that will be included in your IG, you can add more as needed
+  pin-canonicals: pin-multiples
+
+resources:
+  Device/NGS-device:
+    name: NGS Sequencing Device
+    description: NGS Sequencing Device
+  Device/Triodenovo-SW:
+    name: Triodenovo Software Device
+    description: Triodenovo Software Device
+  Encounter/denovoEncounter:
+    name: De Novo Encounter
+    description: De Novo Encounter
+  Encounter/genomicEncounter:
+    name: Genomic Encounter
+    description: Genomic Encounter
+  GenomicStudy/example:
+    name: Genomic Study Example
+    description: Genomic Study Example
+  GenomicStudy/example-lungMass:
+    name: Genomic Study Lung Mass Example
+    description: Genomic Study Lung Mass Example
+  GenomicStudy/example-trio2:
+    name: Genomic Study Trio Example
+    description: Genomic Study Trio Example
+  List/GenomicStudy-examples:
+    name: Genomic Study Examples List
+    description: Genomic Study Examples List
+  List/GenomicStudy-operations:
+    name: Genomic Study Operations List
+    description: Genomic Study Operations List
+  List/MolecularDefinition-examples:
+    name: Molecular Definition Examples List
+    description: Molecular Definition Examples List
+  List/MolecularDefinition-operations:
+    name: Molecular Definition Operations List
+    description: Molecular Definition Operations List
+  MolecularDefinition/example:
+    name: Molecular Definition Example
+    description: Molecular Definition Example
+  MolecularDefinition/example-allele1:
+    name: Molecular Definition Allele 1
+    description: Molecular Definition Allele 1
+  MolecularDefinition/example-allele2:
+    name: Molecular Definition Allele 2
+    description: Molecular Definition Allele 2
+  MolecularDefinition/example-allele3:
+    name: Molecular Definition Allele 3
+    description: Molecular Definition Allele 3
+  MolecularDefinition/example-allele4:
+    name: Molecular Definition Allele 4
+    description: Molecular Definition Allele 4
+  MolecularDefinition/example-allele5:
+    name: Molecular Definition Allele 5
+    description: Molecular Definition Allele 5
+  MolecularDefinition/example-allele6:
+    name: Molecular Definition Allele 6
+    description: Molecular Definition Allele 6
+  MolecularDefinition/example-allele7:
+    name: Molecular Definition Allele 7
+    description: Molecular Definition Allele 7
+  MolecularDefinition/example-allelesliced-cyp2c19-1016:
+    name: Molecular Definition Allele Sliced CYP2C19 1016
+    description: Molecular Definition Allele Sliced CYP2C19 1016
+  MolecularDefinition/example-allelesliced-cyp2c19-661:
+    name: Molecular Definition Allele Sliced CYP2C19 661
+    description: Molecular Definition Allele Sliced CYP2C19 661
+  MolecularDefinition/example-allelesliced-cyp2c19-literal-only:
+    name: Molecular Definition Allele Sliced CYP2C19 Literal Only
+    description: Molecular Definition Allele Sliced CYP2C19 Literal Only
+  MolecularDefinition/example-allelesliced-hla00381:
+    name: Molecular Definition Allele Sliced HLA00381
+    description: Molecular Definition Allele Sliced HLA00381
+  MolecularDefinition/example-allelesliced-pgx-var-1011:
+    name: Molecular Definition Allele Sliced PGx Variant 1011
+    description: Molecular Definition Allele Sliced PGx Variant 1011
+  MolecularDefinition/example-allelesliced1:
+    name: Molecular Definition Allele Sliced 1
+    description: Molecular Definition Allele Sliced 1
+  MolecularDefinition/example-genomic-cyp2c19-accession:
+    name: Molecular Definition Genomic CYP2C19 Accession
+    description: Molecular Definition Genomic CYP2C19 Accession
+  MolecularDefinition/example-genotype1:
+    name: Molecular Definition Genotype 1
+    description: Molecular Definition Genotype 1
+  MolecularDefinition/example-haplotype1:
+    name: Molecular Definition Haplotype 1
+    description: Molecular Definition Haplotype 1
+  MolecularDefinition/example-haplotype2:
+    name: Molecular Definition Haplotype 2
+    description: Molecular Definition Haplotype 2
+  MolecularDefinition/example-replaced-sequence:
+    name: Molecular Definition Replaced Sequence
+    description: Molecular Definition Replaced Sequence
+  MolecularDefinition/example-replacement-sequence:
+    name: Molecular Definition Replacement Sequence
+    description: Molecular Definition Replacement Sequence
+  MolecularDefinition/example-sequence-a:
+    name: Molecular Definition Sequence A
+    description: Molecular Definition Sequence A
+  MolecularDefinition/example-sequence-a-aa-iupac:
+    name: Molecular Definition Sequence A AA IUPAC
+    description: Molecular Definition Sequence A AA IUPAC
+  MolecularDefinition/example-sequence-a-dna-iupac:
+    name: Molecular Definition Sequence A DNA IUPAC
+    description: Molecular Definition Sequence A DNA IUPAC
+  MolecularDefinition/example-sequence-af1961831-url:
+    name: Molecular Definition Sequence AF1961831 URL
+    description: Molecular Definition Sequence AF1961831 URL
+  MolecularDefinition/example-sequence-c:
+    name: Molecular Definition Sequence C
+    description: Molecular Definition Sequence C
+  MolecularDefinition/example-sequence-cgg:
+    name: Molecular Definition Sequence CGG
+    description: Molecular Definition Sequence CGG
+  MolecularDefinition/example-sequence-cyp2c19-Concatenated-regions:
+    name: Molecular Definition Sequence CYP2C19 Concatenated Regions
+    description: Molecular Definition Sequence CYP2C19 Concatenated Regions
+  MolecularDefinition/example-sequence-cyp2c19-accession:
+    name: Molecular Definition Sequence CYP2C19 Accession
+    description: Molecular Definition Sequence CYP2C19 Accession
+  MolecularDefinition/example-sequence-cyp2c19-attached:
+    name: Molecular Definition Sequence CYP2C19 Attached
+    description: Molecular Definition Sequence CYP2C19 Attached
+  MolecularDefinition/example-sequence-cyp2c19-downstream-region:
+    name: Molecular Definition Sequence CYP2C19 Downstream Region
+    description: Molecular Definition Sequence CYP2C19 Downstream Region
+  MolecularDefinition/example-sequence-cyp2c19-gene-region:
+    name: Molecular Definition Sequence CYP2C19 Gene Region
+    description: Molecular Definition Sequence CYP2C19 Gene Region
+  MolecularDefinition/example-sequence-cyp2c19-upstream-region:
+    name: Molecular Definition Sequence CYP2C19 Upstream Region
+    description: Molecular Definition Sequence CYP2C19 Upstream Region
+  MolecularDefinition/example-sequence-cyp2c19-url:
+    name: Molecular Definition Sequence CYP2C19 URL
+    description: Molecular Definition Sequence CYP2C19 URL
+  MolecularDefinition/example-sequence-fmr1:
+    name: Molecular Definition Sequence FMR1
+    description: Molecular Definition Sequence FMR1
+  MolecularDefinition/example-sequence-fmr1-cgg-20x-edited-referenced:
+    name: Molecular Definition Sequence FMR1 CGG 20x Edited Referenced
+    description: Molecular Definition Sequence FMR1 CGG 20x Edited Referenced
+  MolecularDefinition/example-sequence-fmr1-cgg-20x-repeat:
+    name: Molecular Definition Sequence FMR1 CGG 20x Repeat
+    description: Molecular Definition Sequence FMR1 CGG 20x Repeat
+  MolecularDefinition/example-sequence-g:
+    name: Molecular Definition Sequence G
+    description: Molecular Definition Sequence G
+  MolecularDefinition/example-sequence-ggc:
+    name: Molecular Definition Sequence GGC
+    description: Molecular Definition Sequence GGC
+  MolecularDefinition/example-sequence-hla000011:
+    name: Molecular Definition Sequence HLA000011
+    description: Molecular Definition Sequence HLA000011
+  MolecularDefinition/example-sequence-lrg584:
+    name: Molecular Definition Sequence LRG584
+    description: Molecular Definition Sequence LRG584
+  MolecularDefinition/example-sequence-msh2:
+    name: Molecular Definition Sequence MSH2
+    description: Molecular Definition Sequence MSH2
+  MolecularDefinition/example-sequence-nc00001010-url:
+    name: Molecular Definition Sequence NC00001010 URL
+    description: Molecular Definition Sequence NC00001010 URL
+  MolecularDefinition/example-sequence-nm0007694-url:
+    name: Molecular Definition Sequence NM0007694 URL
+    description: Molecular Definition Sequence NM0007694 URL
+  MolecularDefinition/example-sequence-repeat:
+    name: Molecular Definition Sequence Repeat
+    description: Molecular Definition Sequence Repeat
+  MolecularDefinition/example-sequence-t:
+    name: Molecular Definition Sequence T
+    description: Molecular Definition Sequence T
+  MolecularDefinition/example-sequence0-2b-concatenated:
+    name: Molecular Definition Sequence 0 2B Concatenated
+    description: Molecular Definition Sequence 0 2B Concatenated
+  MolecularDefinition/example-sequence1:
+    name: Molecular Definition Sequence 1
+    description: Molecular Definition Sequence 1
+  MolecularDefinition/example-sequence1-2b-concatenated:
+    name: Molecular Definition Sequence 1 2B Concatenated
+    description: Molecular Definition Sequence 1 2B Concatenated
+  MolecularDefinition/example-sequence2-2b-concatenated:
+    name: Molecular Definition Sequence 2 2B Concatenated
+    description: Molecular Definition Sequence 2 2B Concatenated
+  MolecularDefinition/example-starting-sequence-2b-extracted:
+    name: Molecular Definition Starting Sequence 2B Extracted
+    description: Molecular Definition Starting Sequence 2B Extracted
+  MolecularDefinition/example-starting-sequence-2b-relative:
+    name: Molecular Definition Starting Sequence 2B Relative
+    description: Molecular Definition Starting Sequence 2B Relative
+  MolecularDefinition/example-variation-cyp2c19-1015-spdi:
+    name: Molecular Definition Variation CYP2C19 1015 SPDI
+    description: Molecular Definition Variation CYP2C19 1015 SPDI
+  MolecularDefinition/example-variation-cyp2c19-1015-vrs:
+    name: Molecular Definition Variation CYP2C19 1015 VRS
+    description: Molecular Definition Variation CYP2C19 1015 VRS
+  MolecularDefinition/example-variation-cyp2c19-1016-vcf:
+    name: Molecular Definition Variation CYP2C19 1016 VCF
+    description: Molecular Definition Variation CYP2C19 1016 VCF
+  MolecularDefinition/example-variation-cyp2c19-661:
+    name: Molecular Definition Variation CYP2C19 661
+    description: Molecular Definition Variation CYP2C19 661
+  MolecularDefinition/example-variation-cyp2c19-991-hgvs:
+    name: Molecular Definition Variation CYP2C19 991 HGVS
+    description: Molecular Definition Variation CYP2C19 991 HGVS
+  MolecularDefinition/example-variation-pgx-var-1011:
+    name: Molecular Definition Variation PGx Variant 1011
+    description: Molecular Definition Variation PGx Variant 1011
+  MolecularDefinition/example-variation-pgx-var-1012:
+    name: Molecular Definition Variation PGx Variant 1012
+    description: Molecular Definition Variation PGx Variant 1012
+  MolecularDefinition/example-variation-pgx-var-1013:
+    name: Molecular Definition Variation PGx Variant 1013
+    description: Molecular Definition Variation PGx Variant 1013
+  MolecularDefinition/example-variation-pgx-var-1014:
+    name: Molecular Definition Variation PGx Variant 1014
+    description: Molecular Definition Variation PGx Variant 1014
+  MolecularDefinition/example-variation-pgx-var-1015:
+    name: Molecular Definition Variation PGx Variant 1015
+    description: Molecular Definition Variation PGx Variant 1015
+  MolecularDefinition/example-variation-pgx-var-1016:
+    name: Molecular Definition Variation PGx Variant 1016
+    description: Molecular Definition Variation PGx Variant 1016
+  MolecularDefinition/example-variation-pgx-var-1017:
+    name: Molecular Definition Variation PGx Variant 1017
+    description: Molecular Definition Variation PGx Variant 1017
+  MolecularDefinition/example-variation-pgx-var-1018:
+    name: Molecular Definition Variation PGx Variant 1018
+    description: Molecular Definition Variation PGx Variant 1018
+  MolecularDefinition/example-variation-pgx-var-1019:
+    name: Molecular Definition Variation PGx Variant 1019
+    description: Molecular Definition Variation PGx Variant 1019
+  MolecularDefinition/example-variation-pgx-var-1020:
+    name: Molecular Definition Variation PGx Variant 1020
+    description: Molecular Definition Variation PGx Variant 1020
+  MolecularDefinition/example-variation-pgx-var-1021:
+    name: Molecular Definition Variation PGx Variant 1021
+    description: Molecular Definition Variation PGx Variant 1021
+  MolecularDefinition/example-variation1:
+    name: Molecular Definition Variation 1
+    description: Molecular Definition Variation 1
+  Patient/denovoChild:
+    name: De Novo Child Patient
+    description: De Novo Child Patient
+  Patient/denovoFather:
+    name: De Novo Father Patient
+    description: De Novo Father Patient
+  Patient/denovoMother:
+    name: De Novo Mother Patient
+    description: De Novo Mother Patient
+  Patient/father:
+    name: Father Patient
+    description: Father Patient
+  Patient/genomicPatient:
+    name: Genomic Patient
+    description: Genomic Patient
+  Patient/mother:
+    name: Mother Patient
+    description: Mother Patient
+  Patient/proband:
+    name: Proband Patient
+    description: Proband Patient
+  Practitioner/practitioner01:
+    name: Practitioner 01
+    description: Practitioner 01
+  Practitioner/practitioner02:
+    name: Practitioner 02
+    description: Practitioner 02
+  RelatedPerson/relatedPersonDenovoFather:
+    name: De Novo Father Related Person
+    description: De Novo Father Related Person
+  RelatedPerson/relatedPersonDenovoMother:
+    name: De Novo Mother Related Person
+    description: De Novo Mother Related Person
+  ServiceRequest/genomicServiceRequest:
+    name: Genomic Service Request
+    description: Genomic Service Request
+  ServiceRequest/genomicServiceRequest2:
+    name: Genomic Service Request 2
+    description: Genomic Service Request 2
+  ServiceRequest/genomicServiceRequest3:
+    name: Genomic Service Request 3
+    description: Genomic Service Request 3
+  ServiceRequest/genomicServiceRequest4:
+    name: Genomic Service Request 4
+    description: Genomic Service Request 4
+  ServiceRequest/genomicSRFather:
+    name: Genomic Service Request Father
+    description: Genomic Service Request Father
+  ServiceRequest/genomicSRMother:
+    name: Genomic Service Request Mother
+    description: Genomic Service Request Mother
+  ServiceRequest/genomicSRProband:
+    name: Genomic Service Request Proband
+    description: Genomic Service Request Proband
+  Specimen/denovo-1:
+    name: De Novo Specimen 1
+    description: De Novo Specimen 1
+  Specimen/denovo-2:
+    name: De Novo Specimen 2
+    description: De Novo Specimen 2
+  Specimen/denovo-3:
+    name: De Novo Specimen 3
+    description: De Novo Specimen 3
+  Specimen/genomicSpecimen:
+    name: Genomic Specimen
+    description: Genomic Specimen
+  Specimen/specimenFather:
+    name: Father Specimen
+    description: Father Specimen
+  Specimen/specimenMother:
+    name: Mother Specimen
+    description: Mother Specimen
+  Specimen/specimenProband:
+    name: Proband Specimen
+    description: Proband Specimen
+
+# these are the pages that will be included in your IG, you can add more as needed
 pages:
   index.md:
     title: IG Home
   changes.md:
     title: Change Log
  
-# EDIT: customize the menu for your IG as needed
+# customize the menu for your IG as needed
 menu:
   Home: index.html
   FHIR Artifacts:

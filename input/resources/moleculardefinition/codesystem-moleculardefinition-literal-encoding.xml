@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+    <id value="moleculardefinition-literal-encoding"/>
+    <meta>
+        <lastUpdated value="2025-01-30T00:00:00Z"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
+    </meta>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+        <valueCode value="cg"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="informative"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+        <valueInteger value="1"/>
+    </extension>
+    <url value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/moleculardefinition-literal-encoding"/>
+    <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:2.16.840.1.113883.4.642.4.2051"/>
+    </identifier>
+    <version value="0.1.0"/>
+    <name value="MolecularDefinitionLiteralEncoding"/>
+    <title value="Molecular Definition Literal Encoding"/>
+    <status value="draft"/>
+    <experimental value="true"/>
+    <date value="2025-01-30"/>
+    <publisher value="HL7 International"/>
+    <contact>
+        <telecom>
+            <system value="url"/>
+            <value value="http://hl7.org/fhir"/>
+        </telecom>
+        <telecom>
+            <system value="email"/>
+            <value value="fhir@lists.hl7.org"/>
+        </telecom>
+    </contact>
+    <description value="Codes for the encoding used in molecular definition literal representations, based on IUPAC standards for nucleotide and amino acid sequences."/>
+    <caseSensitive value="true"/>
+    <content value="complete"/>
+    <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/moleculardefinition-literal-encoding"/>
+    <concept>
+        <code value="nuc-dna-1-noamb"/>
+        <display value="Nucleotide, 1-letter, no ambiguity, DNA residues"/>
+        <definition value="Single-letter DNA nucleotide codes (A, C, G, T) without ambiguity codes. Based on IUPAC symbols."/>
+    </concept>
+    <concept>
+        <code value="nuc-rna-1-noamb"/>
+        <display value="Nucleotide, 1-letter, no ambiguity, RNA residues"/>
+        <definition value="Single-letter RNA nucleotide codes (A, C, G, U) without ambiguity codes. Based on IUPAC symbols."/>
+    </concept>
+    <concept>
+        <code value="nuc-dna-1-noamb-n"/>
+        <display value="Nucleotide, 1-letter, no ambiguity except N, DNA residues"/>
+        <definition value="Single-letter DNA nucleotide codes (A, C, G, T, N) where N represents any nucleotide. Based on IUPAC symbols."/>
+    </concept>
+    <concept>
+        <code value="nuc-dna-1-amb"/>
+        <display value="Nucleotide, 1-letter, with ambiguity, DNA residues"/>
+        <definition value="Single-letter DNA nucleotide codes with ambiguity codes (A, C, G, T, R, Y, M, K, S, W, H, B, V, D, N). Based on IUPAC symbols."/>
+    </concept>
+    <concept>
+        <code value="nuc-rna-1-amb"/>
+        <display value="Nucleotide, 1-letter, with ambiguity, RNA residues"/>
+        <definition value="Single-letter RNA nucleotide codes with ambiguity codes. Based on IUPAC symbols."/>
+    </concept>
+    <concept>
+        <code value="aa-1-noamb-20common"/>
+        <display value="Amino acid, 1-letter, no ambiguity, 20 common"/>
+        <definition value="Standard single-letter amino acid codes for the 20 common amino acids without ambiguity codes (A, C, D, E, F, G, H, I, K, L, M, N, P, Q, R, S, T, V, W, Y). Based on IUPAC symbols."/>
+    </concept>
+    <concept>
+        <code value="aa-3-noamb-20common"/>
+        <display value="Amino acid, 3-letter, no ambiguity, 20 common"/>
+        <definition value="Three-letter amino acid codes for the 20 common amino acids without ambiguity codes (Ala, Arg, Asn, Asp, Cys, Gln, Glu, Gly, His, Ile, Leu, Lys, Met, Phe, Pro, Ser, Thr, Trp, Tyr, Val). Based on IUPAC symbols."/>
+    </concept>
+    <concept>
+        <code value="aa-1-amb"/>
+        <display value="Amino acid, 1-letter, with ambiguity"/>
+        <definition value="Single-letter amino acid codes with ambiguity codes (A, B, C, D, E, F, G, H, I, K, L, M, N, P, Q, R, S, T, U, V, W, X, Y, Z). Based on IUPAC symbols."/>
+    </concept>
+    <concept>
+        <code value="aa-3-amb"/>
+        <display value="Amino acid, 3-letter, with ambiguity"/>
+        <definition value="Three-letter amino acid codes with ambiguity codes (Ala, Arg, Asn, Asp, Cys, Gln, Glu, Gly, His, Ile, Leu, Lys, Met, Phe, Pro, Ser, Thr, Trp, Tyr, Val, Asx, Sec, Xaa, Glx). Based on IUPAC symbols."/>
+    </concept>
+</CodeSystem>

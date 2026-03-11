@@ -9,7 +9,7 @@
         <display value="Medical record number"/>
       </coding>
     </type>
-    <system value="http://www.somesystemabc.net/identifiers/persons"/>
+    <system value="http://example.org/identifiers/persons"/>
     <value value="11112"/>
     <period>
       <start value="2021-01-01"/>

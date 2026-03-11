@@ -10,17 +10,17 @@
     <valueCode value="cg"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-    <valueCode value="trial-use"/>
+    <valueCode value="draft"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1"/>
   </extension>
-  <url value="http://hl7.org/fhir/genomicstudy-type"/>
+  <url value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-type"/>
   <identifier>
     <system value="urn:ietf:rfc:3986"/>
     <value value="urn:oid:2.16.840.1.113883.4.642.4.1975"/>
   </identifier>
-  <version value="6.0.0"/>
+  <version value="1.0.0"/>
   <name value="GenomicStudyType"/>
   <title value="Genomic Study Type"/>
   <status value="draft"/>
@@ -37,9 +37,15 @@
       <value value="fhir@lists.hl7.org"/>
     </telecom>
   </contact>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/clingenomics"/>
+    </telecom>
+  </contact>
   <description value="The type relevant to GenomicStudy."/>
   <caseSensitive value="true"/>
-  <valueSet value="http://hl7.org/fhir/ValueSet/genomicstudy-type"/>
+  <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/genomicstudy-type"/>
   <content value="complete"/>
   <concept>
     <code value="alt-splc"/>
@@ -100,5 +106,10 @@
     <code value="struc-var"/>
     <display value="Structural variation detection"/>
     <definition value="Detection of deletions, insertions, or rearrangements of DNA segments compared to the reference sequence"/>
+  </concept>
+  <concept>
+    <code value="trio"/>
+    <display value="Trio analysis"/>
+    <definition value="Analysis involving a child and both parents to identify inherited and de novo variants"/>
   </concept>
 </CodeSystem>

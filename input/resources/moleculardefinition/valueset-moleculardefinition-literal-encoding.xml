@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+    <id value="moleculardefinition-literal-encoding"/>
+    <meta>
+        <lastUpdated value="2025-01-30T00:00:00Z"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+    </meta>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+        <valueCode value="cg"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="informative"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+        <valueInteger value="1"/>
+    </extension>
+    <url value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/moleculardefinition-literal-encoding"/>
+    <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:2.16.840.1.113883.4.642.3.2051"/>
+    </identifier>
+    <version value="0.1.0"/>
+    <name value="MolecularDefinitionLiteralEncoding"/>
+    <title value="Molecular Definition Literal Encoding VS"/>
+    <status value="draft"/>
+    <experimental value="true"/>
+    <date value="2025-01-30"/>
+    <publisher value="HL7 International"/>
+    <contact>
+        <telecom>
+            <system value="url"/>
+            <value value="http://hl7.org/fhir"/>
+        </telecom>
+        <telecom>
+            <system value="email"/>
+            <value value="fhir@lists.hl7.org"/>
+        </telecom>
+    </contact>
+    <description value="The encoding used in molecular definition literal representations."/>
+    <compose>
+        <include>
+            <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/moleculardefinition-literal-encoding"/>
+        </include>
+    </compose>
+</ValueSet>

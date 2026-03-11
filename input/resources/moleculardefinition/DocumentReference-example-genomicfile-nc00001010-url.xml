@@ -2,7 +2,7 @@
 <DocumentReference xmlns="http://hl7.org/fhir">
   <id value="example-genomicfile-nc00001010-url" />
   <identifier>
-    <system value="http://www.somesystemabc.net/identifiers/files" />
+    <system value="http://example.org/identifiers/files" />
     <value value="111112" />
   </identifier>
   <status value="current" />

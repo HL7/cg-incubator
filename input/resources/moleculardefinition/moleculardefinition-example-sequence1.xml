@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MolecularDefinition xmlns="http://hl7.org/fhir">
     <id value="example-sequence1"/>
+
     <moleculeType>
         <coding>
             <system value="http://hl7.org/fhir/sequence-type"/>
@@ -54,8 +55,12 @@ GCCTGTACAGACAGTTAATATCACTGCAGGCTTTCCTGTGGTTGGTCAGAAAGA"/>
                         <text value="0-based interval counting"/>
                     </system>
                 </coordinateSystem>
-                <start value="0"/>
-                <end value="754"/>
+                <startQuantity>
+                    <value value="0"/>
+                </startQuantity>
+                <endQuantity>
+                    <value value="754"/>
+                </endQuantity>
             </coordinateInterval>
 
             <reverseComplement value="false"/>
@@ -115,8 +120,12 @@ GCCTGTACAGACAGTTAATATCACTGCAGGCTTTCCTGTGGTTGGTCAGAAAGA"/>
                             <text value="0-based interval counting"/>
                         </system>
                     </coordinateSystem>
-                    <start value="0"/>
-                    <end value="5"/>
+                    <startQuantity>
+                        <value value="0"/>
+                    </startQuantity>
+                    <endQuantity>
+                        <value value="5"/>
+                    </endQuantity>
                 </coordinateInterval>
 
                 <replacementMolecule>

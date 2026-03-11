@@ -3,7 +3,7 @@
 <Device xmlns="http://hl7.org/fhir">
   <id value="Triodenovo-SW"/>
   <identifier>
-    <system value="http://www.somesystemabc.net/identifiers/devices"/>
+    <system value="http://example.org/identifiers/devices"/>
     <value value="11112"/>
   </identifier>
   <status value="active"/>

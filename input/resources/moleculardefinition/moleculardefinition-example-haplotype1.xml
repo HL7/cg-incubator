@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MolecularDefinition xmlns="http://hl7.org/fhir">
     <id value="example-haplotype1"/>
+
+    <description value="CYP2C19*1B and CYP2C19*1.002"/>
     <moleculeType>
         <coding>
             <system value="http://hl7.org/fhir/sequence-type"/>
@@ -8,18 +10,16 @@
             <display value="DNA Sequence"/>
         </coding>
     </moleculeType>
-    <name value="CYP2C19*1B"/>
-    <name value="CYP2C19*1.002"/>
-    <memberState>
+    <member>
         <reference value="MolecularDefinition/example-allele1"/>
         <type value="MolecularDefinition"/>
         <display value="First Allele, NG_008384.3:g.5124C>T"/>
-    </memberState>
-    <memberState>
+    </member>
+    <member>
         <reference value="MolecularDefinition/example-allele2"/>
         <type value="MolecularDefinition"/>
         <display value="Second Allele, NG_008384.3:g.85186A>G"/>
-    </memberState>
+    </member>
     <location>
         <sequenceLocation>
             <sequenceContext>

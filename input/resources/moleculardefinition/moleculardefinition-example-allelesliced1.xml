@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MolecularDefinition xmlns="http://hl7.org/fhir">
     <id value="example-allelesliced1"/>
+
     <moleculeType>
         <coding>
             <system value="http://hl7.org/fhir/sequence-type"/>
@@ -36,23 +37,13 @@
         </sequenceLocation>
     </location>
     <representation>
-        <focus>
-            <coding>
-                <code value="allele-state"/>
-                <display value="Allele State"/>
-            </coding>
-        </focus>
+        <focus value="allele-state"/>
         <resolvable>
             <reference value="DocumentReference/example-genomicFile-ng0083843"/>
         </resolvable>
     </representation>
     <representation>
-        <focus>
-            <coding>
-                <code value="context-state"/>
-                <display value="Context State"/>
-            </coding>
-        </focus>
+        <focus value="context-state"/>
         <relative>
             <startingMolecule>
                 <reference value="MolecularDefinition/example-sequence-lrg584"/>
@@ -71,8 +62,12 @@
                             <text value="0-based interval counting"/>
                         </system>
                     </coordinateSystem>
-                    <start value="5123"/>
-                    <end value="5124"/>
+                    <startQuantity>
+                        <value value="5123"/>
+                    </startQuantity>
+                    <endQuantity>
+                        <value value="5124"/>
+                    </endQuantity>
                 </coordinateInterval>
 
                 <replacementMolecule>

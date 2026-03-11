@@ -6,57 +6,21 @@
     <lastUpdated value="2020-12-28T16:55:11.085+11:00"/>
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
   </meta>
-  <text>
-    <status value="generated"/>
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      
-      
-      
-      <ul>
-        
-        
-        
-        <li>Include major method category, method category, and primary test methodology codes defined in 
-          
-          
-          
-          <a href="http://terminology.hl7.org/3.1.0/CodeSystem-GTR.html">
-            
-            
-            
-            <code>http://terminology.hl7.org/3.1.0/CodeSystem-GTR.html</code>
-          
-          
-          
-          </a>
-        
-        
-        
-        </li>
-      
-      
-      
-      </ul>
-    
-    
-    
-    </div>
-  </text>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="cg"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-    <valueCode value="trial-use"/>
+    <valueCode value="draft"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1"/>
   </extension>
-  <url value="http://hl7.org/fhir/ValueSet/genomicstudy-methodtype"/>
+  <url value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/genomicstudy-methodtype"/>
   <identifier>
     <system value="urn:ietf:rfc:3986"/>
     <value value="urn:oid:2.16.840.1.113883.4.642.3.3085"/>
   </identifier>
-  <version value="6.0.0"/>
+  <version value="1.0.0"/>
   <name value="GenomicStudyMethodTypeVS"/>
   <title value="Genomic Study Method Type VS"/>
   <status value="draft"/>
@@ -73,11 +37,17 @@
       <value value="fhir@lists.hl7.org"/>
     </telecom>
   </contact>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/clingenomics"/>
+    </telecom>
+  </contact>
   <description value="The method type of the GenomicStudy analysis."/>
   <immutable value="false"/>
   <compose>
     <include>
-      <system value="http://hl7.org/fhir/genomicstudy-methodtype"/>
+      <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-methodtype"/>
     </include>
   </compose>
 </ValueSet>

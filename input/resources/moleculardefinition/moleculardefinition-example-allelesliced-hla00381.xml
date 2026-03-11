@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MolecularDefinition xmlns="http://hl7.org/fhir">
     <id value="example-allelesliced-hla00381"/>
+
     <moleculeType>
         <coding>
             <system value="http://hl7.org/fhir/sequence-type"/>
@@ -36,12 +37,7 @@
         </sequenceLocation>
     </location>
     <representation>
-        <focus>
-            <coding>
-                <code value="allele-state"/>
-                <display value="Allele State"/>
-            </coding>
-        </focus>
+        <focus value="allele-state"/>
         <code>
             <coding>
                 <system value="https://www.ebi.ac.uk/ipd/imgt/hla/alleles/allele/"/>

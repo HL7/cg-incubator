@@ -3,7 +3,7 @@
 <Specimen xmlns="http://hl7.org/fhir">
   <id value="specimenFather"/>
   <identifier>
-    <system value="http://www.somesystemabc.net/identifiers/specimens"/>
+    <system value="http://example.org/identifiers/specimens"/>
     <value value="7"/>
   </identifier>
   <status value="available"/>
@@ -33,7 +33,7 @@
     </quantity>
     <method>
       <coding>
-        <!-- <system value="http://terminology.hl7.org/CodeSystem/v2-0488"/> -->
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0488"/>
         <code value="LNV"/>
       </coding>
     </method>

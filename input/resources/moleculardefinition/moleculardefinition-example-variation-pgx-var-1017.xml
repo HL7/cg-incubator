@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MolecularDefinition xmlns="http://hl7.org/fhir">
     <id value="example-variation-pgx-var-1017"/>
+
     <moleculeType>
         <coding>
             <system value="http://hl7.org/fhir/sequence-type"/>
@@ -36,23 +37,13 @@
         </sequenceLocation>
     </location>
     <representation>
-        <focus>
-            <coding>
-                <code value="reference-state"/>
-                <display value="Reference State"/>
-            </coding>
-        </focus>
+        <focus value="reference-state"/>
         <literal>
             <value value="T"/>
         </literal>
     </representation>
     <representation>
-        <focus>
-            <coding>
-                <code value="alternative-state"/>
-                <display value="Alternative State"/>
-            </coding>
-        </focus>
+        <focus value="alternative-state"/>
         <literal>
             <value value="T"/>
         </literal>

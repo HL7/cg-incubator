@@ -10,17 +10,17 @@
     <valueCode value="cg"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-    <valueCode value="trial-use"/>
+    <valueCode value="draft"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1"/>
   </extension>
-  <url value="http://hl7.org/fhir/genomicstudy-dataformat"/>
+  <url value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-dataformat"/>
   <identifier>
     <system value="urn:ietf:rfc:3986"/>
     <value value="urn:oid:2.16.840.1.113883.4.642.4.1978"/>
   </identifier>
-  <version value="6.0.0"/>
+  <version value="1.0.0"/>
   <name value="GenomicStudyDataFormat"/>
   <title value="Genomic Study Data Format"/>
   <status value="draft"/>
@@ -37,168 +37,214 @@
       <value value="fhir@lists.hl7.org"/>
     </telecom>
   </contact>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/clingenomics"/>
+    </telecom>
+  </contact>
   <description value="The data format relevant to genomics. These formats and relevant codes were pulled from [Integrative Genomics Viewer Documentation](https://software.broadinstitute.org/software/igv/FileFormats) by Broad Institute."/>
   <caseSensitive value="true"/>
-  <valueSet value="http://hl7.org/fhir/ValueSet/genomicstudy-dataformat"/>
+  <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/genomicstudy-dataformat"/>
   <content value="complete"/>
   <concept>
     <code value="bam"/>
     <display value="BAM"/>
+    <definition value="Binary Alignment/Map format for storing read alignments against reference sequences."/>
   </concept>
   <concept>
     <code value="bed"/>
     <display value="BED"/>
+    <definition value="Browser Extensible Data format for representing genomic regions and associated annotations."/>
   </concept>
   <concept>
     <code value="bedpe"/>
     <display value="BEDPE"/>
+    <definition value="Paired-End BED format for representing pairwise genomic interactions."/>
   </concept>
   <concept>
     <code value="bedgraph"/>
     <display value="BedGraph"/>
+    <definition value="BED Graph format for representing genomic signals as continuous-valued data."/>
   </concept>
   <concept>
     <code value="bigbed"/>
     <display value="bigBed"/>
+    <definition value="Binary indexed BED format for efficiently storing large amounts of genomic region data."/>
   </concept>
   <concept>
     <code value="bigWig"/>
     <display value="bigWig"/>
+    <definition value="Binary indexed Wig format for efficiently storing large amounts of continuous-valued genomic data."/>
   </concept>
   <concept>
     <code value="birdsuite-files"/>
     <display value="Birdsuite-Files"/>
+    <definition value="File format used by the Birdsuite suite of software for SNP genotyping and copy number analysis."/>
   </concept>
   <concept>
     <code value="broadpeak"/>
     <display value="broadPeak"/>
+    <definition value="BED format variant for representing broad peaks in ChIP-Seq data."/>
   </concept>
   <concept>
     <code value="cbs"/>
     <display value="CBS"/>
+    <definition value="Copy number data format output by Circular Binary Segmentation analysis."/>
   </concept>
   <concept>
     <code value="chemical-reactivity-probing-profiles"/>
     <display value="Chemical-Reactivity-Probing-Profiles"/>
+    <definition value="Profiles of chemical reactivity for RNA structure analysis."/>
   </concept>
   <concept>
     <code value="chrom-sizes"/>
     <display value="chrom-sizes"/>
+    <definition value="File listing chromosome names and their sizes."/>
   </concept>
   <concept>
     <code value="cn"/>
     <display value="CN"/>
+    <definition value="Copy number data format."/>
   </concept>
   <concept>
     <code value="custom-file-formats"/>
     <display value="Custom-File-Formats"/>
+    <definition value="User-defined or proprietary file formats for genomic data."/>
   </concept>
   <concept>
     <code value="cytoband"/>
     <display value="Cytoband"/>
+    <definition value="Chromosome cytogenetic band locations and characteristics."/>
   </concept>
   <concept>
     <code value="fasta"/>
     <display value="FASTA"/>
+    <definition value="Format for representing sequences of nucleic acids or proteins using single letter codes."/>
   </concept>
   <concept>
     <code value="gct"/>
     <display value="GCT"/>
+    <definition value="Gene Cluster Text format for storing gene expression data."/>
   </concept>
   <concept>
     <code value="cram"/>
     <display value="CRAM"/>
+    <definition value="Compressed Reference-Aligned Map format for storing read alignments more compactly than BAM."/>
   </concept>
   <concept>
     <code value="genepred"/>
     <display value="genePred"/>
+    <definition value="Format for storing gene predictions with exon and CDS information."/>
   </concept>
   <concept>
     <code value="gff-gtf"/>
     <display value="GFF/GTF"/>
+    <definition value="General Feature Format / Gene Transfer Format for storing genomic features and annotations."/>
   </concept>
   <concept>
     <code value="gistic"/>
     <display value="GISTIC"/>
+    <definition value="Genomic Identification of Significant Targets in Cancer output format for copy number analysis."/>
   </concept>
   <concept>
     <code value="goby"/>
     <display value="Goby"/>
+    <definition value="Compact file format for storing read alignments, variations, and base quality information."/>
   </concept>
   <concept>
     <code value="gwas"/>
     <display value="GWAS"/>
+    <definition value="Genome-Wide Association Study format for storing association results."/>
   </concept>
   <concept>
     <code value="igv"/>
     <display value="IGV"/>
+    <definition value="Integrative Genomics Viewer session or display format."/>
   </concept>
   <concept>
     <code value="loh"/>
     <display value="LOH"/>
+    <definition value="Loss of Heterozygosity data format."/>
   </concept>
   <concept>
     <code value="maf-multiple-alignment-format"/>
     <display value="MAF-Multiple Alignment Format"/>
+    <definition value="Multiple Alignment Format for storing aligned sequences."/>
   </concept>
   <concept>
     <code value="maf-mutation-annotation-format"/>
     <display value="MAF-Mutation-Annotation-Format"/>
+    <definition value="Mutation Annotation Format for storing somatic mutation data."/>
   </concept>
   <concept>
     <code value="merged-bam-file"/>
     <display value="Merged BAM File"/>
+    <definition value="BAM file containing read alignments from multiple samples or lanes merged together."/>
   </concept>
   <concept>
     <code value="mut"/>
     <display value="MUT"/>
+    <definition value="Mutation data format."/>
   </concept>
   <concept>
     <code value="narrowpeak"/>
     <display value="narrowPeak"/>
+    <definition value="BED format variant for representing narrow peaks in ChIP-Seq data."/>
   </concept>
   <concept>
     <code value="psl"/>
     <display value="PSL"/>
+    <definition value="Pattern Space Layout format for storing sequence alignments."/>
   </concept>
   <concept>
     <code value="res"/>
     <display value="RES"/>
+    <definition value="Resolution data format."/>
   </concept>
   <concept>
     <code value="rna-secondary-structure-formats"/>
     <display value="RNA-Secondary-Structure-Formats"/>
+    <definition value="Formats for representing RNA secondary structure information."/>
   </concept>
   <concept>
     <code value="sam"/>
     <display value="SAM"/>
+    <definition value="Sequence Alignment/Map format for storing read alignments, the uncompressed version of BAM."/>
   </concept>
   <concept>
     <code value="sample-info-attributes-file"/>
     <display value="Sample-Info-Attributes-file"/>
+    <definition value="File containing sample information and attributes."/>
   </concept>
   <concept>
     <code value="seg"/>
     <display value="SEG"/>
+    <definition value="Segmented data format for storing copy number or other segmented genomic data."/>
   </concept>
   <concept>
     <code value="tdf"/>
     <display value="TDF"/>
+    <definition value="Tiled Data Format for efficient storage and display of large genomic datasets."/>
   </concept>
   <concept>
     <code value="track-line"/>
     <display value="Track Line"/>
+    <definition value="UCSC Genome Browser track line header defining display properties for genomic data."/>
   </concept>
   <concept>
     <code value="type-line"/>
     <display value="Type Line"/>
+    <definition value="Type line header for defining genomic data track properties."/>
   </concept>
   <concept>
     <code value="vcf"/>
     <display value="VCF"/>
+    <definition value="Variant Call Format for storing variant information including SNPs, indels, and structural variations."/>
   </concept>
   <concept>
     <code value="wig"/>
     <display value="WIG"/>
+    <definition value="Wiggle Track format for storing continuous-valued genomic data."/>
   </concept>
 </CodeSystem>

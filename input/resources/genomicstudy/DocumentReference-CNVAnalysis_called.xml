@@ -3,7 +3,7 @@
 <DocumentReference xmlns="http://hl7.org/fhir">
   <id value="CNVAnalysis-called"/>
   <identifier>
-    <system value="http://www.somesystemabc.net/identifiers/files"/>
+    <system value="http://example.org/identifiers/files"/>
     <value value="11120"/>
   </identifier>
   <status value="current"/>

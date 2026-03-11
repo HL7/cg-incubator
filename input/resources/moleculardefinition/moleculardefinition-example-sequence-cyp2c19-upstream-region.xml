@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MolecularDefinition xmlns="http://hl7.org/fhir">
     <id value="example-sequence-cyp2c19-upstream-region"/>
+
     <moleculeType>
         <coding>
             <system value="http://hl7.org/fhir/sequence-type"/>
@@ -26,8 +27,12 @@
                         <text value="0-based interval counting"/>
                     </system>
                 </coordinateSystem>
-                <start value="1"/>
-                <end value="5000"/>
+                <startQuantity>
+                    <value value="1"/>
+                </startQuantity>
+                <endQuantity>
+                    <value value="5000"/>
+                </endQuantity>
             </coordinateInterval>
 
             <reverseComplement value="false"/>

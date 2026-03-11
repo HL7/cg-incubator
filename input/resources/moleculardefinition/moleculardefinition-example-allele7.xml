@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MolecularDefinition xmlns="http://hl7.org/fhir">
     <id value="example-allele7"/>
+
     <moleculeType>
         <coding>
             <system value="http://hl7.org/fhir/sequence-type"/>
@@ -37,8 +38,12 @@
                             <text value="0-based interval counting"/>
                         </system>
                     </coordinateSystem>
-                    <start value="143"/>
-                    <end value="144"/>
+                    <startQuantity>
+                        <value value="143"/>
+                    </startQuantity>
+                    <endQuantity>
+                        <value value="144"/>
+                    </endQuantity>
                 </coordinateInterval>
 
                 <replacementMolecule>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MolecularDefinition xmlns="http://hl7.org/fhir">
     <id value="example-allelesliced-pgx-var-1011"/>
+
     <moleculeType>
         <coding>
             <system value="http://hl7.org/fhir/sequence-type"/>
@@ -36,23 +37,13 @@
         </sequenceLocation>
     </location>
     <representation>
-        <focus>
-            <coding>
-                <code value="allele-state"/>
-                <display value="Allele State"/>
-            </coding>
-        </focus>
+        <focus value="allele-state"/>
         <literal>
             <value value="C"/>
         </literal>
     </representation>
     <representation>
-        <focus>
-            <coding>
-                <code value="context-state"/>
-                <display value="Context State"/>
-            </coding>
-        </focus>
+        <focus value="context-state"/>
         <literal>
             <value value="C"/>
         </literal>

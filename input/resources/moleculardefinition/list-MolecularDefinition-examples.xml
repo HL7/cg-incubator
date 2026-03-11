@@ -675,18 +675,7 @@
     </item>
   </entry>
 
-  <entry>
-    <extension url="http://hl7.org/fhir/build/StructureDefinition/description">
-      <valueString value="Example of Sequence of FMR1 using CGG motifs edited by contained referenced sequence resources"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/build/StructureDefinition/title">
-      <valueString value="moleculardefinition-example-sequence-fmr1-cgg-20x-edited-contained"/>
-    </extension>
-    <item>
-      <reference value="MolecularDefinition/example-sequence-fmr1-cgg-20x-edited-contained"/>
-      <display value="Example of Sequence"/>
-    </item>
-  </entry>
+  <!-- entry removed: moleculardefinition-example-sequence-fmr1-cgg-20x-edited-contained is in fixme/ pending fixes -->
 
   <entry>
     <extension url="http://hl7.org/fhir/build/StructureDefinition/description">
@@ -847,18 +836,7 @@
     </item>
   </entry>
 
-  <entry>
-    <extension url="http://hl7.org/fhir/build/StructureDefinition/description">
-      <valueString value="Example of Allele including slices for CYP2C19 position 1016 with contained resources"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/build/StructureDefinition/title">
-      <valueString value="moleculardefinition-example-allelesliced-cyp2c19-1016-cont"/>
-    </extension>
-    <item>
-      <reference value="MolecularDefinition/example-allelesliced-cyp2c19-1016-cont"/>
-      <display value="Example of Allele-Sliced with contained resources"/>
-    </item>
-  </entry>
+  <!-- entry removed: moleculardefinition-example-allelesliced-cyp2c19-1016-cont is in fixme/ pending fixes -->
 
   <entry>
     <extension url="http://hl7.org/fhir/build/StructureDefinition/description">

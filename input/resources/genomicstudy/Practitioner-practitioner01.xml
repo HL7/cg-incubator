@@ -11,7 +11,7 @@
         <display value="Provider number"/>
       </coding>
     </type>
-    <system value="http://www.somesystemabc.net/identifiers/persons"/>
+    <system value="http://example.org/identifiers/persons"/>
     <value value="11115"/>
     <period>
       <start value="2021-01-01"/>

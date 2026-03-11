@@ -1,16 +1,17 @@
 <GenomicStudy xmlns="http://hl7.org/fhir">
     <!-- from Resource: id, meta, implicitRules, and language -->
     <id value="example"/>
+
     <!-- from DomainResource: text, contained, extension, and modifierExtension -->
     <identifier>
         <use value="temp"/>
-        <system value="http://www.somesystemabc.net/identifiers/genomicstudies"/>
+        <system value="http://example.org/identifiers/genomicstudies"/>
         <value value="urn:uuid:1111-1111-1111-1111"/>
     </identifier>
     <status value="unknown"/>
     <type>
         <coding>
-            <system value="http://hl7.org/fhir/genomicstudy-type"/>
+            <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-type"/>
             <code value="fam-var-segr"/>
             <display value="Familial variant segregation"/>
         </coding>
@@ -47,7 +48,7 @@
     <analysis>  <!-- 0..* Genomic Analysis Event of proband -->
         <identifier>
             <use value="temp"/>
-            <system value="http://www.somesystemabc.net/identifiers/genomicAnalyses"/>
+            <system value="http://example.org/identifiers/genomicAnalyses"/>
             <value value="urn:uuid:1111-1111-1111-1111"/>
         </identifier>
         <!-- <instantiatesCanonical>0..1 canonical(PlanDefinition) The defined protocol that describes the analysis</instantiatesCanonical> -->
@@ -68,6 +69,7 @@
             </file>
             <type>
                 <coding>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-dataformat"/>
                     <code value="vcf"/>
                     <display value="VCF"/>
                  </coding>
@@ -80,7 +82,7 @@
             </actor>
             <role>
                 <coding>
-                    <!-- <system value="http://terminology.hl7.org/3.1.0/CodeSystem-v3-ParticipationType.html"/> -->
+                    <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
                     <code value="PRF"/>
                     <display value="Performer"/>
                 </coding>
@@ -92,7 +94,9 @@
             </device>
             <function>
                 <coding>
-                    <display value="Next Generation Sequencing"/>
+                    <system value="http://loinc.org"/>
+                    <code value="LA26398-0"/>
+                    <display value="Sequencing"/>
                 </coding>
             </function>
         </device>
@@ -100,7 +104,7 @@
     <analysis>  <!-- 0..* Genomic Analysis Event of mother -->
         <identifier>
             <use value="temp"/>
-            <system value="http://www.somesystemabc.net/identifiers/genomicAnalyses"/>
+            <system value="http://example.org/identifiers/genomicAnalyses"/>
             <value value="urn:uuid:1111-1111-1111-1112"/>
         </identifier>
         <!-- <instantiatesCanonical>0..1 canonical(PlanDefinition) The defined protocol that describes the analysis</instantiatesCanonical> -->
@@ -122,6 +126,7 @@
             </file>
             <type>
                 <coding>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-dataformat"/>
                     <code value="vcf"/>
                     <display value="VCF"/>
                  </coding>
@@ -134,7 +139,7 @@
             </actor>
             <role>
                 <coding>
-                    <!-- <system value="http://terminology.hl7.org/3.1.0/CodeSystem-v3-ParticipationType.html"/> -->
+                    <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
                     <code value="PRF"/>
                     <display value="Performer"/>
                 </coding>
@@ -150,7 +155,7 @@
     <analysis>  <!-- 0..* Genomic Analysis Event of father -->
         <identifier>
             <use value="temp"/>
-            <system value="http://www.somesystemabc.net/identifiers/genomicAnalyses"/>
+            <system value="http://example.org/identifiers/genomicAnalyses"/>
             <value value="urn:uuid:1111-1111-1111-1113"/>
         </identifier>
         <!-- <instantiatesCanonical>0..1 canonical(PlanDefinition) The defined protocol that describes the analysis</instantiatesCanonical> -->
@@ -172,6 +177,7 @@
             </file>
             <type>
                 <coding>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-dataformat"/>
                     <code value="vcf"/>
                     <display value="VCF"/>
                  </coding>
@@ -184,7 +190,7 @@
             </actor>
             <role>
                 <coding>
-                    <!-- <system value="http://terminology.hl7.org/3.1.0/CodeSystem-v3-ParticipationType.html"/> -->
+                    <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
                     <code value="PRF"/>
                     <display value="Performer"/>
                 </coding>
@@ -200,7 +206,7 @@
     <analysis>  <!-- 0..* De Novo Mutation Analysis -->
         <identifier>
             <use value="temp"/>
-            <system value="http://www.somesystemabc.net/identifiers/genomicAnalyses"/>
+            <system value="http://example.org/identifiers/genomicAnalyses"/>
             <value value="urn:uuid:1111-1111-1111-1114"/>
         </identifier>
         <!-- <instantiatesCanonical>0..1 canonical(PlanDefinition) The defined protocol that describes the analysis</instantiatesCanonical> -->
@@ -217,6 +223,7 @@
             </file>
             <type>
                 <coding>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-dataformat"/>
                     <code value="vcf"/>
                     <display value="VCF"/>
                  </coding>
@@ -229,6 +236,7 @@
             </file>
             <type>
                 <coding>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-dataformat"/>
                     <code value="vcf"/>
                     <display value="VCF"/>
                  </coding>
@@ -241,6 +249,7 @@
             </file>
             <type>
                 <coding>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-dataformat"/>
                     <code value="vcf"/>
                     <display value="VCF"/>
                  </coding>
@@ -253,7 +262,7 @@
             </actor>
             <role>
                 <coding>
-                    <!-- <system value="http://terminology.hl7.org/3.1.0/CodeSystem-v3-ParticipationType.html"/> -->
+                    <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
                     <code value="PRF"/>
                     <display value="Performer"/>
                 </coding>

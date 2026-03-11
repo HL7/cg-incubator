@@ -9,21 +9,21 @@
     <valueCode value="cg"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-    <valueCode value="trial-use"/>
+    <valueCode value="draft"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1"/>
   </extension>
-  <url value="http://hl7.org/fhir/ValueSet/genomicstudy-status"/>
+  <url value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/genomicstudy-status"/>
   <identifier>
     <system value="urn:ietf:rfc:3986"/>
     <value value="urn:oid:2.16.840.1.113883.4.642.3.3083"/>
   </identifier>
-  <version value="6.0.0"/>
+  <version value="1.0.0"/>
   <name value="GenomicStudyStatusVS"/>
   <title value="Genomic Study Status VS"/>
   <status value="draft"/>
-  <experimental value="false"/>
+  <experimental value="true"/>
   <date value="2020-12-28T16:55:11+11:00"/>
   <publisher value="HL7 (FHIR Project)"/>
   <contact>
@@ -36,11 +36,17 @@
       <value value="fhir@lists.hl7.org"/>
     </telecom>
   </contact>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/clingenomics"/>
+    </telecom>
+  </contact>
   <description value="The status of the GenomicStudy."/>
   <immutable value="true"/>
   <compose>
     <include>
-      <system value="http://hl7.org/fhir/genomicstudy-status"/>
+      <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-status"/>
     </include>
   </compose>
 </ValueSet>

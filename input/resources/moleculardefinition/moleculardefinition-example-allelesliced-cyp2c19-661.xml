@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MolecularDefinition xmlns="http://hl7.org/fhir">
     <id value="example-allelesliced-cyp2c19-661"/>
+
     <moleculeType>
         <coding>
             <system value="http://hl7.org/fhir/sequence-type"/>
@@ -33,15 +34,10 @@
         </sequenceLocation>
     </location>
     <representation>
-        <focus>
-            <coding>
-                <code value="allele-state"/>
-                <display value="Allele State"/>
-            </coding>
-        </focus>
+        <focus value="allele-state"/>
         <code>
             <coding>
-                <system value="https://www.pharmvar.org"/>
+                <system value="http://www.pharmvar.org"/>
                 <code value="*38"/>
                 <display value="*38"/>
             </coding>
@@ -51,12 +47,7 @@
         </literal>
     </representation>
     <representation>
-        <focus>
-            <coding>
-                <code value="context-state"/>
-                <display value="Context State"/>
-            </coding>
-        </focus>
+        <focus value="context-state"/>
         <literal>
             <value value="G"/>
         </literal>

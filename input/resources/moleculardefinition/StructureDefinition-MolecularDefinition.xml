@@ -6,7 +6,7 @@
     <valueString value="Specialized.Definitional Artifacts"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-    <valueCode value="trial-use"/>
+    <valueCode value="draft"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="0"/>
@@ -17,11 +17,12 @@
   <extension url="http://hl7.org/fhir/build/StructureDefinition/entered-in-error-status">
     <valueCode value=".status = entered-in-error"/>
   </extension>
-
-  <!-- <extension url="http://hl7.org/fhir/build/StructureDefinition/structuredefinition-implements">
+<!-- 
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-implements">
     <valueCanonical value="http://hl7.org/fhir/StructureDefinition/CanonicalResource"/>
-  </extension> -->
-
+  </extension>
+-->
+  
   <url value="http://hl7.org/fhir/StructureDefinition/MolecularDefinition"/>
   <identifier>
     <system value="urn:ietf:rfc:3986"/>
@@ -31,6 +32,7 @@
   <name value="MolecularDefinition"/>
   <title value="Molecular Definition"/>
   <status value="draft"/>
+  <experimental value="true"/>
   <date value="2025-01-30"/>
   <publisher value="Clinical Genomics Working Group (HL7)"/>
   <contact>
@@ -41,6 +43,12 @@
     <telecom>
       <system value="email"/>
       <value value="clingenomics@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/clingenomics"/>
     </telecom>
   </contact>
   <description value="Definitional content for a molecular entity, such as a nucleotide or protein sequence."/>
@@ -522,9 +530,13 @@
       <min value="0"/>
       <max value="1"/>
       <type>
-        <code value="CodeableConcept"/>
+        <code value="code"/>
       </type>
       <isSummary value="true"/>
+      <binding>
+        <strength value="required"/>
+        <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/moleculardefinition-representation-focus"/>
+      </binding>
     </element>
     <element id="MolecularDefinition.representation.code">
       <path value="MolecularDefinition.representation.code"/>
@@ -555,8 +567,12 @@
       <min value="0"/>
       <max value="1"/>
       <type>
-        <code value="CodeableConcept"/>
+        <code value="code"/>
       </type>
+      <binding>
+        <strength value="required"/>
+        <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/moleculardefinition-literal-encoding"/>
+      </binding>
       <isSummary value="true"/>
     </element>
     <element id="MolecularDefinition.representation.literal.value">
