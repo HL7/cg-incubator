@@ -41,7 +41,6 @@
         <code>
             <coding>
                 <system value="http://www.pharmvar.org"/>
-                <version value="6.2"/>
                 <code value="PV00076"/>
                 <display value="CYP2C19*1.002"/>
             </coding>

@@ -38,8 +38,8 @@
         <code>
             <coding>
                 <system value="http://www.pharmvar.org"/>
-                <code value="*38"/>
-                <display value="*38"/>
+                <code value="PV02145"/>
+                <display value="CYP2C19*38"/>
             </coding>
         </code>
         <literal>

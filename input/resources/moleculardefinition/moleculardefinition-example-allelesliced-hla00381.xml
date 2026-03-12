@@ -40,7 +40,7 @@
         <focus value="allele-state"/>
         <code>
             <coding>
-                <system value="https://www.ebi.ac.uk/ipd/imgt/hla/alleles/allele/"/>
+                <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
                 <code value="HLA00381"/>
                 <display value="B*57:01:01:01"/>
             </coding>
