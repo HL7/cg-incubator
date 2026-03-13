@@ -147,12 +147,20 @@
     <element id="MolecularDefinition.topology">
       <path value="MolecularDefinition.topology"/>
       <short value="The structural topology of the molecular entity (e.g., linear, circular)"/>
-      <definition value="The structural topology of the molecular entity. For sequences (e.g., DNA), this could specify 'linear' and 'circular'. More complex entities might be branched or have a quaternary structure."/>
+      <definition value="The structural topology of the molecular entity. For nucleotide polymers this specifies the end-to-end configuration of the chain: linear (5'-terminus and 3'-terminus present) or circular (no terminal residues). Codes are drawn from the Sequence Ontology topology_attribute branch (SO:0000986). The binding is extensible to allow additional topology concepts such as supercoiled or branched, which are not currently represented in SO. Note that the SO topology_attribute branch is scoped to nucleotide polymers; polypeptide topology (e.g., quaternary structure) requires locally coined codes under the extensible binding."/>
       <min value="0"/>
       <max value="*"/>
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="MolecularDefinitionTopology"/>
+        </extension>
+        <strength value="extensible"/>
+        <description value="The structural topology of the molecule: linear or circular for nucleotide polymers. Codes are drawn from the Sequence Ontology topology_attribute branch (SO:0000986). Implementers may use additional codes for topology states not represented here (e.g., supercoiled, branched)."/>
+        <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/moleculardefinition-topology"/>
+      </binding>
       <isSummary value="true"/>
     </element>
     <element id="MolecularDefinition.member">

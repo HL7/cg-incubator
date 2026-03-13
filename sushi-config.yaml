@@ -367,12 +367,16 @@ resources:
 pages:
   index.md:
     title: IG Home
+  terminology-considerations.md:
+    title: Terminology Considerations
   changes.md:
     title: Change Log
  
 # customize the menu for your IG as needed
 menu:
   Home: index.html
+  Guidance:
+    Terminology Considerations: terminology-considerations.html
   FHIR Artifacts:
     Artifacts: artifacts.html
     Change Log: changes.html
