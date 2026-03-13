@@ -173,6 +173,55 @@ The `bindingName` was corrected from the LOINC answer list ID (`LL5323-2`) to th
 
 ---
 
+## MolecularDefinition: `genomeAssembly` Child Elements
+
+The `genomeAssembly` backbone element is nested under `location.cytobandLocation` and identifies the reference genome for cytoband-based coordinates. Three of its four child elements are vocabulary-bearing.
+
+### `organism` — Extensible Binding (NCBI Taxonomy)
+
+`organism` identifies the species whose genome the assembly represents. The authoritative vocabulary is the [NCBI Taxonomy database](https://www.ncbi.nlm.nih.gov/taxonomy), which assigns a numeric taxon ID to every organism with curated sequence data. The FHIR system URI is `http://www.ncbi.nlm.nih.gov/taxonomy`.
+
+The binding is **extensible** because any organism with a sequenced genome is a legitimate value — restricting to an enumerated set would exclude non-human organisms (mouse, rat, zebrafish, etc.) without scientific justification. Commonly used values:
+
+| Taxon ID | Organism |
+|---|---|
+| `9606` | *Homo sapiens* |
+| `10090` | *Mus musculus* |
+| `10116` | *Rattus norvegicus* |
+| `7955` | *Danio rerio* (zebrafish) |
+
+Note: NCBI Taxonomy does not publish a FHIR CodeSystem. Systems using this binding should include the numeric taxon ID as `code` and the scientific name as `display`.
+
+### `build` — Extensible Binding (LOINC LL1040-6)
+
+`build` records the named genome assembly (e.g., GRCh38, GRCh37). The LOINC answer list [LL1040-6](https://loinc.org/LL1040-6/) is already used for the equivalent `component[reference-sequence-assembly]` element in the genomics-reporting IG. Reusing it here maintains cross-IG consistency.
+
+The binding is **extensible** to accommodate assemblies not yet represented in LL1040-6, most notably T2T-CHM13v2.0 (Telomere-to-Telomere). As new reference assemblies gain adoption, they may be added to LL1040-6 or recorded using a locally defined code with appropriate `display` text.
+
+**Why not NCBI Assembly accession here?** The `build` element is intended for the human-readable assembly name; the corresponding machine-readable accession belongs in the sibling `accession` element. Keeping these separate supports both human-facing display and programmatic lookup.
+
+### `accession` — Example Binding (NCBI Assembly)
+
+`accession` records the versioned machine-readable NCBI Assembly accession for the genome assembly. Unlike `build`, which carries a human-recognizable name, `accession` is intended for programmatic lookup and precise version identification.
+
+NCBI Assembly accessions follow one of two patterns:
+
+| Prefix | Registry | Example | Assembly |
+|--------|----------|---------|----------|
+| `GCF_` | RefSeq (curated) | `GCF_000001405.40` | GRCh38.p14 |
+| `GCF_` | RefSeq (curated) | `GCF_000001405.26` | GRCh38 (initial) |
+| `GCF_` | RefSeq (curated) | `GCF_000001405.13` | GRCh37.p13 |
+| `GCA_` | GenBank | `GCA_009914755.4` | T2T-CHM13v2.0 |
+
+The conventional FHIR system URI for NCBI Assembly is `http://www.ncbi.nlm.nih.gov/assembly`. There is no enumerable FHIR CodeSystem or ValueSet for NCBI Assembly accessions — the identifier space is open and version-bearing — so a ValueSet-based binding is not appropriate.
+
+The binding strength is **example**, which:
+- Documents the expected identifier system to implementers
+- Does not constrain the full `CodeableConcept` (allowing text-only or locally coded variants)
+- Is consistent with FHIR guidance for open, continuously-updated identifier namespaces
+
+---
+
 ## General Guidance for Future Bindings
 
 1. **Prefer SO for sequence and molecular feature concepts.** SO is the correct home for most vocabulary needed by `MolecularDefinition`. Check SO before coining new codes.

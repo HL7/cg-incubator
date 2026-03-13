@@ -360,34 +360,57 @@
     <element id="MolecularDefinition.location.cytobandLocation.genomeAssembly.organism">
       <path value="MolecularDefinition.location.cytobandLocation.genomeAssembly.organism"/>
       <short value="Species of the organism"/>
-      <definition value="Species of the organism."/>
+      <definition value="The species of the organism whose genome this assembly represents, expressed as an NCBI Taxonomy identifier (e.g., 9606 for Homo sapiens, 10090 for Mus musculus)."/>
       <min value="0"/>
       <max value="1"/>
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="OrganismType"/>
+        </extension>
+        <strength value="extensible"/>
+        <description value="The organism whose genome the assembly describes. Codes are drawn from NCBI Taxonomy (http://www.ncbi.nlm.nih.gov/taxonomy). Common values: 9606 (Homo sapiens), 10090 (Mus musculus)."/>
+        <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/moleculardefinition-organism"/>
+      </binding>
       <isSummary value="false"/>
     </element>
     <element id="MolecularDefinition.location.cytobandLocation.genomeAssembly.build">
       <path value="MolecularDefinition.location.cytobandLocation.genomeAssembly.build"/>
-      <short value="Build number"/>
-      <definition value="The build number of this genome assemble."/>
+      <short value="Genome assembly build"/>
+      <definition value="The named genome assembly build, such as GRCh38 or GRCh37. Codes from LOINC answer list LL1040-6 are used here, consistent with the genomics-reporting IG binding for reference-sequence-assembly."/>
       <min value="0"/>
       <max value="1"/>
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="GenomeAssemblyBuild"/>
+        </extension>
+        <strength value="extensible"/>
+        <description value="Named genome assembly build. Codes from LOINC LL1040-6 cover established NCBI/Genome Reference Consortium (GRC) assemblies (e.g., LA14029-5 GRCh37, LA14032-9 GRCh38). The extensible binding accommodates newer assemblies such as T2T-CHM13 not yet represented in LL1040-6."/>
+        <valueSet value="http://loinc.org/vs/LL1040-6"/>
+      </binding>
       <isSummary value="false"/>
     </element>
     <element id="MolecularDefinition.location.cytobandLocation.genomeAssembly.accession">
       <path value="MolecularDefinition.location.cytobandLocation.genomeAssembly.accession"/>
-      <short value="Accession"/>
-      <definition value="The accession of this genome assemble."/>
+      <short value="NCBI Assembly accession"/>
+      <definition value="The NCBI Assembly accession for this genome assembly. Accessions follow the pattern GCF_######.v (RefSeq, e.g., GCF_000001405.40 for GRCh38.p14) or GCA_######.v (GenBank, e.g., GCA_009914755.4 for T2T-CHM13v2.0). Use system http://www.ncbi.nlm.nih.gov/assembly."/>
       <min value="0"/>
       <max value="1"/>
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="GenomeAssemblyAccession"/>
+        </extension>
+        <strength value="example"/>
+        <description value="NCBI Assembly accession numbers identifying genome assembly versions. Use system http://www.ncbi.nlm.nih.gov/assembly with the accession (e.g., GCF_000001405.40) as the code."/>
+      </binding>
       <isSummary value="false"/>
     </element>
     <element id="MolecularDefinition.location.cytobandLocation.genomeAssembly.description[x]">
