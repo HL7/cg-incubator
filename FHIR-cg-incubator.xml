@@ -80,6 +80,7 @@
 <artifact id="ValueSet/moleculardefinition-organism" key="ValueSet-moleculardefinition-organism" name="Molecular Definition Organism"/>
 <artifact id="MolecularDefinition/example-replaced-sequence" key="MolecularDefinition-example-replaced-sequence" name="Molecular Definition Replaced Sequence"/>
 <artifact id="MolecularDefinition/example-replacement-sequence" key="MolecularDefinition-example-replacement-sequence" name="Molecular Definition Replacement Sequence"/>
+<artifact id="ValueSet/moleculardefinition-representation-code" key="ValueSet-moleculardefinition-representation-code" name="Molecular Definition Representation Code"/>
 <artifact id="CodeSystem/moleculardefinition-representation-focus" key="CodeSystem-moleculardefinition-representation-focus" name="Molecular Definition Representation Focus"/>
 <artifact id="ValueSet/moleculardefinition-representation-focus" key="ValueSet-moleculardefinition-representation-focus" name="Molecular Definition Representation Focus VS"/>
 <artifact id="MolecularDefinition/example-sequence0-2b-concatenated" key="MolecularDefinition-example-sequence0-2b-concatenated" name="Molecular Definition Sequence 0 2B Concatenated"/>

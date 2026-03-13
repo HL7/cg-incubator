@@ -440,8 +440,8 @@
     </element>
     <element id="MolecularDefinition.location.cytobandLocation.cytobandInterval.chromosome">
       <path value="MolecularDefinition.location.cytobandLocation.cytobandInterval.chromosome"/>
-      <short value="Chromosome"/>
-      <definition value="The chromosome where this cytoband interval occurs."/>
+      <short value="Human chromosome identifier"/>
+      <definition value="The chromosome on which this cytoband interval is located. Use a LOINC chromosome answer code from LL2938-0, which covers human autosomes (chromosomes 1-22), sex chromosomes (X, Y), and the mitochondrial chromosome (M). LOINC LA-prefixed codes provide stable identifiers for consistent genomic data exchange. This binding is consistent with the chromosome binding in the genomics-reporting IG (component[chromosome-studied])."/>
       <min value="1"/>
       <max value="1"/>
       <type>
@@ -449,7 +449,11 @@
       </type>
       <isSummary value="true"/>
       <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="HumanChromosome"/>
+        </extension>
         <strength value="preferred"/>
+        <description value="LOINC answer list LL2938-0: human chromosome identifiers covering autosomes 1-22, sex chromosomes X and Y, and mitochondrial chromosome M."/>
         <valueSet value="http://loinc.org/vs/LL2938-0"/>
       </binding>
     </element>
@@ -494,8 +498,8 @@
     </element>
     <element id="MolecularDefinition.representation.focus">
       <path value="MolecularDefinition.representation.focus"/>
-      <short value="The domain concept that is the focus of a given instance of the representation"/>
-      <definition value="The domain concept that is the focus of the representation. This element is used to disambiguate the representations of the “reference” and the “alternate” alleles at a given location, for example."/>
+      <short value="Representation focus concept"/>
+      <definition value="Identifies which domain concept a given representation instance describes. When multiple representations are present on a single MolecularDefinition instance, this element is the machine-readable discriminator classifying each by role: allele-state (the specific allele being described), reference-state (the reference sequence at this location), alternative-state (an alternate sequence at this location), or context-state (the surrounding genomic sequence context that frames the allele). This element uses a required binding; implementations shall use a code from the MolecularDefinitionRepresentationFocus CodeSystem."/>
       <min value="0"/>
       <max value="1"/>
       <type>
@@ -503,20 +507,32 @@
       </type>
       <isSummary value="true"/>
       <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="RepresentationFocus"/>
+        </extension>
         <strength value="required"/>
+        <description value="Classifies the role of a representation within a MolecularDefinition: allele-state, reference-state, alternative-state, or context-state."/>
         <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/moleculardefinition-representation-focus"/>
       </binding>
     </element>
     <element id="MolecularDefinition.representation.code">
       <path value="MolecularDefinition.representation.code"/>
-      <short value="A code (e.g., sequence accession number) used to represent a molecular entity"/>
-      <definition value="A code (e.g., sequence accession number) used to represent a molecular entity."/>
+      <short value="Molecular sequence identifier (e.g., RefSeq accession)"/>
+      <definition value="A coded identifier for the molecular entity represented by this instance. The most common use is a versioned sequence accession from a public database (e.g., a RefSeq accession such as NC_000010.11 for a genomic sequence, NM_000769.4 for an mRNA transcript, NP_000760.1 for a protein, or NG_008384.3 for a RefSeqGene). Multiple codes may be provided where the same molecule is indexed in more than one database (e.g., both RefSeq and INSDC GenBank for the same sequence). The coding.system should be drawn from a well-known sequence database URI (see the example binding). Implementers should prefer versioned accessions (those including a dot-version, e.g., NC_000010.11) to ensure stable, unambiguous identification of a specific sequence version."/>
       <min value="0"/>
       <max value="*"/>
       <type>
         <code value="CodeableConcept"/>
       </type>
       <isSummary value="true"/>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="MolecularSequenceCode"/>
+        </extension>
+        <strength value="example"/>
+        <description value="Example molecular sequence identifier systems: NCBI RefSeq (http://www.ncbi.nlm.nih.gov/refseq), INSDC/GenBank (http://insdc.org), Ensembl (http://www.ensembl.org), LRG (http://www.lrg-sequence.org)."/>
+        <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/moleculardefinition-representation-code"/>
+      </binding>
     </element>
     <element id="MolecularDefinition.representation.literal">
       <path value="MolecularDefinition.representation.literal"/>

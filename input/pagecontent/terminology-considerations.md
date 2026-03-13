@@ -16,16 +16,9 @@ Three elements on `MolecularDefinition` carry terminology bindings that required
 | `type` | 0..* | CodeableConcept | **extensible** | [MolecularDefinitionType](ValueSet-moleculardefinition-type.html) |
 | `topology` | 0..* | CodeableConcept | **extensible** | [MolecularDefinitionTopology](ValueSet-moleculardefinition-topology.html) |
 
-All three ValueSets draw their primary codes from the **[Sequence Ontology](http://www.sequenceontology.org) (SO)**, the authoritative community-maintained vocabulary for sequence feature types and molecular attributes. For terminology server support, see the companion genomics terminology server package.
+For these three elements, codes are drawn from the **[Sequence Ontology](http://www.sequenceontology.org) (SO)**, the authoritative community-maintained vocabulary for sequence feature types and molecular attributes. SO is used here because it is the recognized external system for molecular biology vocabulary under HL7 governance policies — coining new HL7 codes for concepts that already exist in SO would duplicate authoritative external vocabulary unnecessarily.
 
----
-
-### Design Decision: Single Authoritative External System (SO)
-
-Rather than creating a CG-specific CodeSystem mirroring SO concepts, this IG binds directly to SO. The rationale:
-
-- SO is a recognized external system under HL7 vocabulary governance policies. Coining new HL7 codes for concepts that already exist in SO would violate the principle of not duplicating authoritative external vocabulary.
-- SO is actively maintained and versioned. Binding to it allows the IG to benefit from SO additions without requiring IG republication.
+Across the broader IG, terminology bindings use a range of external systems (SO, LOINC, NCBI Taxonomy, NCBI RefSeq, NCBI Assembly, INSDC, Ensembl, LRG) alongside locally defined CG CodeSystems for domain-specific concepts with no suitable external home. For terminology server support, see the companion genomics terminology server package.
 
 ---
 
@@ -222,11 +215,84 @@ The binding strength is **example**, which:
 
 ---
 
+## MolecularDefinition: cytobandInterval.chromosome
+
+### `chromosome` — Preferred Binding (LOINC LL2938-0)
+
+`chromosome` identifies which human chromosome a cytoband interval is located on. The binding uses LOINC answer list [LL2938-0](https://loinc.org/LL2938-0/), the standard LOINC answer list for human chromosomes.
+
+| Category | Chromosomes | LOINC code range |
+|----------|-------------|------------------|
+| Autosomes | 1–22 | LA21254-0 – LA21275-5 |
+| Sex chromosomes | X, Y | LA21276-3, LA21277-1 |
+| Mitochondrial | M | LA25391-0 |
+
+The binding strength is **preferred** — consistent with how chromosome is bound in the genomics-reporting IG (e.g., `component[chromosome-studied]`). Using the same answer list maintains cross-IG consistency and allows consumers to correlate cytoband locations with sequencing data from both IGs.
+
+**Why preferred, not required?** Chromosome naming conventions occasionally diverge (e.g., "chr1" vs "1" vs "Chromosome 1"), and some jurisdictions or laboratory systems use local codes. `preferred` strongly directs implementers toward LOINC LL2938-0 while accommodating legitimate local practice.
+
+---
+
+## MolecularDefinition: representation.focus
+
+### `representation.focus` — Required Binding (CG CodeSystem)
+
+`representation.focus` classifies the role of a given representation within a `MolecularDefinition` instance. When a single instance carries multiple representations (e.g., both a reference allele and an observed variant), this element is the machine-readable discriminator that tells a consuming system what each representation describes.
+
+The element type is `code` (not `CodeableConcept`), and uses a locally defined CG CodeSystem with four codes:
+
+| Code | Display | Meaning |
+|------|---------|----------|
+| `allele-state` | Allele State | The specific allele being described at this location |
+| `reference-state` | Reference State | The reference sequence at this location (as in a reference genome) |
+| `alternative-state` | Alternative State | An alternate sequence at this location (e.g., an observed variant allele) |
+| `context-state` | Context State | The surrounding genomic sequence context that frames the allele |
+
+The distinction between `reference-state` and `allele-state` is intentional: `reference-state` always refers to the canonical reference genome sequence, while `allele-state` is the experimentally observed or clinically reported allele (which may or may not differ from the reference). `context-state` is used when a representation captures broader flanking sequence rather than the allele itself — for example, the full genomic region submitted for variant calling.
+
+**Why required?** The element type is `code` (a primitive), and the set of focus roles is closed. Allowing unconstrained codes would undermine the discriminator function of this element. If future use cases require additional focus roles, the CodeSystem and ValueSet will be updated.
+
+---
+
+## MolecularDefinition: representation.code
+
+### `representation.code` — Example Binding (Sequence Identifier Systems)
+
+`representation.code` carries a coded identifier for the molecular entity described by a `representation` instance. The `0..*` cardinality allows the same molecule to be cross-referenced in multiple databases within a single representation.
+
+The dominant use case is a versioned **NCBI RefSeq accession**, consistent with usage in the genomics-reporting IG and the cg-incubator examples. Versioned accessions are strongly preferred over unversioned ones to ensure stable, unambiguous identification of a specific sequence version.
+
+#### Common accession types and their RefSeq prefixes
+
+| Prefix | Sequence type | Example | Meaning |
+|--------|--------------|---------|----------|
+| `NC_` | Chromosomal genomic | `NC_000010.11` | Chromosome 10, GRCh38.p14 |
+| `NG_` | RefSeqGene (genomic) | `NG_008384.3` | CYP2C19 locus |
+| `NM_` | mRNA (coding transcript) | `NM_000769.4` | CYP2C19 mRNA |
+| `NR_` | Non-coding RNA | `NR_024540.1` | |
+| `NP_` | Protein | `NP_000760.1` | CYP2C19 protein |
+| `NT_`/`NW_` | Genomic contig/scaffold | `NT_009237.19` | |
+
+#### Identifier systems included in the example binding
+
+| System URI | Database | Notes |
+|-----------|----------|-------|
+| `http://www.ncbi.nlm.nih.gov/refseq` | NCBI RefSeq | Curated, versioned; primary system for clinical genomics |
+| `http://insdc.org` | INSDC (GenBank / EMBL / DDBJ) | International nucleotide sequence collaboration; unversioned IDs also exist |
+| `http://www.ensembl.org` | Ensembl | Common in research/computational genomics (ENSG, ENST, ENSP) |
+| `http://www.lrg-sequence.org` | LRG | Locus Reference Genomic — stable reference sequences for clinical variant reporting, common in European labs |
+
+**Why example, not extensible or required?** `representation.code` is an open identifier element — any public sequence database producing stable accession identifiers is a valid source. An `example` binding documents the most commonly used systems without falsely constraining a genuinely open identifier space. The `0..*` cardinality further signals that multiple systems may co-exist on a single representation.
+
+**Why not HGVS expressions here?** HGVS expressions (e.g., `NC_000010.11:g.94762681C>T`) are variant notations that incorporate both a reference accession and a variant description. They are valid in `representation.code` as coded values, using a system URI such as `http://varnomen.hgvs.org`, but are typically better expressed in `representation.literal` or via dedicated variant representation patterns.
+
+---
+
 ## General Guidance for Future Bindings
 
-1. **Prefer SO for sequence and molecular feature concepts.** SO is the correct home for most vocabulary needed by `MolecularDefinition`. Check SO before coining new codes.
+1. **Prefer an established external vocabulary before coining new CG codes.** Check SO for molecular/sequence feature concepts, LOINC for clinical lab and observation concepts, and NCBI systems (Taxonomy, RefSeq, Assembly) for biological entity identifiers. Only define a local CG CodeSystem when no suitable external vocabulary covers the concept — as done for `coordinateSystem.origin` and `coordinateSystem.normalizationMethod`.
 2. **Use `required` only for classification axes that must be stable for search.** Once `required`, adding new codes is a breaking change for existing systems that must validate. Plan the code set carefully.
 3. **Use `extensible` for domain-semantic or interpretive concepts.** If implementers will legitimately need codes beyond the curated set, `extensible` is correct. Document the expected extension pattern.
-4. **Never use `preferred` for codes where external system coverage is known and good.** `preferred` signals that alternatives are acceptable. If SO provides the right code, `required` or `extensible` (depending on stability needs) is more appropriate than `preferred`, which would allow silent substitution.
+4. **Never use `preferred` for codes where external system coverage is known and complete.** `preferred` signals that alternatives are acceptable without penalty. If an established external vocabulary provides the right codes, `required` or `extensible` (depending on stability needs) is more appropriate than `preferred`, which would allow silent substitution and fragment interoperability.
 5. **Document SO hierarchy limitations explicitly.** As seen with RNA subtypes and topology scope, SO's hierarchy does not always match biological intuition. Always verify parent/child relationships in the local SO CodeSystem before writing a filter-based ValueSet `include`.
 6. **Monitor SO for code deprecation.** SO codes can be deprecated or replaced over time. When updating SO-bound ValueSets, confirm that enumerated codes have not been deprecated or replaced (check the `obsoletedBy` property in the SO CodeSystem).
