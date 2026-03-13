@@ -4,9 +4,9 @@
 
     <moleculeType>
         <coding>
-            <system value="http://hl7.org/fhir/sequence-type"/>
-            <code value="rna"/>
-            <display value="RNA Sequence"/>
+            <system value="http://www.sequenceontology.org"/>
+            <code value="SO:0000356"/>
+            <display value="RNA"/>
         </coding>
     </moleculeType>
     <location>

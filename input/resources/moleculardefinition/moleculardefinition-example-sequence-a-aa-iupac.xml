@@ -4,9 +4,9 @@
 
     <moleculeType>
         <coding>
-            <system value="http://hl7.org/fhir/sequence-type"/>
-            <code value="aa"/>
-            <display value="AA Sequence"/>
+            <system value="http://www.sequenceontology.org"/>
+            <code value="SO:0000104"/>
+            <display value="polypeptide"/>
         </coding>
     </moleculeType>
     <representation>

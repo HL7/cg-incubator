@@ -4,9 +4,9 @@
 
     <moleculeType>
         <coding>
-            <system value="http://hl7.org/fhir/sequence-type"/>
-            <code value="dna"/>
-            <display value="DNA Sequence"/>
+            <system value="http://www.sequenceontology.org"/>
+            <code value="SO:0000352"/>
+            <display value="DNA"/>
         </coding>
     </moleculeType>
     <location>
