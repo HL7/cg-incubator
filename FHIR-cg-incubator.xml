@@ -112,6 +112,7 @@
 <artifact id="MolecularDefinition/example-sequence-t" key="MolecularDefinition-example-sequence-t" name="Molecular Definition Sequence T"/>
 <artifact id="MolecularDefinition/example-starting-sequence-2b-extracted" key="MolecularDefinition-example-starting-sequence-2b-extracted" name="Molecular Definition Starting Sequence 2B Extracted"/>
 <artifact id="MolecularDefinition/example-starting-sequence-2b-relative" key="MolecularDefinition-example-starting-sequence-2b-relative" name="Molecular Definition Starting Sequence 2B Relative"/>
+<artifact id="ValueSet/moleculardefinition-strand" key="ValueSet-moleculardefinition-strand" name="Molecular Definition Strand"/>
 <artifact id="ValueSet/moleculardefinition-topology" key="ValueSet-moleculardefinition-topology" name="Molecular Definition Topology"/>
 <artifact id="ValueSet/moleculardefinition-type" key="ValueSet-moleculardefinition-type" name="Molecular Definition Type"/>
 <artifact id="MolecularDefinition/example-variation1" key="MolecularDefinition-example-variation1" name="Molecular Definition Variation 1"/>

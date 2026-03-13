@@ -101,6 +101,27 @@ Avoid using `type = SO:0002292` (circular_mRNA) in place of `type = SO:0000234` 
 
 ---
 
+## MolecularDefinition: `strand`
+
+`strand` qualifies a `sequenceLocation` with an orientation, relevant when the interval alone is insufficient to identify a location (e.g., on a double-stranded DNA molecule). The element previously had no binding and only mentioned forward/reverse as examples in free text.
+
+### Design Decision: Sequence Ontology `direction_attribute` codes, Required Binding
+
+SO provides exactly two leaf concepts under `SO:0001029` (direction_attribute) that match this domain:
+
+| SO Code | Display | Equivalent Terms |
+|---|---|---|
+| `SO:0001030` | `forward` | plus strand, sense strand, Watson strand |
+| `SO:0001031` | `reverse` | minus strand, antisense strand, Crick strand |
+
+SO also defines `SO:0002262` (Watson_strand) and `SO:0002263` (Crick_strand), but these are classified under `SO:0000830` (chromosome_part) — they model strands as structural components of a chromosome, not as orientation attributes of a feature. They are therefore semantically inappropriate for an orientation-qualifying element and are excluded.
+
+**Why `required`?** Strand is a binary, closed domain. There is no valid third option for a nucleotide polymer location. A `required` binding ensures that systems can reliably interpret orientation without ambiguity and prevents free-text drift (e.g., "+", "plus", "sense", "watson" all appearing in the wild for the same concept).
+
+The `description` on the binding explicitly maps forward → plus/sense/Watson and reverse → minus/antisense/Crick so that implementers translating from VCF (`+`/`-`), GFF3 (`+`/`-`/`.`), or GA4GH conventions can identify the correct code without consulting SO directly.
+
+---
+
 ## MolecularDefinition: `coordinateSystem` Child Elements
 
 The `coordinateSystem` backbone element appears three times within `MolecularDefinition` (under `location.sequenceLocation.coordinateInterval`, `representation.extracted.coordinateInterval`, and `representation.relative.edit.coordinateInterval`). Each instance carries three vocabulary-bearing child elements. The same bindings apply uniformly to all three instances.
@@ -159,4 +180,4 @@ The `bindingName` was corrected from the LOINC answer list ID (`LL5323-2`) to th
 3. **Use `extensible` for domain-semantic or interpretive concepts.** If implementers will legitimately need codes beyond the curated set, `extensible` is correct. Document the expected extension pattern.
 4. **Never use `preferred` for codes where external system coverage is known and good.** `preferred` signals that alternatives are acceptable. If SO provides the right code, `required` or `extensible` (depending on stability needs) is more appropriate than `preferred`, which would allow silent substitution.
 5. **Document SO hierarchy limitations explicitly.** As seen with RNA subtypes and topology scope, SO's hierarchy does not always match biological intuition. Always verify parent/child relationships in the local SO CodeSystem before writing a filter-based ValueSet `include`.
-6. **Version-pin SO includes.** Each ValueSet pins `<version value="2026-03-02"/>`. When updating, confirm that existing codes have not been deprecated or replaced (check the `obsoletedBy` property in the SO CodeSystem).
+6. **Monitor SO for code deprecation.** SO codes can be deprecated or replaced over time. When updating SO-bound ValueSets, confirm that enumerated codes have not been deprecated or replaced (check the `obsoletedBy` property in the SO CodeSystem).

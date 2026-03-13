@@ -318,13 +318,21 @@
     </element>
     <element id="MolecularDefinition.location.sequenceLocation.strand">
       <path value="MolecularDefinition.location.sequenceLocation.strand"/>
-      <short value="The strand at the coordinateInterval"/>
-      <definition value="The specific strand at the coordinateInterval, when the interval alone is not sufficient to define a location (e.g., double stranded DNA). Example values include 'forward' and 'reverse'."/>
+      <short value="The strand orientation of the sequenceLocation"/>
+      <definition value="The specific strand at the coordinateInterval, when the interval alone is not sufficient to define a location (e.g., double stranded DNA). 'Forward' corresponds to the plus/sense/Watson strand (5' to 3' in the standard reference orientation); 'reverse' corresponds to the minus/antisense/Crick strand (3' to 5' in the standard reference orientation)."/>
       <min value="0"/>
       <max value="1"/>
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="StrandType"/>
+        </extension>
+        <strength value="required"/>
+        <description value="Strand orientation of a sequenceLocation. 'forward' (SO:0001030) = plus/sense/Watson strand; 'reverse' (SO:0001031) = minus/antisense/Crick strand."/>
+        <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/moleculardefinition-strand"/>
+      </binding>
       <isSummary value="false"/>
     </element>
     <element id="MolecularDefinition.location.cytobandLocation">

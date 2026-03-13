@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValueSet xmlns="http://hl7.org/fhir">
-  <id value="moleculardefinition-topology"/>
+  <id value="moleculardefinition-strand"/>
   <meta>
     <lastUpdated value="2026-03-13T00:00:00Z"/>
     <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
@@ -14,14 +14,14 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="0"/>
   </extension>
-  <url value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/moleculardefinition-topology"/>
+  <url value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/moleculardefinition-strand"/>
   <identifier>
     <system value="urn:ietf:rfc:3986"/>
-    <value value="urn:oid:2.16.840.1.113883.4.642.3.3003"/>
+    <value value="urn:oid:2.16.840.1.113883.4.642.3.3006"/>
   </identifier>
   <version value="1.0.0"/>
-  <name value="MolecularDefinitionTopology"/>
-  <title value="Molecular Definition Topology"/>
+  <name value="MolecularDefinitionStrand"/>
+  <title value="Molecular Definition Strand"/>
   <status value="draft"/>
   <experimental value="true"/>
   <date value="2026-03-13"/>
@@ -42,7 +42,7 @@
       <value value="http://www.hl7.org/Special/committees/clingenomics"/>
     </telecom>
   </contact>
-  <description value="The structural topology of a molecular entity as defined by the MolecularDefinition resource. Codes are drawn from the Sequence Ontology (SO) topology_attribute branch (SO:0000986): linear (SO:0000987) and circular (SO:0000988). The binding is extensible to allow additional topology concepts — such as supercoiled, relaxed-circular, or branched — to be expressed using local or future SO codes when no matching code exists in this set. Note: the SO topology_attribute is currently scoped to nucleotide polymers; polypeptide topology (e.g., quaternary structure) is outside the defined SO set and would require locally coined codes under the extensible binding."/>
+  <description value="The strand orientation of a sequenceLocation. 'Forward' corresponds to the plus/sense/Watson strand (5' to 3' in the standard reference orientation); 'reverse' corresponds to the minus/antisense/Crick strand (3' to 5' in the standard reference orientation)."/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -53,17 +53,13 @@
   <compose>
     <include>
       <system value="http://www.sequenceontology.org"/>
-      <!-- linear: A quality of a nucleotide polymer that has a 3'-terminal residue  -->
-      <!-- and a 5'-terminal residue. Parent: topology_attribute (SO:0000986)         -->
       <concept>
-        <code value="SO:0000987"/>
-        <display value="linear"/>
+        <code value="SO:0001030"/>
+        <display value="forward"/>
       </concept>
-      <!-- circular: A quality of a nucleotide polymer that has no terminal            -->
-      <!-- nucleotide residues. Parent: topology_attribute (SO:0000986)                -->
       <concept>
-        <code value="SO:0000988"/>
-        <display value="circular"/>
+        <code value="SO:0001031"/>
+        <display value="reverse"/>
       </concept>
     </include>
   </compose>
