@@ -101,6 +101,57 @@ Avoid using `type = SO:0002292` (circular_mRNA) in place of `type = SO:0000234` 
 
 ---
 
+## MolecularDefinition: `coordinateSystem` Child Elements
+
+The `coordinateSystem` backbone element appears three times within `MolecularDefinition` (under `location.sequenceLocation.coordinateInterval`, `representation.extracted.coordinateInterval`, and `representation.relative.edit.coordinateInterval`). Each instance carries three vocabulary-bearing child elements. The same bindings apply uniformly to all three instances.
+
+### `system` — Extensible Binding (LOINC LL5323-2, preserved)
+
+`system` describes the counting convention: whether positions are 0-based or 1-based, and whether the boundary model is character-based or interval-based. An existing `extensible` binding to the LOINC answer list [LL5323-2](http://loinc.org/vs/LL5323-2) is preserved unchanged. The four LOINC codes map directly to widely-used genomic systems:
+
+| LOINC Code | Display | Real-World Systems |
+|---|---|---|
+| `LA30100-4` | 0-based interval counting | UCSC BED, GA4GH VRS, SPDI |
+| `LA30101-2` | 0-based character counting | Less common; used in some REST APIs |
+| `LA30102-0` | 1-based character counting | HGVS (c./g./n./p.), RefSeq accession positions |
+| `LA30103-8` | 1-based interval counting | VCF variants (loosely) |
+
+The `bindingName` was corrected from the LOINC answer list ID (`LL5323-2`) to the semantic name `CoordinateSystemType`. No other changes were made to the binding and no new ValueSet is introduced for this element.
+
+**Why preserve LOINC rather than coining CG codes?** The LOINC LL5323-2 answer list is already used in genomics-reporting and other CG IGs. Preserving it maintains cross-IG consistency and avoids fragmenting terminology for the same concept.
+
+### `origin` — Required Binding (CG-defined CodeSystem)
+
+`origin` identifies the reference landmark from which coordinate distances are measured. This concept is entirely domain-specific to clinical genomics; no external vocabulary (LOINC, SO, SNOMED CT) provides suitable codes. A new CG-defined CodeSystem `coordinatesystem-origin` is introduced with four concepts:
+
+| Code | Display | Typical Standard |
+|---|---|---|
+| `sequence-start` | Sequence Start | Genomic/chromosomal coordinates (NC_, NG_, NT_ accessions) |
+| `cds-start` | CDS Start (A of ATG) | HGVS c. (coding DNA) |
+| `feature-start` | Feature Start | HGVS exon-relative positions |
+| `feature-end` | Feature End | HGVS intronic positions (e.g., c.100+3) |
+
+**Why `required`?** Origin ambiguity is a patient safety concern. Identical numeric coordinates carry entirely different biological meanings depending on origin — for example, the same integer under `cds-start` versus `sequence-start` conventions may differ by hundreds or thousands of bases. A `required` binding ensures that any system receiving a `MolecularDefinition` instance can unambiguously interpret the coordinates without relying on out-of-band context. This is distinct from `normalizationMethod`, where uncertainty is confined to repetitive regions and has less impact on safety-critical interpretation.
+
+**On extensibility:** The `required` binding permits no codes outside this set. If future molecular types require new origin concepts (e.g., mitochondrial origins, protein feature-relative origins), the CodeSystem should be extended rather than using `text`-only fallbacks.
+
+### `normalizationMethod` — Extensible Binding (CG-defined CodeSystem)
+
+`normalizationMethod` captures which alignment convention was applied to resolve positional ambiguity in repetitive sequence regions. Like `origin`, no external vocabulary provides these codes. A new CG-defined CodeSystem `coordinatesystem-normalizationmethod` is introduced with four concepts:
+
+| Code | Display | Typical Standard |
+|---|---|---|
+| `left-shift` | Left Shift | VCF |
+| `right-shift` | Right Shift | HGVS (3' rule for duplications and insertions) |
+| `fully-justified` | Fully Justified | VOCA, GA4GH |
+| `no-normalization` | No Normalization | As-reported from caller |
+
+**Why `extensible` rather than `required`?** Normalization methodology is evolving and implementation-context-dependent. New algorithmic conventions may emerge (e.g., strand-aware approaches, protein-level normalization). An `extensible` binding ensures common cases are covered with standard codes while permitting new codes via `text` or local CodeSystems for methods not yet enumerated.
+
+**Why record normalization at all?** The same variant can occupy different positions when different normalization methods are applied to a repeat region. Systems that aggregate or compare variants across databases must know the normalization convention to correctly determine equivalence. Recording this in a structured, coded field rather than free text is critical for machine-interpretable genomic data exchange.
+
+---
+
 ## General Guidance for Future Bindings
 
 1. **Prefer SO for sequence and molecular feature concepts.** SO is the correct home for most vocabulary needed by `MolecularDefinition`. Check SO before coining new codes.

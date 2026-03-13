@@ -242,10 +242,10 @@
       </type>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="LL5323-2"/>
+          <valueString value="CoordinateSystemType"/>
         </extension>
         <strength value="extensible"/>
-        <description value="Coordinate system."/>
+        <description value="Coordinate system type governing position counting. Codes from LOINC answer list LL5323-2 correspond to widely-used systems: LA30100-4 (0-based interval counting, used by UCSC BED, GA4GH VRS, and SPDI), LA30101-2 (0-based character counting), LA30102-0 (1-based character counting, used by HGVS c./g./n./p. and RefSeq), and LA30103-8 (1-based interval counting)."/>
         <valueSet value="http://loinc.org/vs/LL5323-2"/>
       </binding>
       <isSummary value="true"/>
@@ -259,6 +259,14 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="CoordinateSystemOrigin"/>
+        </extension>
+        <strength value="required"/>
+        <description value="The reference landmark from which coordinates are measured. Unambiguous origin specification is essential for correct variant interpretation and cross-system interoperability."/>
+        <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/coordinatesystem-origin"/>
+      </binding>      
       <isSummary value="true"/>
     </element>
     <element id="MolecularDefinition.location.sequenceLocation.coordinateInterval.coordinateSystem.normalizationMethod">
@@ -270,6 +278,14 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="CoordinateSystemNormalizationMethod"/>
+        </extension>
+        <strength value="extensible"/>
+        <description value="The normalization convention applied when positioning a variant in a repetitive sequence region (e.g., left-shift for VCF, right-shift for HGVS 3' rule, fully-justified for VOCA/GA4GH)."/>
+        <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/coordinatesystem-normalizationmethod"/>
+      </binding>
       <isSummary value="true"/>
     </element>
     <element id="MolecularDefinition.location.sequenceLocation.coordinateInterval.start[x]">
@@ -576,10 +592,10 @@
       </type>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="LL5323-2"/>
+          <valueString value="CoordinateSystemType"/>
         </extension>
         <strength value="extensible"/>
-        <description value="Coordinate system."/>
+        <description value="Coordinate system type governing position counting. Codes from LOINC answer list LL5323-2 correspond to widely-used systems: LA30100-4 (0-based interval counting, used by UCSC BED, GA4GH VRS, and SPDI), LA30101-2 (0-based character counting), LA30102-0 (1-based character counting, used by HGVS c./g./n./p. and RefSeq), and LA30103-8 (1-based interval counting)."/>
         <valueSet value="http://loinc.org/vs/LL5323-2"/>
       </binding>
       <isSummary value="true"/>
@@ -593,6 +609,14 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="CoordinateSystemOrigin"/>
+        </extension>
+        <strength value="required"/>
+        <description value="The reference landmark from which coordinates are measured. Unambiguous origin specification is essential for correct variant interpretation and cross-system interoperability."/>
+        <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/coordinatesystem-origin"/>
+      </binding>
       <isSummary value="true"/>
     </element>
     <element id="MolecularDefinition.representation.extracted.coordinateInterval.coordinateSystem.normalizationMethod">
@@ -604,6 +628,14 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="CoordinateSystemNormalizationMethod"/>
+        </extension>
+        <strength value="extensible"/>
+        <description value="The normalization convention applied when positioning a variant in a repetitive sequence region (e.g., left-shift for VCF, right-shift for HGVS 3' rule, fully-justified for VOCA/GA4GH)."/>
+        <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/coordinatesystem-normalizationmethod"/>
+      </binding>
       <isSummary value="true"/>
     </element>
     <element id="MolecularDefinition.representation.extracted.coordinateInterval.start[x]">
@@ -805,10 +837,10 @@
       </type>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="LL5323-2"/>
+          <valueString value="CoordinateSystemType"/>
         </extension>
         <strength value="extensible"/>
-        <description value="Coordinate system."/>
+        <description value="Coordinate system type governing position counting. Codes from LOINC answer list LL5323-2 correspond to widely-used systems: LA30100-4 (0-based interval counting, used by UCSC BED, GA4GH VRS, and SPDI), LA30101-2 (0-based character counting), LA30102-0 (1-based character counting, used by HGVS c./g./n./p. and RefSeq), and LA30103-8 (1-based interval counting)."/>
         <valueSet value="http://loinc.org/vs/LL5323-2"/>
       </binding>
       <isSummary value="true"/>
@@ -822,6 +854,14 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="CoordinateSystemOrigin"/>
+        </extension>
+        <strength value="required"/>
+        <description value="The reference landmark from which coordinates are measured. Unambiguous origin specification is essential for correct variant interpretation and cross-system interoperability."/>
+        <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/coordinatesystem-origin"/>
+      </binding>
       <isSummary value="true"/>
     </element>
     <element id="MolecularDefinition.representation.relative.edit.coordinateInterval.coordinateSystem.normalizationMethod">
@@ -833,6 +873,14 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="CoordinateSystemNormalizationMethod"/>
+        </extension>
+        <strength value="extensible"/>
+        <description value="The normalization convention applied when positioning a variant in a repetitive sequence region (e.g., left-shift for VCF, right-shift for HGVS 3' rule, fully-justified for VOCA/GA4GH)."/>
+        <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/coordinatesystem-normalizationmethod"/>
+      </binding>
       <isSummary value="true"/>
     </element>
     <element id="MolecularDefinition.representation.relative.edit.coordinateInterval.start[x]">

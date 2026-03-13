@@ -6,6 +6,10 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact id="DocumentReference/CNVAnalysis-called" key="DocumentReference-CNVAnalysis-called" name="CNVAnalysis-called"/>
+<artifact id="ValueSet/coordinatesystem-normalizationmethod" key="ValueSet-coordinatesystem-normalizationmethod" name="Coordinate System Normalization Method"/>
+<artifact id="CodeSystem/coordinatesystem-normalizationmethod" key="CodeSystem-coordinatesystem-normalizationmethod" name="Coordinate System Normalization Method"/>
+<artifact id="ValueSet/coordinatesystem-origin" key="ValueSet-coordinatesystem-origin" name="Coordinate System Origin"/>
+<artifact id="CodeSystem/coordinatesystem-origin" key="CodeSystem-coordinatesystem-origin" name="Coordinate System Origin"/>
 <artifact id="Patient/denovoChild" key="Patient-denovoChild" name="De Novo Child Patient"/>
 <artifact id="Encounter/denovoEncounter" key="Encounter-denovoEncounter" name="De Novo Encounter"/>
 <artifact id="Patient/denovoFather" key="Patient-denovoFather" name="De Novo Father Patient"/>

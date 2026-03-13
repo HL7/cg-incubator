@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="coordinatesystem-origin"/>
+  <meta>
+    <lastUpdated value="2026-03-13T00:00:00Z"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="cg"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="informative"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="0"/>
+  </extension>
+  <url value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/coordinatesystem-origin"/>
+  <identifier>
+    <system value="urn:ietf:rfc:3986"/>
+    <value value="urn:oid:2.16.840.1.113883.4.642.4.3004"/>
+  </identifier>
+  <version value="1.0.0"/>
+  <name value="CoordinateSystemOrigin"/>
+  <title value="Coordinate System Origin"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-03-13"/>
+  <publisher value="Clinical Genomics Working Group (HL7)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/clingenomics"/>
+    </telecom>
+  </contact>
+  <description value="The reference landmark (origin) from which coordinates are measured in a coordinateInterval. This identifies the conceptual anchor point on the molecule where numbering begins, independent of whether numbering is 0-based or 1-based (which is captured in coordinateSystem.system). No external vocabulary covers this domain-specific concept, so it is defined here by the CG Working Group."/>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/coordinatesystem-origin"/>
+  <concept>
+    <code value="sequence-start"/>
+    <display value="Sequence Start"/>
+    <definition value="Coordinates are measured from the start of the molecule: the 5' end of a nucleotide sequence or the N-terminus of a polypeptide. This is the default for genomic, chromosomal, and transcript-level coordinate systems (e.g., NC_ or NG_ accession-based positions)."/>
+  </concept>
+  <concept>
+    <code value="cds-start"/>
+    <display value="CDS Start (A of ATG)"/>
+    <definition value="Coordinates are measured from the adenine of the translation initiation codon (A of ATG = position 1, or 0 in 0-based systems). This is the origin used by the HGVS coding DNA reference sequence (c. prefix). Positions upstream of the ATG are negative (5' UTR); positions downstream of the stop codon are marked with an asterisk (3' UTR)."/>
+  </concept>
+  <concept>
+    <code value="feature-start"/>
+    <display value="Feature Start"/>
+    <definition value="Coordinates are measured from the start of a named genomic feature, such as the first base of an exon. This is used for HGVS exon-relative or feature-relative position expressions."/>
+  </concept>
+  <concept>
+    <code value="feature-end"/>
+    <display value="Feature End"/>
+    <definition value="Coordinates are measured from the end of a named genomic feature, such as the last base of an exon. A positive offset extends into the downstream intron; a negative offset extends upstream into the exon. This origin is used for HGVS intronic positions (e.g., c.100+3, where 100 is the last coding base and +3 is the offset into the intron)."/>
+  </concept>
+</CodeSystem>
