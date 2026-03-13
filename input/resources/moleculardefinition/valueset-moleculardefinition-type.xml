@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="moleculardefinition-type"/>
+  <meta>
+    <lastUpdated value="2026-03-13T00:00:00Z"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="cg"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="informative"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="0"/>
+  </extension>
+  <url value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/moleculardefinition-type"/>
+  <identifier>
+    <system value="urn:ietf:rfc:3986"/>
+    <value value="urn:oid:2.16.840.1.113883.4.642.3.3002"/>
+  </identifier>
+  <version value="1.0.0"/>
+  <name value="MolecularDefinitionType"/>
+  <title value="Molecular Definition Type"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-03-13"/>
+  <publisher value="Clinical Genomics Working Group (HL7)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/clingenomics"/>
+    </telecom>
+  </contact>
+  <description value="Domain-semantic subtype classifications for a MolecularDefinition resource instance, providing greater specificity than the moleculeType element. For example, an instance with moleculeType 'RNA' may have a type of 'mRNA' or 'miRNA'. This ValueSet is an enumerated, curated subset of Sequence Ontology (SO) terms covering clinically relevant DNA and RNA subtypes. The binding is extensible: implementers may use codes from SO or other systems not listed here when no suitable code exists in this set."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+      <display value="World"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://www.sequenceontology.org"/>
+
+      <!-- ============================================================ -->
+      <!-- DNA subtypes                                                  -->
+      <!-- ============================================================ -->
+
+      <!-- genomic_DNA: DNA that encodes, or is derived from, the                 -->
+      <!-- genomic DNA of an organism                                             -->
+      <concept>
+        <code value="SO:0000991"/>
+        <display value="genomic_DNA"/>
+      </concept>
+
+      <!-- cDNA: A DNA molecule synthesized from a mature mRNA template           -->
+      <concept>
+        <code value="SO:0000756"/>
+        <display value="cDNA"/>
+      </concept>
+
+      <!-- single_stranded_cDNA: A cDNA that is single-stranded                   -->
+      <concept>
+        <code value="SO:0000757"/>
+        <display value="single_stranded_cDNA"/>
+      </concept>
+
+      <!-- double_stranded_cDNA: A cDNA that is double-stranded                   -->
+      <concept>
+        <code value="SO:0000758"/>
+        <display value="double_stranded_cDNA"/>
+      </concept>
+
+      <!-- mitochondrial_DNA: A DNA sequence of mitochondrial origin              -->
+      <concept>
+        <code value="SO:0001032"/>
+        <display value="mitochondrial_DNA"/>
+      </concept>
+
+      <!-- ============================================================ -->
+      <!-- RNA subtypes                                                  -->
+      <!-- ============================================================ -->
+
+      <!-- mRNA: Messenger RNA; a mature transcript that is translated            -->
+      <!-- into protein. Parent: mature_transcript (SO:0000233)                   -->
+      <concept>
+        <code value="SO:0000234"/>
+        <display value="mRNA"/>
+      </concept>
+
+      <!-- rRNA: Ribosomal RNA; structural component of the ribosome.             -->
+      <!-- Parent: ncRNA (SO:0000655)                                             -->
+      <concept>
+        <code value="SO:0000252"/>
+        <display value="rRNA"/>
+      </concept>
+
+      <!-- tRNA: Transfer RNA; adaptor molecule for translation.                  -->
+      <!-- Parent: sncRNA (SO:0002247)                                            -->
+      <concept>
+        <code value="SO:0000253"/>
+        <display value="tRNA"/>
+      </concept>
+
+      <!-- snRNA: Small nuclear RNA; involved in pre-mRNA splicing.               -->
+      <!-- Parent: sncRNA (SO:0002247)                                            -->
+      <concept>
+        <code value="SO:0000274"/>
+        <display value="snRNA"/>
+      </concept>
+
+      <!-- snoRNA: Small nucleolar RNA; involved in rRNA modification.            -->
+      <!-- Parent: sncRNA (SO:0002247)                                            -->
+      <concept>
+        <code value="SO:0000275"/>
+        <display value="snoRNA"/>
+      </concept>
+
+      <!-- miRNA: MicroRNA; small regulatory RNA that silences gene expression.   -->
+      <!-- Parent: small_regulatory_ncRNA (SO:0000370)                            -->
+      <concept>
+        <code value="SO:0000276"/>
+        <display value="miRNA"/>
+      </concept>
+
+      <!-- siRNA: Small interfering RNA; mediates RNA interference.               -->
+      <!-- Parent: small_regulatory_ncRNA (SO:0000370)                            -->
+      <concept>
+        <code value="SO:0000646"/>
+        <display value="siRNA"/>
+      </concept>
+
+      <!-- lncRNA: Long non-coding RNA; ncRNA >= ~200 nt with regulatory roles.   -->
+      <!-- Parent: ncRNA (SO:0000655)                                             -->
+      <concept>
+        <code value="SO:0001877"/>
+        <display value="lncRNA"/>
+      </concept>
+
+      <!-- antisense_RNA: RNA transcribed from the antisense strand.              -->
+      <!-- Parent: ncRNA (SO:0000655)                                             -->
+      <concept>
+        <code value="SO:0000644"/>
+        <display value="antisense_RNA"/>
+      </concept>
+
+      <!-- ncRNA: Non-coding RNA; mature transcript that is not translated.       -->
+      <!-- Parent: mature_transcript (SO:0000233)                                 -->
+      <concept>
+        <code value="SO:0000655"/>
+        <display value="ncRNA"/>
+      </concept>
+
+      <!-- piRNA: PIWI-interacting RNA; involved in transposon silencing.         -->
+      <!-- Parent: small_regulatory_ncRNA (SO:0000370)                            -->
+      <concept>
+        <code value="SO:0001035"/>
+        <display value="piRNA"/>
+      </concept>
+
+    </include>
+  </compose>
+</ValueSet>

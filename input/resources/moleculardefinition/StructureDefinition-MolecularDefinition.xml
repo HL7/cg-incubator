@@ -108,24 +108,40 @@
     </element>
     <element id="MolecularDefinition.moleculeType">
       <path value="MolecularDefinition.moleculeType"/>
-      <short value="The type of molecule (e.g., DNA, RNA, amino acid)"/>
-      <definition value="The type of molecule (e.g., DNA, RNA, amino acid). This is a broad concept that refers to the general physical composition of the molecule, intended to facilitate searching and to provide domain context for profiles and instances. The terminology binding may be expanded to support additional types of molecules in the future (e.g., peptide nucleic acids, oligosaccharides)."/>
+      <short value="The type of molecule (e.g., DNA, RNA, polypeptide)"/>
+      <definition value="The broad physical class of molecule represented by this instance (e.g., DNA, RNA, polypeptide). This element provides a stable, searchable classification of the molecule and is intended to facilitate cross-system querying and to provide domain context for profiles. The terminology binding may be expanded to support additional molecule classes in the future (e.g., peptide nucleic acids, oligosaccharides)."/>
       <min value="0"/>
       <max value="1"/>
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="MolecularDefinitionMoleculeType"/>
+        </extension>
+        <strength value="required"/>
+        <description value="The broad physical class of molecule: DNA, RNA, or polypeptide. Codes are drawn from the Sequence Ontology (SO)."/>
+        <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/moleculardefinition-moleculetype"/>
+      </binding>
       <isSummary value="true"/>
     </element>
     <element id="MolecularDefinition.type">
       <path value="MolecularDefinition.type"/>
-      <short value="Classification of the molecule into types other than those defined by moleculeType"/>
-      <definition value="Classifications of an instance of the resource into arbitrary types, based on domain semantics. For example, this element could indicate that an instance of moleculeType 'RNA' could have a type of 'mRNA' or 'siRNA'."/>
+      <short value="Domain-semantic subtype classification of the molecule"/>
+      <definition value="Domain-semantic subtype classifications of this molecule instance, providing greater specificity than moleculeType. For example, an instance with moleculeType 'RNA' (SO:0000356) may have a type of 'mRNA' (SO:0000234) or 'miRNA' (SO:0000276). Multiple types may be specified. Note that RNA subtype concepts in the Sequence Ontology are not hierarchically descended from SO:0000356 (RNA); this ValueSet therefore enumerates them explicitly."/>
       <min value="0"/>
       <max value="*"/>
       <type>
         <code value="CodeableConcept"/>
       </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="MolecularDefinitionType"/>
+        </extension>
+        <strength value="extensible"/>
+        <description value="Domain-semantic subtype of the molecule (e.g., mRNA, genomic_DNA, lncRNA). Codes are drawn from a curated subset of Sequence Ontology (SO). Implementers may use additional SO codes or codes from other systems when no suitable code exists in this set."/>
+        <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/moleculardefinition-type"/>
+      </binding>
       <isSummary value="true"/>
     </element>
     <element id="MolecularDefinition.topology">
@@ -377,140 +393,38 @@
         <code value="CodeableConcept"/>
       </type>
       <isSummary value="true"/>
+      <binding>
+        <strength value="preferred"/>
+        <valueSet value="http://loinc.org/vs/LL2938-0"/>
+      </binding>
     </element>
-    <element id="MolecularDefinition.location.cytobandLocation.cytobandInterval.startCytoband">
-      <path value="MolecularDefinition.location.cytobandLocation.cytobandInterval.startCytoband"/>
+    <element id="MolecularDefinition.location.cytobandLocation.cytobandInterval.startCytoband[x]">
+      <path value="MolecularDefinition.location.cytobandLocation.cytobandInterval.startCytoband[x]"/>
       <short value="Start"/>
       <definition value="The start of this cytoband Interval."/>
       <min value="0"/>
       <max value="1"/>
       <type>
-        <code value="BackboneElement"/>
+        <code value="CodeableConcept"/>
+      </type>
+      <type>
+        <code value="string"/>
       </type>
       <isSummary value="true"/>
     </element>
-    <element id="MolecularDefinition.location.cytobandLocation.cytobandInterval.startCytoband.arm[x]">
-      <path value="MolecularDefinition.location.cytobandLocation.cytobandInterval.startCytoband.arm[x]"/>
-      <short value="Arm"/>
-      <definition value="The arm of this start interval."/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="code"/>
-      </type>
-      <type>
-        <code value="string"/>
-      </type>
-      <isSummary value="false"/>
-    </element>
-    <element id="MolecularDefinition.location.cytobandLocation.cytobandInterval.startCytoband.region[x]">
-      <path value="MolecularDefinition.location.cytobandLocation.cytobandInterval.startCytoband.region[x]"/>
-      <short value="Region"/>
-      <definition value="The region of this start interval."/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="code"/>
-      </type>
-      <type>
-        <code value="string"/>
-      </type>
-      <isSummary value="false"/>
-    </element>
-    <element id="MolecularDefinition.location.cytobandLocation.cytobandInterval.startCytoband.band[x]">
-      <path value="MolecularDefinition.location.cytobandLocation.cytobandInterval.startCytoband.band[x]"/>
-      <short value="Band"/>
-      <definition value="The band of this start interval."/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="code"/>
-      </type>
-      <type>
-        <code value="string"/>
-      </type>
-      <isSummary value="false"/>
-    </element>
-    <element id="MolecularDefinition.location.cytobandLocation.cytobandInterval.startCytoband.subBand[x]">
-      <path value="MolecularDefinition.location.cytobandLocation.cytobandInterval.startCytoband.subBand[x]"/>
-      <short value="Sub-band"/>
-      <definition value="The sub-band of this start interval."/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="code"/>
-      </type>
-      <type>
-        <code value="string"/>
-      </type>
-      <isSummary value="false"/>
-    </element>
-    <element id="MolecularDefinition.location.cytobandLocation.cytobandInterval.endCytoband">
-      <path value="MolecularDefinition.location.cytobandLocation.cytobandInterval.endCytoband"/>
+    <element id="MolecularDefinition.location.cytobandLocation.cytobandInterval.endCytoband[x]">
+      <path value="MolecularDefinition.location.cytobandLocation.cytobandInterval.endCytoband[x]"/>
       <short value="End"/>
       <definition value="The end of this cytoband Interval."/>
       <min value="0"/>
       <max value="1"/>
       <type>
-        <code value="BackboneElement"/>
+        <code value="CodeableConcept"/>
+      </type>
+      <type>
+        <code value="string"/>
       </type>
       <isSummary value="true"/>
-    </element>
-    <element id="MolecularDefinition.location.cytobandLocation.cytobandInterval.endCytoband.arm[x]">
-      <path value="MolecularDefinition.location.cytobandLocation.cytobandInterval.endCytoband.arm[x]"/>
-      <short value="Arm"/>
-      <definition value="The arm of this end interval."/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="code"/>
-      </type>
-      <type>
-        <code value="string"/>
-      </type>
-      <isSummary value="false"/>
-    </element>
-    <element id="MolecularDefinition.location.cytobandLocation.cytobandInterval.endCytoband.region[x]">
-      <path value="MolecularDefinition.location.cytobandLocation.cytobandInterval.endCytoband.region[x]"/>
-      <short value="Region"/>
-      <definition value="The region of this end interval."/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="code"/>
-      </type>
-      <type>
-        <code value="string"/>
-      </type>
-      <isSummary value="false"/>
-    </element>
-    <element id="MolecularDefinition.location.cytobandLocation.cytobandInterval.endCytoband.band[x]">
-      <path value="MolecularDefinition.location.cytobandLocation.cytobandInterval.endCytoband.band[x]"/>
-      <short value="Band"/>
-      <definition value="The band of this end interval."/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="code"/>
-      </type>
-      <type>
-        <code value="string"/>
-      </type>
-      <isSummary value="false"/>
-    </element>
-    <element id="MolecularDefinition.location.cytobandLocation.cytobandInterval.endCytoband.subBand[x]">
-      <path value="MolecularDefinition.location.cytobandLocation.cytobandInterval.endCytoband.subBand[x]"/>
-      <short value="SuBand"/>
-      <definition value="The sub-band of this end interval."/>
-      <min value="0"/>
-      <max value="1"/>
-      <type>
-        <code value="code"/>
-      </type>
-      <type>
-        <code value="string"/>
-      </type>
-      <isSummary value="false"/>
     </element>
     <element id="MolecularDefinition.representation">
       <path value="MolecularDefinition.representation"/>

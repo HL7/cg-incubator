@@ -71,6 +71,7 @@
 <artifact id="MolecularDefinition/example-haplotype2" key="MolecularDefinition-example-haplotype2" name="Molecular Definition Haplotype 2"/>
 <artifact id="CodeSystem/moleculardefinition-literal-encoding" key="CodeSystem-moleculardefinition-literal-encoding" name="Molecular Definition Literal Encoding"/>
 <artifact id="ValueSet/moleculardefinition-literal-encoding" key="ValueSet-moleculardefinition-literal-encoding" name="Molecular Definition Literal Encoding VS"/>
+<artifact id="ValueSet/moleculardefinition-moleculetype" key="ValueSet-moleculardefinition-moleculetype" name="Molecular Definition Molecule Type"/>
 <artifact id="List/MolecularDefinition-operations" key="List-MolecularDefinition-operations" name="Molecular Definition Operations List"/>
 <artifact id="MolecularDefinition/example-replaced-sequence" key="MolecularDefinition-example-replaced-sequence" name="Molecular Definition Replaced Sequence"/>
 <artifact id="MolecularDefinition/example-replacement-sequence" key="MolecularDefinition-example-replacement-sequence" name="Molecular Definition Replacement Sequence"/>
@@ -107,6 +108,7 @@
 <artifact id="MolecularDefinition/example-sequence-t" key="MolecularDefinition-example-sequence-t" name="Molecular Definition Sequence T"/>
 <artifact id="MolecularDefinition/example-starting-sequence-2b-extracted" key="MolecularDefinition-example-starting-sequence-2b-extracted" name="Molecular Definition Starting Sequence 2B Extracted"/>
 <artifact id="MolecularDefinition/example-starting-sequence-2b-relative" key="MolecularDefinition-example-starting-sequence-2b-relative" name="Molecular Definition Starting Sequence 2B Relative"/>
+<artifact id="ValueSet/moleculardefinition-type" key="ValueSet-moleculardefinition-type" name="Molecular Definition Type"/>
 <artifact id="MolecularDefinition/example-variation1" key="MolecularDefinition-example-variation1" name="Molecular Definition Variation 1"/>
 <artifact id="MolecularDefinition/example-variation-cyp2c19-1015-spdi" key="MolecularDefinition-example-variation-cyp2c19-1015-spdi" name="Molecular Definition Variation CYP2C19 1015 SPDI"/>
 <artifact id="MolecularDefinition/example-variation-cyp2c19-1015-vrs" key="MolecularDefinition-example-variation-cyp2c19-1015-vrs" name="Molecular Definition Variation CYP2C19 1015 VRS"/>
