@@ -1,0 +1,203 @@
+<GenomicStudy xmlns="http://hl7.org/fhir" resourceDefinition="http://hl7.org/fhir/StructureDefinition/GenomicStudy|0.1.0-ci-build">
+    <id value="example-pgx"/>
+    <!--
+        Pharmacogenomics (PGX) targeted gene panel study.
+        Germline sequencing of CYP2C19, CYP2C9, and VKORC1 protein-coding and
+        exon-splicing regions to guide drug dosing decisions.
+        Demonstrates: coded gene regionsStudied (HGNC), metrics (sequencing coverage),
+        germline genomicSourceClass.
+    -->
+
+    <identifier>
+        <use value="temp"/>
+        <system value="http://example.org/identifiers/genomicstudies"/>
+        <value value="urn:uuid:pgx-study-0001"/>
+    </identifier>
+    <status value="available"/>
+    <type>
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="405825005"/>
+            <display value="Molecular genetic test (procedure)"/>
+        </coding>
+    </type>
+    <subject>
+        <reference value="Patient/pgxPatient"/>
+    </subject>
+    <startDate value="2021-01-01"/>
+    <basedOn>
+        <reference value="ServiceRequest/pgxServiceRequest"/>
+    </basedOn>
+    <interpreter>
+        <reference value="Practitioner/practitioner02"/>
+    </interpreter>
+    <reason>
+        <concept>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="182992009"/>
+                <display value="Treatment completed (situation)"/>
+            </coding>
+        </concept>
+    </reason>
+    <note>
+        <text value="PGX panel ordered prior to initiating warfarin therapy to guide dosing based on CYP2C9 and VKORC1 genotype."/>
+    </note>
+    <description value="Pharmacogenomics sequencing panel targeting protein-coding and exon-splicing regions of CYP2C19, CYP2C9, and VKORC1 to inform drug selection and dosing."/>
+
+    <analysis>
+        <identifier>
+            <use value="temp"/>
+            <system value="http://example.org/identifiers/genomicAnalyses"/>
+            <value value="urn:uuid:pgx-analysis-0001"/>
+        </identifier>
+        <methodType>
+            <coding>
+                <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-methodtype"/>
+                <code value="sequence-analysis-of-the-entire-coding-region"/>
+                <display value="Sequence analysis of the entire coding region"/>
+            </coding>
+        </methodType>
+        <changeType>
+            <coding>
+                <system value="http://www.sequenceontology.org"/>
+                <code value="SO:0001483"/>
+                <display value="SNV"/>
+            </coding>
+        </changeType>
+        <changeType>
+            <coding>
+                <system value="http://www.sequenceontology.org"/>
+                <code value="SO:0001019"/>
+                <display value="copy_number_variation"/>
+            </coding>
+        </changeType>
+        <genomeBuild>
+            <coding>
+                <system value="http://loinc.org"/>
+                <code value="LA26806-2"/>
+                <display value="GRCh38"/>
+            </coding>
+        </genomeBuild>
+        <genomicSourceClass>
+            <coding>
+                <system value="http://loinc.org"/>
+                <code value="LA6683-2"/>
+                <display value="Germline"/>
+            </coding>
+        </genomicSourceClass>
+        <instantiatesUri value="https://www.pharmgkb.org/"/>
+        <title value="PGX Targeted Gene Panel - Sequencing Analysis"/>
+        <specimen>
+            <reference value="Specimen/pgxSpecimen"/>
+        </specimen>
+        <date value="2021-01-01T01:01:10-06:00"/>
+        <note>
+            <text value="Sequencing coverage of 100% achieved across all targeted regions."/>
+        </note>
+        <metrics>
+            <sequencingCoverage>
+                <value value="100"/>
+                <unit value="%"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="%"/>
+            </sequencingCoverage>
+            <description value="100% coverage of protein-coding and exon-splicing regions for all three genes."/>
+        </metrics>
+        <!-- regionsStudied expressed as HGNC coded gene list (CodeableReference.concept) -->
+        <regionsStudied>
+            <concept>
+                <coding>
+                    <system value="http://www.genenames.org"/>
+                    <code value="HGNC:2621"/>
+                    <display value="CYP2C19"/>
+                </coding>
+                <text value="protein-coding and exon-splicing regions of CYP2C19"/>
+            </concept>
+        </regionsStudied>
+        <regionsStudied>
+            <concept>
+                <coding>
+                    <system value="http://www.genenames.org"/>
+                    <code value="HGNC:2623"/>
+                    <display value="CYP2C9"/>
+                </coding>
+                <text value="protein-coding and exon-splicing regions of CYP2C9"/>
+            </concept>
+        </regionsStudied>
+        <regionsStudied>
+            <concept>
+                <coding>
+                    <system value="http://www.genenames.org"/>
+                    <code value="HGNC:23663"/>
+                    <display value="VKORC1"/>
+                </coding>
+                <text value="protein-coding and exon-splicing regions of VKORC1"/>
+            </concept>
+        </regionsStudied>
+        <!-- regionsCalled: same genes, all achieved sufficient coverage to be called -->
+        <regionsCalled>
+            <concept>
+                <coding>
+                    <system value="http://www.genenames.org"/>
+                    <code value="HGNC:2621"/>
+                    <display value="CYP2C19"/>
+                </coding>
+            </concept>
+        </regionsCalled>
+        <regionsCalled>
+            <concept>
+                <coding>
+                    <system value="http://www.genenames.org"/>
+                    <code value="HGNC:2623"/>
+                    <display value="CYP2C9"/>
+                </coding>
+            </concept>
+        </regionsCalled>
+        <regionsCalled>
+            <concept>
+                <coding>
+                    <system value="http://www.genenames.org"/>
+                    <code value="HGNC:23663"/>
+                    <display value="VKORC1"/>
+                </coding>
+            </concept>
+        </regionsCalled>
+        <output>
+            <file>
+                <reference value="DocumentReference/pgxVCFfile"/>
+            </file>
+            <type>
+                <coding>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-dataformat"/>
+                    <code value="vcf"/>
+                    <display value="VCF"/>
+                </coding>
+            </type>
+        </output>
+        <performer>
+            <actor>
+                <reference value="Practitioner/practitioner02"/>
+            </actor>
+            <role>
+                <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+                    <code value="PRF"/>
+                    <display value="Performer"/>
+                </coding>
+            </role>
+        </performer>
+        <device>
+            <device>
+                <reference value="Device/NGS-device"/>
+            </device>
+            <function>
+                <coding>
+                    <system value="http://loinc.org"/>
+                    <code value="LA26398-0"/>
+                    <display value="Sequencing"/>
+                </coding>
+            </function>
+        </device>
+    </analysis>
+</GenomicStudy>

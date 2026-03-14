@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocumentReference xmlns="http://hl7.org/fhir">
+  <id value="pgxVCFfile"/>
+  <identifier>
+    <system value="http://example.org/identifiers/files"/>
+    <value value="pgx-vcf-001"/>
+  </identifier>
+  <status value="current"/>
+  <docStatus value="final"/>
+  <description value="VCF file containing PGX variant calls for CYP2C19, CYP2C9, and VKORC1"/>
+  <securityLabel>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-Confidentiality"/>
+      <code value="R"/>
+      <display value="Restricted"/>
+    </coding>
+  </securityLabel>
+  <content>
+    <attachment>
+      <contentType value="text/plain"/>
+      <url value="http://example.org/files/pgx-variants.vcf"/>
+      <title value="pgx-variants.vcf"/>
+    </attachment>
+  </content>
+</DocumentReference>

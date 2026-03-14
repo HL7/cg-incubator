@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Specimen xmlns="http://hl7.org/fhir">
+  <id value="tumorSpecimen"/>
+  <identifier>
+    <system value="http://example.org/identifiers/specimens"/>
+    <value value="222333"/>
+  </identifier>
+  <status value="available"/>
+  <type>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="122610009"/>
+      <display value="Specimen from lung obtained by biopsy (specimen)"/>
+    </coding>
+  </type>
+  <subject>
+    <reference value="Patient/somaticPatient"/>
+  </subject>
+  <receivedTime value="2023-01-23T01:01:01Z"/>
+  <collection>
+    <collectedDateTime value="2023-01-20T09:00:00Z"/>
+    <method>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="129314006"/>
+        <display value="Biopsy - action"/>
+      </coding>
+    </method>
+  </collection>
+  <note>
+    <text value="FFPE tumor tissue. Tumor cellularity: 20%."/>
+  </note>
+</Specimen>

@@ -1,4 +1,4 @@
-<GenomicStudy xmlns="http://hl7.org/fhir">
+<GenomicStudy xmlns="http://hl7.org/fhir" resourceDefinition="http://hl7.org/fhir/StructureDefinition/GenomicStudy|0.1.0-ci-build">
  <!-- from Resource: id, meta, implicitRules, and language -->
  <!-- from DomainResource: text, contained, extension, and modifierExtension -->
     <id value="example-lungMass"/>
@@ -43,9 +43,9 @@
         </concept>
     </reason>
     <note>
-        <text value="For technical reasons, PIK3CB was deemed uncallable."/>
+        <text value="For technical reasons, PIK3CA was deemed uncallable."/>
     </note>
-    <description value="Whole exome sequencing of lung biopsy. 300 genes are examined for simple variants (SNV, MNV, InDel), and 170 genes are also examined for CNVs. For technical reasons, PIK3CB was deemed uncallable."/> <!-- 0..1 Description of the genomic study -->
+    <description value="Whole exome sequencing of lung biopsy. 300 genes are examined for simple variants (SNV, MNV, InDel), and 170 genes are also examined for CNVs. For technical reasons, PIK3CA was deemed uncallable."/> <!-- 0..1 Description of the genomic study -->
     <analysis>
         <identifier>
             <use value="official"/>
@@ -87,20 +87,55 @@
                 <display value="GRCh38"/>
             </coding>
         </genomeBuild>
+        <genomicSourceClass>
+            <coding>
+                <system value="http://loinc.org"/>
+                <code value="LA6684-0"/>
+                <display value="Somatic"/>
+            </coding>
+        </genomicSourceClass>
         <title value="Simple variant analysis"/><!-- 0..1 Name of the analysis event (human friendly) -->
         <specimen>
             <reference value="Specimen/genomicSpecimen"/>
         </specimen>
         <date value="2019-03-01T01:01:10-06:00"/><!-- 0..1 The date of the analysis event -->
         <note>
-            <text value="For technical reasons, PIK3CB was deemed uncallable using this method."/>
+            <text value="For technical reasons, PIK3CA was deemed uncallable using this method."/>
         </note>
-        <!-- <regionsStudied>
-            <reference value="DocumentReference/WES_FullSequencedRegion_GRCh38"/>
-        </regionsStudied> -->
-        <!-- <regionsCalled>
-            <reference value="DocumentReference/SimpleVariantAnalysis_called"/>
-        </regionsCalled> -->
+        <metrics>
+            <readDepth>
+                <value value="120"/>
+                <unit value="x"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="1"/>
+            </readDepth>
+            <sequencingCoverage>
+                <value value="98"/>
+                <unit value="%"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="%"/>
+            </sequencingCoverage>
+            <description value="120x average read depth with 98% coverage of target regions."/>
+        </metrics>
+        <regionsStudied>
+            <reference>
+                <reference value="DocumentReference/WES-FullSequencedRegion-GRCh38"/>
+            </reference>
+        </regionsStudied>
+        <regionsCalled>
+            <reference>
+                <reference value="DocumentReference/SimpleVariantAnalysis-called"/>
+            </reference>
+        </regionsCalled>
+        <regionsUncalled>
+            <concept>
+                <coding>
+                    <system value="http://www.genenames.org"/>
+                    <code value="HGNC:8975"/>
+                    <display value="PIK3CA"/>
+                </coding>
+            </concept>
+        </regionsUncalled>
         <output>  <!-- 0..* outputs for the analysis event -->
             <!-- <file>
                 <reference value="DocumentReference/genomicVCFfile_simple"/>
@@ -165,20 +200,40 @@
                 <display value="GRCh38"/>
             </coding>
         </genomeBuild>
+        <genomicSourceClass>
+            <coding>
+                <system value="http://loinc.org"/>
+                <code value="LA6684-0"/>
+                <display value="Somatic"/>
+            </coding>
+        </genomicSourceClass>
         <title value="CNV analysis"/><!-- 0..1 Name of the analysis event (human friendly) -->
         <specimen>
             <reference value="Specimen/genomicSpecimen"/>
         </specimen>
         <date value="2019-03-01T01:01:10-06:00"/><!-- 0..1 The date of the analysis event -->
         <note>
-            <text value="For technical reasons, PIK3CB was deemed uncallable using this method."/>
+            <text value="For technical reasons, PIK3CA was deemed uncallable using this method."/>
         </note>
-        <!-- <regionsStudied>
-            <reference value="DocumentReference/WES_FullSequencedRegion_GRCh38"/>
-        </regionsStudied> -->
-        <!-- <regionsCalled>
-            <reference value="DocumentReference/CNVAnalysis_called"/>
-        </regionsCalled> -->
+        <regionsStudied>
+            <reference>
+                <reference value="DocumentReference/WES-FullSequencedRegion-GRCh38"/>
+            </reference>
+        </regionsStudied>
+        <regionsCalled>
+            <reference>
+                <reference value="DocumentReference/CNVAnalysis-called"/>
+            </reference>
+        </regionsCalled>
+        <regionsUncalled>
+            <concept>
+                <coding>
+                    <system value="http://www.genenames.org"/>
+                    <code value="HGNC:8975"/>
+                    <display value="PIK3CA"/>
+                </coding>
+            </concept>
+        </regionsUncalled>
         <output>  <!-- 0..* Inputs for the analysis event -->
             <!-- <file>
                 <reference value="DocumentReference/genomicVCFfile_cnv"/>

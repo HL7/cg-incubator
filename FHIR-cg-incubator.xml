@@ -43,6 +43,8 @@
 <artifact id="CodeSystem/genomicstudy-methodtype" key="CodeSystem-genomicstudy-methodtype" name="Genomic Study Method Type"/>
 <artifact id="ValueSet/genomicstudy-methodtype" key="ValueSet-genomicstudy-methodtype" name="Genomic Study Method Type VS"/>
 <artifact id="List/GenomicStudy-operations" key="List-GenomicStudy-operations" name="Genomic Study Operations List"/>
+<artifact id="GenomicStudy/example-pgx" key="GenomicStudy-example-pgx" name="Genomic Study PGx Example"/>
+<artifact id="GenomicStudy/example-somaticStudy" key="GenomicStudy-example-somaticStudy" name="Genomic Study Somatic Study Example"/>
 <artifact id="CodeSystem/genomicstudy-status" key="CodeSystem-genomicstudy-status" name="Genomic Study Status"/>
 <artifact id="ValueSet/genomicstudy-status" key="ValueSet-genomicstudy-status" name="Genomic Study Status VS"/>
 <artifact id="GenomicStudy/example-trio2" key="GenomicStudy-example-trio2" name="Genomic Study Trio Example"/>
@@ -53,6 +55,7 @@
 <artifact id="SearchParameter/GenomicStudy-patient" key="SearchParameter-GenomicStudy-patient" name="GenomicStudyPatientSearchParam"/>
 <artifact id="SearchParameter/GenomicStudy-status" key="SearchParameter-GenomicStudy-status" name="GenomicStudyStatusSearchParam"/>
 <artifact id="SearchParameter/GenomicStudy-subject" key="SearchParameter-GenomicStudy-subject" name="GenomicStudySubjectSearchParam"/>
+<artifact id="ValueSet/hgnc-vs" key="ValueSet-hgnc-vs" name="HUGO Gene Nomenclature Committee Gene Names (HGNC)"/>
 <artifact id="StructureDefinition/MolecularDefinition" key="StructureDefinition-MolecularDefinition" name="Molecular Definition"/>
 <artifact id="MolecularDefinition/example-allele1" key="MolecularDefinition-example-allele1" name="Molecular Definition Allele 1"/>
 <artifact id="MolecularDefinition/example-allele2" key="MolecularDefinition-example-allele2" name="Molecular Definition Allele 2"/>
@@ -142,12 +145,19 @@
 <artifact id="Patient/mother" key="Patient-mother" name="Mother Patient"/>
 <artifact id="Specimen/specimenMother" key="Specimen-specimenMother" name="Mother Specimen"/>
 <artifact id="Device/NGS-device" key="Device-NGS-device" name="NGS Sequencing Device"/>
+<artifact id="Specimen/normalSpecimen" key="Specimen-normalSpecimen" name="Normal Specimen"/>
+<artifact id="Patient/pgxPatient" key="Patient-pgxPatient" name="PGx Patient"/>
+<artifact id="ServiceRequest/pgxServiceRequest" key="ServiceRequest-pgxServiceRequest" name="PGx Service Request"/>
+<artifact id="Specimen/pgxSpecimen" key="Specimen-pgxSpecimen" name="PGx Specimen"/>
 <artifact id="Practitioner/practitioner01" key="Practitioner-practitioner01" name="Practitioner 01"/>
 <artifact id="Practitioner/practitioner02" key="Practitioner-practitioner02" name="Practitioner 02"/>
 <artifact id="Patient/proband" key="Patient-proband" name="Proband Patient"/>
 <artifact id="Specimen/specimenProband" key="Specimen-specimenProband" name="Proband Specimen"/>
 <artifact id="DocumentReference/SimpleVariantAnalysis-called" key="DocumentReference-SimpleVariantAnalysis-called" name="SimpleVariantAnalysis-called"/>
+<artifact id="Patient/somaticPatient" key="Patient-somaticPatient" name="Somatic Patient"/>
+<artifact id="ServiceRequest/somaticServiceRequest" key="ServiceRequest-somaticServiceRequest" name="Somatic Service Request"/>
 <artifact id="Device/Triodenovo-SW" key="Device-Triodenovo-SW" name="Triodenovo Software Device"/>
+<artifact id="Specimen/tumorSpecimen" key="Specimen-tumorSpecimen" name="Tumor Specimen"/>
 <artifact id="DocumentReference/WES-FullSequencedRegion-GRCh38" key="DocumentReference-WES-FullSequencedRegion-GRCh38" name="WES-FullSequencedRegion-GRCh38"/>
 <artifact id="DocumentReference/example-genomicFile-af1961831-url" key="DocumentReference-example-genomicFile-af1961831-url" name="example-genomicFile-af1961831-url"/>
 <artifact id="DocumentReference/example-genomicFile-cyp2c19-accession" key="DocumentReference-example-genomicFile-cyp2c19-accession" name="example-genomicFile-cyp2c19-accession"/>
@@ -172,6 +182,11 @@
 <artifact id="DocumentReference/genomicVCFfile" key="DocumentReference-genomicVCFfile" name="genomicVCFfile"/>
 <artifact id="DocumentReference/genomicVCFfile-cnv" key="DocumentReference-genomicVCFfile-cnv" name="genomicVCFfile-cnv"/>
 <artifact id="DocumentReference/genomicVCFfile-simple" key="DocumentReference-genomicVCFfile-simple" name="genomicVCFfile-simple"/>
+<artifact id="DocumentReference/pgxVCFfile" key="DocumentReference-pgxVCFfile" name="pgxVCFfile"/>
+<artifact id="DocumentReference/somaticCalledRegions" key="DocumentReference-somaticCalledRegions" name="somaticCalledRegions"/>
+<artifact id="DocumentReference/somaticFusionFile" key="DocumentReference-somaticFusionFile" name="somaticFusionFile"/>
+<artifact id="DocumentReference/somaticRNAstudiedRegions" key="DocumentReference-somaticRNAstudiedRegions" name="somaticRNAstudiedRegions"/>
+<artifact id="DocumentReference/somaticVCFfile" key="DocumentReference-somaticVCFfile" name="somaticVCFfile"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>

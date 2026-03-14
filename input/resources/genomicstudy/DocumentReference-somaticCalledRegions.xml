@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocumentReference xmlns="http://hl7.org/fhir">
+  <id value="somaticCalledRegions"/>
+  <identifier>
+    <system value="http://example.org/identifiers/files"/>
+    <value value="somatic-called-001"/>
+  </identifier>
+  <status value="current"/>
+  <docStatus value="preliminary"/>
+  <description value="BED file describing regions that passed coverage and quality thresholds in the tumor/normal DNA analysis"/>
+  <securityLabel>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-Confidentiality"/>
+      <code value="R"/>
+      <display value="Restricted"/>
+    </coding>
+  </securityLabel>
+  <content>
+    <attachment>
+      <contentType value="text/plain"/>
+      <url value="http://example.org/files/somatic-called-regions.bed"/>
+      <title value="somatic-called-regions.bed"/>
+    </attachment>
+  </content>
+</DocumentReference>

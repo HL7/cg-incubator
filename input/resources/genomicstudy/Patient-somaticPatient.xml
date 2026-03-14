@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patient xmlns="http://hl7.org/fhir">
+  <id value="somaticPatient"/>
+  <identifier>
+    <use value="temp"/>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="MR"/>
+        <display value="Medical record number"/>
+      </coding>
+    </type>
+    <system value="http://example.org/identifiers/persons"/>
+    <value value="1234567"/>
+    <period>
+      <start value="2021-01-01"/>
+    </period>
+    <assigner>
+      <display value="General Hospital"/>
+    </assigner>
+  </identifier>
+  <active value="true"/>
+  <name>
+    <use value="official"/>
+    <family value="Hamsburg"/>
+    <given value="Junior"/>
+  </name>
+  <gender value="male"/>
+  <birthDate value="1987-09-01"/>
+</Patient>

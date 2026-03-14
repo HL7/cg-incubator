@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MolecularDefinition xmlns="http://hl7.org/fhir">
+<MolecularDefinition xmlns="http://hl7.org/fhir" resourceDefinition="http://hl7.org/fhir/StructureDefinition/MolecularDefinition|0.1.0-ci-build">
     <id value="example-variation-cyp2c19-1015-spdi"/>
 
     <moleculeType>

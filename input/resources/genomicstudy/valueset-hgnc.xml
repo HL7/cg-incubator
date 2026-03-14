@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="hgnc-vs"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="cg"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="trial-use"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1"/>
+  </extension>
+  <url value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/hgnc-vs"/>
+  <version value="0.1.0-ci-build"/>
+  <name value="HGNCVS"/>
+  <title value="HUGO Gene Nomenclature Committee Gene Names (HGNC)"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-03-14"/>
+  <publisher value="HL7 International / Clinical Genomics"/>
+  <contact>
+    <name value="HL7 International / Clinical Genomics"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/clingenomics"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="clingenomics@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <description value="This value set includes all HGNC Codes, which includes multiple code systems. The preferred system URL is http://www.genenames.org per the HL7 Terminology (THO) NamingSystem definition (https://terminology.hl7.org/NamingSystem-v3-hgnc.html). Gene IDs are used as CodeableConcepts, which must be sent with the HGNC gene ID including the prefix 'HGNC:' as the code and the HGNC 'gene symbol' as display. CAUTION: HGNC also indexes gene groups by numeric ID (without a prefix), and older systems may send HGNC gene IDs without the prefix, so care must be taken to confirm alignment. The genegroup code system is separately included to draw attention to this ambiguity and potential error."/>
+  <copyright value="HGNC data are freely available for academic and commercial use. See https://www.genenames.org/about/"/>
+  <compose>
+    <include>
+      <system value="http://www.genenames.org"/>
+    </include>
+    <include>
+      <system value="http://www.genenames.org/genegroup"/>
+    </include>
+  </compose>
+</ValueSet>

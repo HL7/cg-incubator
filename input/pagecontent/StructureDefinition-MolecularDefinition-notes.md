@@ -181,7 +181,23 @@ The literal element can be used to represent a sequence as a string of character
 
 #### Code
 
-The code element can be used to represent a sequence by reference, using an accession number that identifies a specific sequence within a repository. The code, system, and version elements of the Coding data type can be used to fully disambiguate one code from another. Note that the code element does not guarantee that the repository is publicly accessible or that the sequence referenced by the code can be retrieved, it only specifies the sequence using a code that could be exchanged. Thus, this element could be used for both a public sequence repository (e.g., GenBank) and a private database (e.g., biobank).
+The `representation.code` element (`0..*`) can be used to identify a molecular entity by a coded accession or identifier from a known sequence database. The `0..*` cardinality allows the same molecule to be cross-referenced using identifiers from multiple databases within a single representation.
+
+The `system`, `code`, and `display` elements of the `Coding` datatype should be used to fully identify the sequence: `system` carries the database URI, `code` carries the accession identifier, and `display` carries a human-readable description.
+
+The most common use case in clinical genomics is a **versioned NCBI RefSeq accession** (system: `http://www.ncbi.nlm.nih.gov/refseq`). Versioned accessions (those including a dot-version suffix, e.g., `NC_000010.11`) are strongly preferred over unversioned ones to ensure stable, unambiguous identification of a specific sequence version. Commonly used accession types:
+
+| Prefix | Type | Example |
+|--------|------|---------|
+| `NC_` | Chromosomal genomic | `NC_000010.11` |
+| `NG_` | RefSeqGene | `NG_008384.3` |
+| `NM_` | mRNA transcript | `NM_000769.4` |
+| `NR_` | Non-coding RNA | `NR_024540.1` |
+| `NP_` | Protein | `NP_000760.1` |
+
+Other recognized sequence identifier systems include INSDC/GenBank (`http://insdc.org`), Ensembl (`http://www.ensembl.org`), and LRG (`http://www.lrg-sequence.org`). An example binding documenting these systems is defined in the [Terminology Considerations](terminology-considerations.html) page.
+
+Note that `representation.code` does not guarantee that the repository is publicly accessible or that the referenced sequence can be retrieved — it only identifies the sequence using a code that can be exchanged. A private biobank accession that follows a known system scheme is a valid use of this element. For publicly accessible files, prefer `representation.resolvable` (which implies the content can be retrieved).
 
 #### Resolvable
 
@@ -238,13 +254,15 @@ The MolecularDefinition resource is an abstract resource that provides building 
 
 #### Slicing the Representation Element
 
-The representation backbone element provides a series of methods for specifying the value of a sequence. As a result, the entire structure can be used any time a sequence is referenced, and this is accomplished by slicing. For example, the current sequence-based profiles of MolecularDefinition slice the representation element as follows:
+The `representation` backbone element provides a series of methods for specifying the value of a sequence. As a result, the entire structure can be used any time a sequence is referenced, and this is accomplished by slicing on `representation.focus`. The `focus` element uses a `required` binding to the `MolecularDefinitionRepresentationFocus` CodeSystem; its four codes classify the role of each representation slice.
 
-| Profile | Cardinality | Focus (slice) | Semantic meaning |
-|---------|-------------|---------------|-----------------|
-| Sequence | 1..1 | Primary Sequence | The primary sequence of the molecule |
-| Allele | 1..1 | Allele | The sequence of the Allele at the specified Location |
-| Allele | 0..1 | Context | The sequence of the contextual sequence at the specified Location |
-| Variation | 1..1 | Reference | The sequence defined as the reference allele (at the specified Location) |
-| Variation | 1..1 | Alternate | The sequence defined as the alternate allele (at the specified Location) |
-| Variation | 0..1 | Context | The sequence of the contextual sequence at the specified Location |
+The current sequence-based profiles of MolecularDefinition define representation slices as follows:
+
+| Profile | Cardinality | `representation.focus` code | Semantic meaning |
+|---------|-------------|------------------------------|-----------------|
+| Sequence | 1..1 | *(none — focus omitted)* | The primary sequence of the molecule |
+| Allele | 1..1 | `allele-state` | The sequence of the allele at the specified location |
+| Allele | 0..1 | `context-state` | The surrounding genomic context at the specified location |
+| Variation | 1..1 | `reference-state` | The sequence defined as the reference allele |
+| Variation | 1..1 | `alternative-state` | The sequence defined as the alternate allele |
+| Variation | 0..1 | `context-state` | The surrounding genomic context at the specified location |

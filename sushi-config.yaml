@@ -71,6 +71,12 @@ resources:
   GenomicStudy/example-trio2:
     name: Genomic Study Trio Example
     description: Genomic Study Trio Example
+  GenomicStudy/example-pgx:
+    name: Genomic Study PGx Example
+    description: Genomic Study PGx Example
+  GenomicStudy/example-somaticStudy:
+    name: Genomic Study Somatic Study Example
+    description: Genomic Study Somatic Study Example
   List/GenomicStudy-examples:
     name: Genomic Study Examples List
     description: Genomic Study Examples List
@@ -308,6 +314,12 @@ resources:
   Patient/proband:
     name: Proband Patient
     description: Proband Patient
+  Patient/pgxPatient:
+    name: PGx Patient
+    description: PGx Patient
+  Patient/somaticPatient:
+    name: Somatic Patient
+    description: Somatic Patient
   Practitioner/practitioner01:
     name: Practitioner 01
     description: Practitioner 01
@@ -341,6 +353,12 @@ resources:
   ServiceRequest/genomicSRProband:
     name: Genomic Service Request Proband
     description: Genomic Service Request Proband
+  ServiceRequest/pgxServiceRequest:
+    name: PGx Service Request
+    description: PGx Service Request
+  ServiceRequest/somaticServiceRequest:
+    name: Somatic Service Request
+    description: Somatic Service Request
   Specimen/denovo-1:
     name: De Novo Specimen 1
     description: De Novo Specimen 1
@@ -362,6 +380,15 @@ resources:
   Specimen/specimenProband:
     name: Proband Specimen
     description: Proband Specimen
+  Specimen/normalSpecimen:
+    name: Normal Specimen
+    description: Normal Specimen
+  Specimen/pgxSpecimen:
+    name: PGx Specimen
+    description: PGx Specimen
+  Specimen/tumorSpecimen:
+    name: Tumor Specimen
+    description: Tumor Specimen
 
 # these are the pages that will be included in your IG, you can add more as needed
 pages:

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceRequest xmlns="http://hl7.org/fhir">
+  <id value="pgxServiceRequest"/>
+  <identifier>
+    <system value="http://example.org/identifiers/servicerequests"/>
+    <value value="pgx-sr-001"/>
+  </identifier>
+  <status value="active"/>
+  <intent value="original-order"/>
+  <code>
+    <concept>
+      <text value="PGX sequencing panel"/>
+    </concept>
+  </code>
+  <subject>
+    <reference value="Patient/pgxPatient"/>
+  </subject>
+  <requester>
+    <reference value="Practitioner/practitioner01"/>
+  </requester>
+  <reason>
+    <concept>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="182992009"/>
+        <display value="Treatment completed (situation)"/>
+      </coding>
+    </concept>
+  </reason>
+</ServiceRequest>

@@ -41,6 +41,30 @@
   </entry>
   <entry>
     <extension url="http://hl7.org/fhir/build/StructureDefinition/description">
+      <valueString value="GenomicStudy - Pharmacogenomics (PGX) panel"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/title">
+      <valueString value="genomicstudy-example-pgx"/>
+    </extension>
+    <item>
+      <reference value="GenomicStudy/example-pgx"/>
+      <display value="General"/>
+    </item>
+  </entry>
+  <entry>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/description">
+      <valueString value="GenomicStudy - Somatic tumor/normal cancer panel"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/title">
+      <valueString value="genomicstudy-example-somaticStudy"/>
+    </extension>
+    <item>
+      <reference value="GenomicStudy/example-somaticStudy"/>
+      <display value="General"/>
+    </item>
+  </entry>
+  <entry>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/description">
       <valueString value="DocumentReference - CNV Analysis - called"/>
     </extension>
     <extension url="http://hl7.org/fhir/build/StructureDefinition/title">
@@ -554,6 +578,154 @@
     </extension>
     <item>
       <reference value="Specimen/genomicSpecimen"/>
+      <display value="General"/>
+    </item>
+  </entry>
+
+  <!-- PGX example supporting resources -->
+  <entry>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/description">
+      <valueString value="Patient - PGX Patient (Adam B. Everyman)"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/title">
+      <valueString value="Patient-pgxPatient"/>
+    </extension>
+    <item>
+      <reference value="Patient/pgxPatient"/>
+      <display value="General"/>
+    </item>
+  </entry>
+  <entry>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/description">
+      <valueString value="Specimen - PGX blood specimen"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/title">
+      <valueString value="Specimen-pgxSpecimen"/>
+    </extension>
+    <item>
+      <reference value="Specimen/pgxSpecimen"/>
+      <display value="General"/>
+    </item>
+  </entry>
+  <entry>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/description">
+      <valueString value="ServiceRequest - PGX panel service request"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/title">
+      <valueString value="ServiceRequest-pgxServiceRequest"/>
+    </extension>
+    <item>
+      <reference value="ServiceRequest/pgxServiceRequest"/>
+      <display value="General"/>
+    </item>
+  </entry>
+  <entry>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/description">
+      <valueString value="DocumentReference - PGX VCF output file"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/title">
+      <valueString value="DocumentReference-pgxVCFfile"/>
+    </extension>
+    <item>
+      <reference value="DocumentReference/pgxVCFfile"/>
+      <display value="General"/>
+    </item>
+  </entry>
+
+  <!-- Somatic study supporting resources -->
+  <entry>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/description">
+      <valueString value="Patient - Somatic cancer patient (Junior Hamsburg)"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/title">
+      <valueString value="Patient-somaticPatient"/>
+    </extension>
+    <item>
+      <reference value="Patient/somaticPatient"/>
+      <display value="General"/>
+    </item>
+  </entry>
+  <entry>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/description">
+      <valueString value="Specimen - Tumor biopsy (FFPE lung)"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/title">
+      <valueString value="Specimen-tumorSpecimen"/>
+    </extension>
+    <item>
+      <reference value="Specimen/tumorSpecimen"/>
+      <display value="General"/>
+    </item>
+  </entry>
+  <entry>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/description">
+      <valueString value="Specimen - Matched normal blood specimen"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/title">
+      <valueString value="Specimen-normalSpecimen"/>
+    </extension>
+    <item>
+      <reference value="Specimen/normalSpecimen"/>
+      <display value="General"/>
+    </item>
+  </entry>
+  <entry>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/description">
+      <valueString value="ServiceRequest - Somatic cancer panel service request"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/title">
+      <valueString value="ServiceRequest-somaticServiceRequest"/>
+    </extension>
+    <item>
+      <reference value="ServiceRequest/somaticServiceRequest"/>
+      <display value="General"/>
+    </item>
+  </entry>
+  <entry>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/description">
+      <valueString value="DocumentReference - Somatic DNA VCF output file"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/title">
+      <valueString value="DocumentReference-somaticVCFfile"/>
+    </extension>
+    <item>
+      <reference value="DocumentReference/somaticVCFfile"/>
+      <display value="General"/>
+    </item>
+  </entry>
+  <entry>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/description">
+      <valueString value="DocumentReference - Somatic called regions BED file"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/title">
+      <valueString value="DocumentReference-somaticCalledRegions"/>
+    </extension>
+    <item>
+      <reference value="DocumentReference/somaticCalledRegions"/>
+      <display value="General"/>
+    </item>
+  </entry>
+  <entry>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/description">
+      <valueString value="DocumentReference - Somatic RNA studied regions BED file"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/title">
+      <valueString value="DocumentReference-somaticRNAstudiedRegions"/>
+    </extension>
+    <item>
+      <reference value="DocumentReference/somaticRNAstudiedRegions"/>
+      <display value="General"/>
+    </item>
+  </entry>
+  <entry>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/description">
+      <valueString value="DocumentReference - Somatic RNA fusions/transcript variants VCF"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/build/StructureDefinition/title">
+      <valueString value="DocumentReference-somaticFusionFile"/>
+    </extension>
+    <item>
+      <reference value="DocumentReference/somaticFusionFile"/>
       <display value="General"/>
     </item>
   </entry>

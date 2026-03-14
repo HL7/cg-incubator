@@ -1,0 +1,313 @@
+<GenomicStudy xmlns="http://hl7.org/fhir" resourceDefinition="http://hl7.org/fhir/StructureDefinition/GenomicStudy|0.1.0-ci-build">
+    <id value="example-somaticStudy"/>
+    <!--
+        Comprehensive somatic cancer 700-gene panel study.
+        Two analyses performed on the same tumor biopsy:
+          1. DNA panel (tumor + normal paired) - SNV, MNV, InDel, CNV, coding regions
+          2. RNA panel - gene fusions and transcript variants
+        Demonstrates: somatic genomicSourceClass, paired tumor/normal specimens,
+        mixed regionsStudied (BED file + coded HGNC genes), regionsUncallable (BED file),
+        RNA analysis with fusion change types, two distinct analyses within one study.
+    -->
+
+    <identifier>
+        <use value="temp"/>
+        <system value="http://example.org/identifiers/genomicstudies"/>
+        <value value="urn:uuid:somatic-study-0001"/>
+    </identifier>
+    <status value="available"/>
+    <type>
+        <text value="My Test Cancer 700 Gene Panel"/>
+    </type>
+    <subject>
+        <reference value="Patient/somaticPatient"/>
+    </subject>
+    <startDate value="2023-02-02"/>
+    <basedOn>
+        <reference value="ServiceRequest/somaticServiceRequest"/>
+    </basedOn>
+    <interpreter>
+        <reference value="Practitioner/practitioner02"/>
+    </interpreter>
+    <reason>
+        <concept>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="424993006"/>
+                <display value="Adenocarcinoma of lung, stage IV (disorder)"/>
+            </coding>
+        </concept>
+    </reason>
+    <note>
+        <text value="I. Assay Overview: The Genomic Cancer Testing Assay is a comprehensive molecular examination designed to detect and quantify specific DNA and RNA alterations associated with malignancies. The test incorporates Next Generation Sequencing (NGS) technology to profile tumor samples. II. Target Genes and Biomarkers: This assay evaluates an extensive panel of cancer-related genes. Sample Type: Formalin-fixed, paraffin-embedded (FFPE) tumor tissue. Sequencing Platform: Illumina-based NGS technology. Sensitivity: Detects variants with a mutant allele frequency (MAF) as low as 5%. Results are delivered within 10-14 working days from sample receipt."/>
+    </note>
+    <description value="Comprehensive somatic genomic profiling of lung adenocarcinoma (stage IV) using a 700-gene panel. Includes paired tumor/normal DNA sequencing for SNV, MNV, InDel and CNV detection, and RNA sequencing for gene fusion and transcript variant detection."/>
+
+    <!-- Analysis 1: DNA Tumor/Normal Paired Sequencing -->
+    <analysis>
+        <identifier>
+            <use value="temp"/>
+            <system value="http://example.org/identifiers/genomicAnalyses"/>
+            <value value="urn:uuid:somatic-analysis-dna-0001"/>
+        </identifier>
+        <methodType>
+            <coding>
+                <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-methodtype"/>
+                <code value="sequence-analysis-of-the-entire-coding-region"/>
+                <display value="Sequence analysis of the entire coding region"/>
+            </coding>
+        </methodType>
+        <methodType>
+            <coding>
+                <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-methodtype"/>
+                <code value="deletion-duplication-analysis"/>
+                <display value="Deletion/duplication analysis"/>
+            </coding>
+        </methodType>
+        <changeType>
+            <coding>
+                <system value="http://www.sequenceontology.org"/>
+                <code value="SO:0001483"/>
+                <display value="SNV"/>
+            </coding>
+        </changeType>
+        <changeType>
+            <coding>
+                <system value="http://www.sequenceontology.org"/>
+                <code value="SO:0002007"/>
+                <display value="MNV"/>
+            </coding>
+        </changeType>
+        <changeType>
+            <coding>
+                <system value="http://www.sequenceontology.org"/>
+                <code value="SO:1000032"/>
+                <display value="delins"/>
+            </coding>
+        </changeType>
+        <changeType>
+            <coding>
+                <system value="http://www.sequenceontology.org"/>
+                <code value="SO:0001019"/>
+                <display value="copy_number_variation"/>
+            </coding>
+        </changeType>
+        <genomeBuild>
+            <coding>
+                <system value="http://loinc.org"/>
+                <code value="LA26806-2"/>
+                <display value="GRCh38"/>
+            </coding>
+        </genomeBuild>
+        <genomicSourceClass>
+            <coding>
+                <system value="http://loinc.org"/>
+                <code value="LA6684-0"/>
+                <display value="Somatic"/>
+            </coding>
+        </genomicSourceClass>
+        <title value="Tumor/Normal Paired DNA Sequencing - SNV, MNV, InDel, CNV"/>
+        <!-- focus identifies the patient whose cancer is being profiled -->
+        <focus>
+            <reference value="Patient/somaticPatient"/>
+        </focus>
+        <!-- Two specimens: tumor biopsy (FFPE) and matched normal (blood) -->
+        <specimen>
+            <reference value="Specimen/tumorSpecimen"/>
+        </specimen>
+        <specimen>
+            <reference value="Specimen/normalSpecimen"/>
+        </specimen>
+        <date value="2023-02-02T01:01:10-06:00"/>
+        <note>
+            <text value="For technical reasons, BCR gene was deemed uncallable."/>
+        </note>
+        <metrics>
+            <readDepth>
+                <value value="500"/>
+                <unit value="x"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="1"/>
+            </readDepth>
+            <sequencingCoverage>
+                <value value="97"/>
+                <unit value="%"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="%"/>
+            </sequencingCoverage>
+            <description value="500x average tumor read depth, 97% target region coverage. Minimum allele frequency threshold 5%."/>
+        </metrics>
+        <!-- regionsStudied: mixed - BED file for full panel + individual coded HGNC genes -->
+        <regionsStudied>
+            <reference>
+                <reference value="DocumentReference/WES-FullSequencedRegion-GRCh38"/>
+            </reference>
+        </regionsStudied>
+        <regionsStudied>
+            <concept>
+                <coding>
+                    <system value="http://www.genenames.org"/>
+                    <code value="HGNC:76"/>
+                    <display value="ABL1"/>
+                </coding>
+            </concept>
+        </regionsStudied>
+        <regionsStudied>
+            <concept>
+                <coding>
+                    <system value="http://www.genenames.org"/>
+                    <code value="HGNC:427"/>
+                    <display value="ALK"/>
+                </coding>
+            </concept>
+        </regionsStudied>
+        <regionsStudied>
+            <concept>
+                <coding>
+                    <system value="http://www.genenames.org"/>
+                    <code value="HGNC:583"/>
+                    <display value="APC"/>
+                </coding>
+            </concept>
+        </regionsStudied>
+        <!-- regionsCalled: all callable regions expressed as a BED file -->
+        <regionsCalled>
+            <reference>
+                <reference value="DocumentReference/somaticCalledRegions"/>
+            </reference>
+        </regionsCalled>
+        <!-- regionsUncallable: BCR gene uncallable due to low coverage -->
+        <regionsUncalled>
+            <concept>
+                <coding>
+                    <system value="http://www.genenames.org"/>
+                    <code value="HGNC:1014"/>
+                    <display value="BCR"/>
+                </coding>
+            </concept>
+        </regionsUncalled>
+        <output>
+            <file>
+                <reference value="DocumentReference/somaticVCFfile"/>
+            </file>
+            <type>
+                <coding>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-dataformat"/>
+                    <code value="vcf"/>
+                    <display value="VCF"/>
+                </coding>
+            </type>
+        </output>
+        <performer>
+            <actor>
+                <reference value="Practitioner/practitioner02"/>
+            </actor>
+            <role>
+                <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+                    <code value="PRF"/>
+                    <display value="Performer"/>
+                </coding>
+            </role>
+        </performer>
+        <device>
+            <device>
+                <reference value="Device/NGS-device"/>
+            </device>
+            <function>
+                <coding>
+                    <system value="http://loinc.org"/>
+                    <code value="LA26398-0"/>
+                    <display value="Sequencing"/>
+                </coding>
+            </function>
+        </device>
+    </analysis>
+
+    <!-- Analysis 2: RNA Sequencing for Gene Fusions and Transcript Variants -->
+    <analysis>
+        <identifier>
+            <use value="temp"/>
+            <system value="http://example.org/identifiers/genomicAnalyses"/>
+            <value value="urn:uuid:somatic-analysis-rna-0001"/>
+        </identifier>
+        <methodType>
+            <coding>
+                <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-methodtype"/>
+                <code value="rna-analysis"/>
+                <display value="RNA analysis"/>
+            </coding>
+        </methodType>
+        <changeType>
+            <coding>
+                <system value="http://www.sequenceontology.org"/>
+                <code value="SO:0001565"/>
+                <display value="gene_fusion"/>
+            </coding>
+        </changeType>
+        <changeType>
+            <coding>
+                <system value="http://www.sequenceontology.org"/>
+                <code value="SO:0001576"/>
+                <display value="transcript_variant"/>
+            </coding>
+        </changeType>
+        <genomicSourceClass>
+            <coding>
+                <system value="http://loinc.org"/>
+                <code value="LA6684-0"/>
+                <display value="Somatic"/>
+            </coding>
+        </genomicSourceClass>
+        <title value="Tumor RNA Sequencing - Gene Fusions and Transcript Variants"/>
+        <!-- RNA analysis uses tumor biopsy only (not matched normal) -->
+        <focus>
+            <reference value="Patient/somaticPatient"/>
+        </focus>
+        <specimen>
+            <reference value="Specimen/tumorSpecimen"/>
+        </specimen>
+        <date value="2023-02-02T01:01:10-06:00"/>
+        <regionsStudied>
+            <reference>
+                <reference value="DocumentReference/somaticRNAstudiedRegions"/>
+            </reference>
+        </regionsStudied>
+        <output>
+            <file>
+                <reference value="DocumentReference/somaticFusionFile"/>
+            </file>
+            <type>
+                <coding>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-dataformat"/>
+                    <code value="vcf"/>
+                    <display value="VCF"/>
+                </coding>
+            </type>
+        </output>
+        <performer>
+            <actor>
+                <reference value="Practitioner/practitioner02"/>
+            </actor>
+            <role>
+                <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+                    <code value="PRF"/>
+                    <display value="Performer"/>
+                </coding>
+            </role>
+        </performer>
+        <device>
+            <device>
+                <reference value="Device/NGS-device"/>
+            </device>
+            <function>
+                <coding>
+                    <system value="http://loinc.org"/>
+                    <code value="LA26398-0"/>
+                    <display value="Sequencing"/>
+                </coding>
+            </function>
+        </device>
+    </analysis>
+</GenomicStudy>

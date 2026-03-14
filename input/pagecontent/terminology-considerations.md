@@ -288,6 +288,131 @@ The dominant use case is a versioned **NCBI RefSeq accession**, consistent with 
 
 ---
 
+## GenomicStudy: Terminology Bindings
+
+GenomicStudy carries a wider range of terminology bindings than MolecularDefinition, reflecting its role as a study-level metadata resource that bridges clinical lab systems, bioinformatics pipelines, and clinical reporting. The full binding inventory is:
+
+| Element | Strength | ValueSet / System |
+|---|---|---|
+| `status` | **required** | `genomicstudy-status` (incubator CS) |
+| `type` | **example** | `genomicstudy-type` (incubator CS) |
+| `analysis.methodType` | **preferred** | `genomicstudy-methodtype` (incubator CS) |
+| `analysis.changeType` | **preferred** | `genomicstudy-changetype` (incubator CS, SO-based) |
+| `analysis.genomeBuild` | **extensible** | LOINC [LL1040-6](https://loinc.org/LL1040-6/) |
+| `analysis.genomicSourceClass` | **extensible** | LOINC [LL378-1](https://loinc.org/LL378-1/) |
+| `analysis.regionsStudied` | **extensible** | [hgnc-vs](https://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs) (GRIG) |
+| `analysis.regionsCalled` | **extensible** | [hgnc-vs](https://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs) (GRIG) |
+| `analysis.regionsUncalled` | **extensible** | [hgnc-vs](https://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs) (GRIG) |
+| `analysis.input.type` | **example** | `genomicstudy-dataformat` (incubator CS) |
+| `analysis.output.type` | **example** | `genomicstudy-dataformat` (incubator CS) |
+
+---
+
+### `status` — Required Binding (incubator CodeSystem)
+
+`status` is a modifier element. It must be `required` so that systems can reliably interpret whether a study record is valid (`available`), provisional (`registered`), voided (`entered-in-error`), or withdrawn (`cancelled`). Only systems that can enumerate and validate the full set can safely process GenomicStudy resources.
+
+---
+
+### `type` — Example Binding (incubator CodeSystem)
+
+`type` is free-form in clinical practice — laboratory study types vary widely across institutions and assay generations. An `example` binding provides guidance without constraining implementation. Feedback from ballot reviewers is expected to inform whether a `preferred` binding is appropriate in a future version.
+
+---
+
+### `analysis.methodType` — Preferred Binding (incubator CodeSystem)
+
+The `methodType` ValueSet draws from [NCBI-GTR major method category, method category, and primary methodology](https://www.ncbi.nlm.nih.gov/gtr/) lists, supplemented by CG Workgroup discussion. The binding was upgraded from `example` to **preferred** to signal to implementers that this is the expected code space and to encourage convergence, while stopping short of `required` because:
+
+- The GTR list is large (~50+ codes) and not all are relevant to all institutions.
+- New assay technologies emerge regularly (e.g., long-read sequencing, optical genome mapping) and the ValueSet evolves accordingly.
+- Different laboratories may use proprietary method classifications that do not map cleanly to GTR terms.
+
+**Design note — relationship to GRIG STU3:** The genomics-reporting IG STU3 uses the CodeSystem `http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-method-type-cs`. The incubator uses `http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-methodtype`. The codes are intended to be equivalent — the incubator CS was established before the cross-IG alignment was settled. Future normalization toward a single canonical CS URL should be tracked.
+
+---
+
+### `analysis.changeType` — Preferred Binding (incubator CodeSystem, SO-based)
+
+The `changeType` ValueSet enumerates variant consequence types drawn from [Sequence Ontology](http://www.sequenceontology.org/). The binding was upgraded from `example` to **preferred** for the same rationale as `methodType`.
+
+**Why Sequence Ontology here?** Variant consequence classification is SO's core domain. The dominant codes (SNV, MNV, delins, CNV, gene_fusion, transcript_variant) have stable, widely recognized SO identifiers. Using SO avoids coining incubator-local codes for concepts with established SO terms, consistent with general guidance in the [_General Guidance_](#general-guidance-for-future-bindings) section.
+
+**Why not SNOMED CT?** SNOMED CT has mutation type concepts, but they are less granular at the molecular level, carry licensing encumbrances in some jurisdictions, and are less consistently used in bioinformatics toolchains than SO.
+
+---
+
+### `analysis.genomeBuild` — Extensible Binding (LOINC LL1040-6)
+
+This reuses the same LOINC answer list used throughout the genomics-reporting IG for `component[reference-sequence-assembly]`. Cross-IG consistency is the primary rationale. The binding is **extensible** because:
+
+- New assemblies (e.g., T2T-CHM13v2.0) may not yet appear in LL1040-6.
+- Non-human organisms use entirely different assembly naming conventions.
+
+---
+
+### `analysis.genomicSourceClass` — Extensible Binding (LOINC LL378-1)
+
+`genomicSourceClass` records whether the genome analyzed is germline (`LA6683-2`) or somatic (`LA6684-0`). This binding is directly aligned with `component[genomic-source-class]` in the genomics-reporting IG, which uses the same LOINC answer list.
+
+**Why LOINC, not a local code?** The LOINC answer list LL378-1 is already the de facto standard for this field in clinical genomics FHIR exchange, used consistently in GRIG and elsewhere. Reusing it preserves cross-IG interoperability and allows a downstream DiagnosticReport to correlate the study-level source class with observation-level source class without code translation.
+
+**Why extensible, not required?** LL378-1 contains a small number of additional codes (e.g., `LA6685-7` Prenatal, `LA10429-1` Fetal) that may be relevant in specific clinical contexts. `extensible` permits use of the full answer list while still accommodating edge cases.
+
+---
+
+### `analysis.regionsStudied`, `regionsCalled`, `regionsUncalled` — Extensible Binding (HGNC ValueSet, from GRIG)
+
+These three elements share an identical `extensible` binding to the [hgnc-vs](https://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs) ValueSet, which is defined and maintained in the genomics-reporting IG.
+
+#### Datatype: CodeableReference
+
+All three use the `CodeableReference(DocumentReference)` datatype, which has two sides:
+
+- **`concept`** — a `CodeableConcept` bound to the HGNC ValueSet, for expressing a specific gene by its HGNC identifier.
+- **`reference`** — a `Reference(DocumentReference)`, for pointing to a BED file describing genomic coordinates.
+
+Both sides may appear within the same analysis, in separate element instances. The binding applies only to the `concept` side; the `reference` side is constrained to `DocumentReference` by the type profile.
+
+#### Why HGNC for the concept side?
+
+[HGNC](https://www.genenames.org/) (HUGO Gene Nomenclature Committee) is the authoritative source of approved human gene symbols and identifiers. Using HGNC gene identifiers (e.g., `HGNC:76` for ABL1) is clearly preferable to using gene symbols alone (which are subject to change) or NCBI Gene IDs (which are database-internal identifiers). HGNC identifiers are stable, publicly available, and already used throughout the genomics-reporting IG for gene-quantified observations.
+
+#### Cross-IG dependency
+
+The `hgnc-vs` ValueSet is defined at `http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs` — it is owned by GRIG, not the incubator. This creates a cross-IG dependency. Implementations using the incubator IG must therefore also include the genomics-reporting package as a dependency for terminology resolution. This dependency is declared in `sushi-config.yaml`.
+
+If this dependency becomes undesirable in a future release (e.g., version skew between the two IGs), the incubator could mint its own equivalent HGNC ValueSet. For now, reuse is preferred to avoid duplication.
+
+#### `regionsUncalled` — new element
+
+`regionsUncalled` has no equivalent in the FHIR R5/R6 core GenomicStudy resource but was present as an extension in the GRIG STU3 Procedure backport profiles. It is introduced here as a first-class element to explicitly document gaps in analytical coverage. Uncallable regions should always be recorded when known, to allow clinical consumers to distinguish a true negative result from an untested region — a distinction critical for variant interpretation.
+
+---
+
+### `analysis.input.type` and `analysis.output.type` — Example Binding (incubator CodeSystem)
+
+File format codes (BAM, CRAM, FASTQ, VCF, MAF, BED, etc.) are drawn from the [Integrative Genomics Viewer (IGV) documentation](https://software.broadinstitute.org/software/igv/FileFormats) by Broad Institute. The binding is **example** because:
+
+- New bioinformatics file formats emerge regularly.
+- Different pipeline toolchains may use proprietary or extended format variants not covered by IGV's list.
+- The primary use of this element is human-readable labelling of file references, not machine-executable dispatch logic.
+
+---
+
+### Unbound terminology-bearing elements
+
+Two elements in GenomicStudy carry `CodeableConcept` values but have no formal ValueSet binding in the current StructureDefinition:
+
+| Element | Suggested External System | Notes |
+|---|---|---|
+| `analysis.performer.role` | HL7 v3 ParticipationType (`http://terminology.hl7.org/CodeSystem/v3-ParticipationType`) | Code `PRF` (Performer) used in examples. A binding to `http://hl7.org/fhir/ValueSet/performer-role` is a candidate for a future version. |
+| `analysis.device.function` | LOINC | Code `LA26398-0` (Sequencing) used in examples. No standard VS for device function exists in the CG domain; a future binding should be considered once common patterns stabilize. |
+
+Implementers should use `http://terminology.hl7.org/CodeSystem/v3-ParticipationType` for performer roles and LOINC for device function in the interim.
+
+---
+
 ## General Guidance for Future Bindings
 
 1. **Prefer an established external vocabulary before coining new CG codes.** Check SO for molecular/sequence feature concepts, LOINC for clinical lab and observation concepts, and NCBI systems (Taxonomy, RefSeq, Assembly) for biological entity identifiers. Only define a local CG CodeSystem when no suitable external vocabulary covers the concept — as done for `coordinateSystem.origin` and `coordinateSystem.normalizationMethod`.

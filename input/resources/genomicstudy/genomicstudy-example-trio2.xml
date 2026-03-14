@@ -1,4 +1,4 @@
-<GenomicStudy xmlns="http://hl7.org/fhir">
+<GenomicStudy xmlns="http://hl7.org/fhir" resourceDefinition="http://hl7.org/fhir/StructureDefinition/GenomicStudy|0.1.0-ci-build">
     <!-- from Resource: id, meta, implicitRules, and language -->
     <id value="example-trio2"/>
 
@@ -58,6 +58,13 @@
             <value value="urn:uuid:1111-1111-1111-1112"/>
         </identifier>
         <!-- <instantiatesCanonical>0..1 canonical(PlanDefinition) The defined protocol that describes the analysis</instantiatesCanonical> -->
+        <genomicSourceClass>
+            <coding>
+                <system value="http://loinc.org"/>
+                <code value="LA6683-2"/>
+                <display value="Germline"/>
+            </coding>
+        </genomicSourceClass>
         <instantiatesUri value="https://pubmed.ncbi.nlm.nih.gov/33927380/"/>
         <title value="Maternal Sequence Variation Detection Using Next Generation Sequencing"/><!-- 0..1 Name of the analysis event (human friendly) -->
         <focus>
@@ -107,6 +114,13 @@
             <value value="urn:uuid:1111-1111-1111-1113"/>
         </identifier>
         <!-- <instantiatesCanonical>0..1 canonical(PlanDefinition) The defined protocol that describes the analysis</instantiatesCanonical> -->
+        <genomicSourceClass>
+            <coding>
+                <system value="http://loinc.org"/>
+                <code value="LA6683-2"/>
+                <display value="Germline"/>
+            </coding>
+        </genomicSourceClass>
         <instantiatesUri value="https://pubmed.ncbi.nlm.nih.gov/33927380/"/>
         <title value="Paternal Sequence Variation Detection Using Next Generation Sequencing"/>
         <focus>

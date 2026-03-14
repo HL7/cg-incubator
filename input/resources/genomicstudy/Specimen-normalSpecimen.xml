@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Specimen xmlns="http://hl7.org/fhir">
+  <id value="normalSpecimen"/>
+  <identifier>
+    <system value="http://example.org/identifiers/specimens"/>
+    <value value="444555"/>
+  </identifier>
+  <status value="available"/>
+  <type>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="119297000"/>
+      <display value="Blood specimen (specimen)"/>
+    </coding>
+  </type>
+  <subject>
+    <reference value="Patient/somaticPatient"/>
+  </subject>
+  <receivedTime value="2023-01-23T01:01:01Z"/>
+  <collection>
+    <collectedDateTime value="2023-01-20T09:30:00Z"/>
+    <method>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="28520004"/>
+        <display value="Venipuncture for blood test (procedure)"/>
+      </coding>
+    </method>
+  </collection>
+  <note>
+    <text value="Matched normal blood specimen for tumor/normal paired sequencing."/>
+  </note>
+</Specimen>

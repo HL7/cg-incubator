@@ -327,7 +327,7 @@
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="GenomicStudyMethodType"/>
         </extension>
-        <strength value="example"/>
+        <strength value="preferred"/>
         <description value="The method type of the GenomicStudy analysis."/>
         <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/genomicstudy-methodtype"/>
       </binding>
@@ -345,7 +345,7 @@
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="GenomicStudyChangeType"/>
         </extension>
-        <strength value="example"/>
+        <strength value="preferred"/>
         <description value="The change type relevant to GenomicStudy analysis."/>
         <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/genomicstudy-changetype"/>
       </binding>
@@ -369,6 +369,27 @@
         <strength value="extensible"/>
         <description value="Human reference sequence NCBI build ID"/>
         <valueSet value="http://loinc.org/vs/LL1040-6"/>
+      </binding>
+    </element>
+    <element id="GenomicStudy.analysis.genomicSourceClass">
+      <path value="GenomicStudy.analysis.genomicSourceClass"/>
+      <short value="The genomic source class of the specimens used in the analysis (e.g., somatic, germline)"/>
+      <definition value="The genomic source class of the specimens used in the analysis, e.g., somatic or germline."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="GenomicStudyGenomicSourceClass"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/build/StructureDefinition/copyright">
+          <valueString value="Copyright © 2022 Regenstrief Institute, Inc. All Rights Reserved."/>
+        </extension>
+        <strength value="extensible"/>
+        <description value="The genomic source class (e.g., somatic, germline) of the specimens being analyzed."/>
+        <valueSet value="http://loinc.org/vs/LL378-1"/>
       </binding>
     </element>
     <element id="GenomicStudy.analysis.instantiatesCanonical">
@@ -449,6 +470,50 @@
         <code value="Annotation"/>
       </type>
     </element>
+    <element id="GenomicStudy.analysis.metrics">
+      <path value="GenomicStudy.analysis.metrics"/>
+      <short value="Quality metrics for the analysis"/>
+      <definition value="High-level quality metrics about the sequencing analysis that was performed."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+    </element>
+    <element id="GenomicStudy.analysis.metrics.readDepth">
+      <path value="GenomicStudy.analysis.metrics.readDepth"/>
+      <short value="Average read depth (e.g., 30x, 100x)"/>
+      <definition value="The average read depth (number of reads for a position) for the sequencing analysis."/>
+      <comment value="This value is typically represented with an 'x' after the number (30x). Share the quantity value only."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Quantity"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/SimpleQuantity"/>
+      </type>
+    </element>
+    <element id="GenomicStudy.analysis.metrics.sequencingCoverage">
+      <path value="GenomicStudy.analysis.metrics.sequencingCoverage"/>
+      <short value="Percentage of studied regions sequenced (e.g., 95%)"/>
+      <definition value="The percentage of the studied regions that were sequenced."/>
+      <comment value="This value is typically represented with a '%' after the number (95%). Share the quantity value only."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Quantity"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/SimpleQuantity"/>
+      </type>
+    </element>
+    <element id="GenomicStudy.analysis.metrics.description">
+      <path value="GenomicStudy.analysis.metrics.description"/>
+      <short value="Freetext coverage metrics description"/>
+      <definition value="Freetext description of the coverage and quality metrics for the sequencing analysis."/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
     <element id="GenomicStudy.analysis.protocolPerformed">
       <path value="GenomicStudy.analysis.protocolPerformed"/>
       <short value="The protocol that was performed for the analysis event"/>
@@ -463,27 +528,66 @@
     </element>
     <element id="GenomicStudy.analysis.regionsStudied">
       <path value="GenomicStudy.analysis.regionsStudied"/>
-      <short value="The genomic regions to be studied in the analysis (BED file)"/>
-      <definition value="The genomic regions to be studied in the analysis (BED file)."/>
+      <short value="Genomic regions studied in the analysis (coded genes or BED file)"/>
+      <definition value="The genomic regions studied in the analysis. May be expressed as a coded list of HGNC gene symbols or as a reference to a BED file (DocumentReference)."/>
+      <comment value="For coded genes, use the HGNC gene symbol as display text and the HGNC gene ID as the code. If no HGNC code has been issued, use NCBI gene IDs. If region details beyond a coded gene list are needed, reference a BED file via DocumentReference."/>
+      <requirements value="Shared as a coded list of HGNC gene symbols or a BED file."/>
       <min value="0"/>
       <max value="*"/>
       <type>
-        <code value="Reference"/>
+        <code value="CodeableReference"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/DocumentReference"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
       </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="HGNCGeneNames"/>
+        </extension>
+        <strength value="extensible"/>
+        <description value="HGNC gene names for coded gene lists."/>
+        <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/hgnc-vs"/>
+      </binding>
     </element>
     <element id="GenomicStudy.analysis.regionsCalled">
       <path value="GenomicStudy.analysis.regionsCalled"/>
-      <short value="Genomic regions actually called in the analysis event (BED file)"/>
-      <definition value="Genomic regions actually called in the analysis event (BED file)."/>
+      <short value="Genomic regions called in the analysis (coded genes or BED file)"/>
+      <definition value="The genomic regions studied in the analysis with sufficient coverage and quality to be called. May be expressed as a coded list of HGNC gene symbols or as a reference to a BED file (DocumentReference)."/>
+      <comment value="For coded genes, use the HGNC gene symbol as display text and the HGNC gene ID as the code. If no HGNC code has been issued, use NCBI gene IDs. If region details beyond a coded gene list are needed, reference a BED file via DocumentReference."/>
+      <requirements value="Shared as a coded list of HGNC gene symbols or a BED file."/>
       <min value="0"/>
       <max value="*"/>
       <type>
-        <code value="Reference"/>
+        <code value="CodeableReference"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/DocumentReference"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
       </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="HGNCGeneNames"/>
+        </extension>
+        <strength value="extensible"/>
+        <description value="HGNC gene names for coded gene lists."/>
+        <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/hgnc-vs"/>
+      </binding>
+    </element>
+    <element id="GenomicStudy.analysis.regionsUncalled">
+      <path value="GenomicStudy.analysis.regionsUncalled"/>
+      <short value="Genomic regions studied but deemed uncallable (coded genes or BED file)"/>
+      <definition value="The genomic regions that were studied in the analysis but were deemed uncallable, typically due to low coverage or other quality issues. May be expressed as a coded list of HGNC gene symbols or as a reference to a BED file (DocumentReference)."/>
+      <comment value="For coded genes, use the HGNC gene symbol as display text and the HGNC gene ID as the code. If no HGNC code has been issued, use NCBI gene IDs. If region details beyond a coded gene list are needed, reference a BED file via DocumentReference."/>
+      <requirements value="Shared as a coded list of HGNC gene symbols or a BED file."/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="CodeableReference"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/DocumentReference"/>
+      </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="HGNCGeneNames"/>
+        </extension>
+        <strength value="extensible"/>
+        <description value="HGNC gene names for coded gene lists."/>
+        <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/hgnc-vs"/>
+      </binding>
     </element>
     <element id="GenomicStudy.analysis.input">
       <path value="GenomicStudy.analysis.input"/>

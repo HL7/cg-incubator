@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceRequest xmlns="http://hl7.org/fhir">
+  <id value="somaticServiceRequest"/>
+  <identifier>
+    <system value="http://example.org/identifiers/servicerequests"/>
+    <value value="somatic-sr-001"/>
+  </identifier>
+  <status value="active"/>
+  <intent value="original-order"/>
+  <code>
+    <concept>
+      <text value="My Test Cancer 700 Gene Panel"/>
+    </concept>
+  </code>
+  <subject>
+    <reference value="Patient/somaticPatient"/>
+  </subject>
+  <requester>
+    <reference value="Practitioner/practitioner01"/>
+  </requester>
+  <reason>
+    <concept>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="424993006"/>
+        <display value="Adenocarcinoma of lung, stage IV (disorder)"/>
+      </coding>
+    </concept>
+  </reason>
+</ServiceRequest>
