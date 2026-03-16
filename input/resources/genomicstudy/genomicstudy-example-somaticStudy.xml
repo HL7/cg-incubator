@@ -137,7 +137,7 @@
             </sequencingCoverage>
             <description value="500x average tumor read depth, 97% target region coverage. Minimum allele frequency threshold 5%."/>
         </metrics>
-        <!-- genomicRegion: studied = full 700-gene panel BED file plus key individual HGNC genes -->
+        <!-- genomicRegion: studied = full 700-gene panel expressed as a BED file -->
         <genomicRegion>
             <type>
                 <coding>
@@ -150,33 +150,6 @@
                 <reference>
                     <reference value="DocumentReference/WES-FullSequencedRegion-GRCh38"/>
                 </reference>
-            </locus>
-            <locus>
-                <concept>
-                    <coding>
-                        <system value="http://www.genenames.org"/>
-                        <code value="HGNC:76"/>
-                        <display value="ABL1"/>
-                    </coding>
-                </concept>
-            </locus>
-            <locus>
-                <concept>
-                    <coding>
-                        <system value="http://www.genenames.org"/>
-                        <code value="HGNC:427"/>
-                        <display value="ALK"/>
-                    </coding>
-                </concept>
-            </locus>
-            <locus>
-                <concept>
-                    <coding>
-                        <system value="http://www.genenames.org"/>
-                        <code value="HGNC:583"/>
-                        <display value="APC"/>
-                    </coding>
-                </concept>
             </locus>
         </genomicRegion>
         <!-- genomicRegion: called = all callable regions expressed as a BED file -->

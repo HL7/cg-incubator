@@ -42,7 +42,7 @@
       <value value="http://www.hl7.org/Special/committees/clingenomics"/>
     </telecom>
   </contact>
-  <description value="Example codes for representing a molecular entity by accession identifier. Codes are drawn from well-known molecular sequence databases: NCBI RefSeq (http://www.ncbi.nlm.nih.gov/refseq), INSDC/GenBank (http://insdc.org), Ensembl (http://www.ensembl.org), and LRG (http://www.lrg-sequence.org). This binding is example strength — implementations are not constrained to these systems and may use any appropriate molecular sequence identifier system."/>
+  <description value="Example codes for representing a molecular entity by accession identifier. Codes are drawn from molecular sequence databases registered in HL7 terminology: NCBI RefSeq (http://www.ncbi.nlm.nih.gov/refseq) and LRG (http://www.lrg-sequence.org). This binding is example strength — implementations are not constrained to these systems and may use any appropriate molecular sequence identifier system."/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -53,12 +53,6 @@
   <compose>
     <include>
       <system value="http://www.ncbi.nlm.nih.gov/refseq"/>
-    </include>
-    <include>
-      <system value="http://insdc.org"/>
-    </include>
-    <include>
-      <system value="http://www.ensembl.org"/>
     </include>
     <include>
       <system value="http://www.lrg-sequence.org"/>

@@ -65,7 +65,6 @@
                 <display value="Germline"/>
             </coding>
         </genomicSourceClass>
-        <instantiatesUri value="https://pubmed.ncbi.nlm.nih.gov/33927380/"/>
         <title value="Maternal Sequence Variation Detection Using Next Generation Sequencing"/><!-- 0..1 Name of the analysis event (human friendly) -->
         <focus>
             <reference value="Patient/mother"/>
@@ -121,7 +120,6 @@
                 <display value="Germline"/>
             </coding>
         </genomicSourceClass>
-        <instantiatesUri value="https://pubmed.ncbi.nlm.nih.gov/33927380/"/>
         <title value="Paternal Sequence Variation Detection Using Next Generation Sequencing"/>
         <focus>
             <reference value="Patient/father"/>
@@ -170,7 +168,6 @@
             <value value="urn:uuid:1111-1111-1111-1114"/>
         </identifier>
         <!-- <instantiatesCanonical>0..1 canonical(PlanDefinition) The defined protocol that describes the analysis</instantiatesCanonical> -->
-        <instantiatesUri value="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6885382/"/>
         <title value="De Novo Mutation Detection and Interpretation"/>
         <focus>
             <reference value="Patient/denovoChild"/>

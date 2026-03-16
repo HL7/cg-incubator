@@ -86,7 +86,6 @@
                 <display value="Germline"/>
             </coding>
         </genomicSourceClass>
-        <instantiatesUri value="https://www.pharmgkb.org/"/>
         <title value="PGX Targeted Gene Panel - Sequencing Analysis"/>
         <specimen>
             <reference value="Specimen/pgxSpecimen"/>

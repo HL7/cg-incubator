@@ -174,14 +174,23 @@ The `genomeAssembly` backbone element is nested under `location.cytobandLocation
 
 `organism` identifies the species whose genome the assembly represents. The authoritative vocabulary is the [NCBI Taxonomy database](https://www.ncbi.nlm.nih.gov/taxonomy), which assigns a numeric taxon ID to every organism with curated sequence data. The FHIR system URI is `http://www.ncbi.nlm.nih.gov/taxonomy`.
 
-The binding is **extensible** because any organism with a sequenced genome is a legitimate value — restricting to an enumerated set would exclude non-human organisms (mouse, rat, zebrafish, etc.) without scientific justification. Commonly used values:
+The binding is **extensible** because any organism with a sequenced genome is a legitimate value — restricting to an enumerated set would exclude non-human organisms (mouse, rat, zebrafish, etc.) without scientific justification. Commonly used values are enumerated in the [NCBI Taxonomy fragment CodeSystem](CodeSystem-ncbi-taxonomy-fragment.html) included in this IG, which the validator uses to resolve codes in this system. Add taxon IDs to that fragment as new examples reference them.
 
-| Taxon ID | Organism |
-|---|---|
-| `9606` | *Homo sapiens* |
-| `10090` | *Mus musculus* |
-| `10116` | *Rattus norvegicus* |
-| `7955` | *Danio rerio* (zebrafish) |
+| Taxon ID | Organism | Context |
+|---|---|---|
+| `9606` | *Homo sapiens* | Human genomics |
+| `10090` | *Mus musculus* | Mouse model |
+| `10116` | *Rattus norvegicus* | Rat model |
+| `7955` | *Danio rerio* | Zebrafish model |
+| `2697049` | *Severe acute respiratory syndrome coronavirus 2* | SARS-CoV-2 / COVID-19 |
+| `11320` | *Influenza A virus* | Seasonal / pandemic influenza |
+| `11520` | *Influenza B virus* | Seasonal influenza |
+| `11250` | *Human orthopneumovirus* | Respiratory syncytial virus (RSV) |
+| `12227` | *Human rhinovirus A* | Common cold (rhinovirus) |
+| `11103` | *Hepacivirus C* | Hepatitis C virus (HCV) |
+| `10359` | *Human cytomegalovirus* | CMV |
+| `10376` | *Human herpesvirus 4* | Epstein-Barr virus (EBV) |
+| `11234` | *Measles morbillivirus* | Measles |
 
 Note: NCBI Taxonomy does not publish a FHIR CodeSystem. Systems using this binding should include the numeric taxon ID as `code` and the scientific name as `display`.
 
@@ -278,8 +287,6 @@ The dominant use case is a versioned **NCBI RefSeq accession**, consistent with 
 | System URI | Database | Notes |
 |-----------|----------|-------|
 | `http://www.ncbi.nlm.nih.gov/refseq` | NCBI RefSeq | Curated, versioned; primary system for clinical genomics |
-| `http://insdc.org` | INSDC (GenBank / EMBL / DDBJ) | International nucleotide sequence collaboration; unversioned IDs also exist |
-| `http://www.ensembl.org` | Ensembl | Common in research/computational genomics (ENSG, ENST, ENSP) |
 | `http://www.lrg-sequence.org` | LRG | Locus Reference Genomic — stable reference sequences for clinical variant reporting, common in European labs |
 
 **Why example, not extensible or required?** `representation.code` is an open identifier element — any public sequence database producing stable accession identifiers is a valid source. An `example` binding documents the most commonly used systems without falsely constraining a genuinely open identifier space. The `0..*` cardinality further signals that multiple systems may co-exist on a single representation.

@@ -44,6 +44,8 @@ parameters:
     - input/resources/moleculardefinition/StructureDefinition-MolecularDefinition.xml
   
   special-url-base: http://hl7.org/fhir
+  special-url:
+    - http://www.ncbi.nlm.nih.gov/taxonomy
 
   pin-canonicals: pin-multiples
 

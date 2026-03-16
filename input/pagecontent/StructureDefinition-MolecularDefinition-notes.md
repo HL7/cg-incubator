@@ -195,7 +195,7 @@ The most common use case in clinical genomics is a **versioned NCBI RefSeq acces
 | `NR_` | Non-coding RNA | `NR_024540.1` |
 | `NP_` | Protein | `NP_000760.1` |
 
-Other recognized sequence identifier systems include INSDC/GenBank (`http://insdc.org`), Ensembl (`http://www.ensembl.org`), and LRG (`http://www.lrg-sequence.org`). An example binding documenting these systems is defined in the [Terminology Considerations](terminology-considerations.html) page.
+LRG (`http://www.lrg-sequence.org`) is another recognized system registered in HL7 terminology, providing stable reference sequences for clinical variant reporting. An example binding documenting these systems is defined in the [Terminology Considerations](terminology-considerations.html) page.
 
 Note that `representation.code` does not guarantee that the repository is publicly accessible or that the referenced sequence can be retrieved — it only identifies the sequence using a code that can be exchanged. A private biobank accession that follows a known system scheme is a valid use of this element. For publicly accessible files, prefer `representation.resolvable` (which implies the content can be retrieved).
 

@@ -530,7 +530,7 @@
           <valueString value="MolecularSequenceCode"/>
         </extension>
         <strength value="example"/>
-        <description value="Example molecular sequence identifier systems: NCBI RefSeq (http://www.ncbi.nlm.nih.gov/refseq), INSDC/GenBank (http://insdc.org), Ensembl (http://www.ensembl.org), LRG (http://www.lrg-sequence.org)."/>
+        <description value="Example molecular sequence identifier systems registered in HL7 terminology: NCBI RefSeq (http://www.ncbi.nlm.nih.gov/refseq) and LRG (http://www.lrg-sequence.org)."/>
         <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/moleculardefinition-representation-code"/>
       </binding>
     </element>

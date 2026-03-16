@@ -59,7 +59,6 @@
                 <display value="Germline"/>
             </coding>
         </genomicSourceClass>
-        <instantiatesUri value="https://pubmed.ncbi.nlm.nih.gov/33927380/"/>
         <title value="Proband Sequence Variation Detection Using Next Generation Sequencing"/>
         <specimen>
             <reference value="Specimen/denovo-1"/>
@@ -124,7 +123,6 @@
                 <display value="Germline"/>
             </coding>
         </genomicSourceClass>
-        <instantiatesUri value="https://pubmed.ncbi.nlm.nih.gov/33927380/"/>
         <title value="Maternal Sequence Variation Detection Using Next Generation Sequencing"/><!-- 0..1 Name of the analysis event (human friendly) -->
         <focus>
             <reference value="Patient/denovoMother"/>
@@ -182,7 +180,6 @@
                 <display value="Germline"/>
             </coding>
         </genomicSourceClass>
-        <instantiatesUri value="https://pubmed.ncbi.nlm.nih.gov/33927380/"/>
         <title value="Paternal Sequence Variation Detection Using Next Generation Sequencing"/>
         <focus>
             <reference value="Patient/denovoFather"/>
@@ -233,7 +230,6 @@
             <value value="urn:uuid:1111-1111-1111-1114"/>
         </identifier>
         <!-- <instantiatesCanonical>0..1 canonical(PlanDefinition) The defined protocol that describes the analysis</instantiatesCanonical> -->
-        <instantiatesUri value="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6885382/"/>
         <title value="De Novo Mutation Detection and Interpretation"/>
         <!-- <specimen> 0..1 Reference(Specimen) The specimen used in the analysis event</specimen> -->
         <date value="2021-01-01T03:01:10-06:00"/><!-- 0..1 The date of the analysis event -->

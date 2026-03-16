@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  NCBI Taxonomy fragment CodeSystem.
+  This is a content=fragment representation of the external NCBI Taxonomy database
+  (https://www.ncbi.nlm.nih.gov/taxonomy). It exists solely so that the FHIR
+  validator can resolve codes drawn from this system when they appear in
+  MolecularDefinition.genomeAssembly.organism instances.
+
+  This fragment is intentionally non-exhaustive. Add concepts here as new
+  examples or profiles reference additional taxon IDs. Do not replace this
+  file with a complete enumeration — the full taxonomy contains millions of
+  entries and is not appropriate to include in a FHIR IG package.
+-->
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="ncbi-taxonomy-fragment"/>
+  <url value="http://www.ncbi.nlm.nih.gov/taxonomy"/>
+  <version value="2026"/>
+  <name value="NCBITaxonomyFragment"/>
+  <title value="NCBI Taxonomy (fragment)"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-03-16"/>
+  <publisher value="Clinical Genomics Working Group (HL7)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/clingenomics"/>
+    </telecom>
+  </contact>
+  <description value="A fragment of the NCBI Taxonomy database (https://www.ncbi.nlm.nih.gov/taxonomy) containing taxon IDs referenced by examples and profiles in this IG. Numeric taxon IDs are used as codes; scientific names are used as display text. This fragment covers commonly used research organisms and representative clinical viral pathogens. Add entries here as new examples reference additional taxon IDs."/>
+  <copyright value="NCBI Taxonomy data is a product of the National Center for Biotechnology Information (NCBI), part of the National Library of Medicine at the National Institutes of Health. The database is freely available in the public domain."/>
+  <caseSensitive value="false"/>
+  <content value="fragment"/>
+  <concept>
+    <code value="9606"/>
+    <display value="Homo sapiens"/>
+  </concept>
+  <concept>
+    <code value="10090"/>
+    <display value="Mus musculus"/>
+  </concept>
+  <concept>
+    <code value="10116"/>
+    <display value="Rattus norvegicus"/>
+  </concept>
+  <concept>
+    <code value="7955"/>
+    <display value="Danio rerio"/>
+  </concept>
+  <!-- Viral pathogens: representative clinical respiratory/infectious disease panel targets -->
+  <concept>
+    <code value="2697049"/>
+    <display value="Severe acute respiratory syndrome coronavirus 2"/>
+  </concept>
+  <concept>
+    <code value="11520"/>
+    <display value="Influenza B virus"/>
+  </concept>
+  <concept>
+    <code value="11320"/>
+    <display value="Influenza A virus"/>
+  </concept>
+  <concept>
+    <code value="11234"/>
+    <display value="Measles morbillivirus"/>
+  </concept>
+  <concept>
+    <code value="11250"/>
+    <display value="Human orthopneumovirus"/>
+  </concept>
+  <concept>
+    <code value="12227"/>
+    <display value="Human rhinovirus A"/>
+  </concept>
+  <concept>
+    <code value="11103"/>
+    <display value="Hepacivirus C"/>
+  </concept>
+  <concept>
+    <code value="10359"/>
+    <display value="Human cytomegalovirus"/>
+  </concept>
+  <concept>
+    <code value="10376"/>
+    <display value="Human herpesvirus 4"/>
+  </concept>
+</CodeSystem>

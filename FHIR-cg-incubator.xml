@@ -146,6 +146,7 @@
 <artifact id="SearchParameter/MolecularDefinition-type" key="SearchParameter-MolecularDefinition-type" name="MolecularDefinitionTypeSearchParam"/>
 <artifact id="Patient/mother" key="Patient-mother" name="Mother Patient"/>
 <artifact id="Specimen/specimenMother" key="Specimen-specimenMother" name="Mother Specimen"/>
+<artifact id="CodeSystem/ncbi-taxonomy-fragment" key="CodeSystem-ncbi-taxonomy-fragment" name="NCBI Taxonomy (fragment)"/>
 <artifact id="Device/NGS-device" key="Device-NGS-device" name="NGS Sequencing Device"/>
 <artifact id="Specimen/normalSpecimen" key="Specimen-normalSpecimen" name="Normal Specimen"/>
 <artifact id="Patient/pgxPatient" key="Patient-pgxPatient" name="PGx Patient"/>
