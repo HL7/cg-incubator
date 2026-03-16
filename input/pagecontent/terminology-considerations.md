@@ -300,9 +300,8 @@ GenomicStudy carries a wider range of terminology bindings than MolecularDefinit
 | `analysis.changeType` | **preferred** | `genomicstudy-changetype` (incubator CS, SO-based) |
 | `analysis.genomeBuild` | **extensible** | LOINC [LL1040-6](https://loinc.org/LL1040-6/) |
 | `analysis.genomicSourceClass` | **extensible** | LOINC [LL378-1](https://loinc.org/LL378-1/) |
-| `analysis.regionsStudied` | **extensible** | [hgnc-vs](https://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs) (GRIG) |
-| `analysis.regionsCalled` | **extensible** | [hgnc-vs](https://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs) (GRIG) |
-| `analysis.regionsUncalled` | **extensible** | [hgnc-vs](https://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs) (GRIG) |
+| `analysis.genomicRegion.type` | **extensible** | `genomicstudy-regiontype` (incubator CS) |
+| `analysis.genomicRegion.locus` | **extensible** | [hgnc-vs](https://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs) (GRIG) |
 | `analysis.input.type` | **example** | `genomicstudy-dataformat` (incubator CS) |
 | `analysis.output.type` | **example** | `genomicstudy-dataformat` (incubator CS) |
 
@@ -361,18 +360,30 @@ This reuses the same LOINC answer list used throughout the genomics-reporting IG
 
 ---
 
-### `analysis.regionsStudied`, `regionsCalled`, `regionsUncalled` — Extensible Binding (HGNC ValueSet, from GRIG)
+### `analysis.genomicRegion.type` — Extensible Binding (incubator CodeSystem)
 
-These three elements share an identical `extensible` binding to the [hgnc-vs](https://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs) ValueSet, which is defined and maintained in the genomics-reporting IG.
+`genomicRegion.type` identifies the role of a group of genomic regions relative to the analysis outcome. The binding is **extensible** to the [genomicstudy-regiontype](ValueSet-genomicstudy-regiontype.html) ValueSet, which defines three codes:
 
-#### Datatype: CodeableReference
+| Code | Display | Meaning |
+|---|---|---|
+| `studied` | Studied | The full intended scope of the analysis (the target panel, exome, or genome) |
+| `called` | Called | The subset of studied regions where sufficient coverage and data quality enabled variant calling |
+| `uncalled` | Uncalled | Regions within the studied scope where calls could not be produced due to data quality limitations |
 
-All three use the `CodeableReference(DocumentReference)` datatype, which has two sides:
+**Why `extensible` and not `required`?** Different genomic methodologies may need additional region-status classifications beyond these three (e.g., `targeted` vs `sequenced` distinctions in amplicon-based assays, or RNA-specific concepts). An `extensible` binding ensures the common cases use standard, interoperable codes while permitting other codes for methodology-specific needs not covered by the defined set.
 
-- **`concept`** — a `CodeableConcept` bound to the HGNC ValueSet, for expressing a specific gene by its HGNC identifier.
+**Clinical interpretation of `uncalled`:** An `uncalled` entry records that calls *could not be made* in those regions due to a technical limitation of the analysis — it does not imply that a pathogenic variant is present or was missed. Clinical consumers should interpret `uncalled` as "insufficient data quality" rather than "probable negative." The `genomicRegion.description` sub-element should be used to document the specific reason (e.g., `low coverage <20x`, `poor mapping due to segmental duplication`).
+
+---
+
+### `analysis.genomicRegion.locus` — Extensible Binding (HGNC ValueSet, from GRIG)
+
+`genomicRegion.locus` uses the `CodeableReference(DocumentReference)` datatype, which has two sides:
+
+- **`concept`** — a `CodeableConcept` with an **extensible** binding to the [hgnc-vs](https://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs) ValueSet from the genomics-reporting IG, for expressing a specific gene by its HGNC identifier.
 - **`reference`** — a `Reference(DocumentReference)`, for pointing to a BED file describing genomic coordinates.
 
-Both sides may appear within the same analysis, in separate element instances. The binding applies only to the `concept` side; the `reference` side is constrained to `DocumentReference` by the type profile.
+Both sides may appear within the same `genomicRegion` entry, in separate `locus` sub-element repetitions. The HGNC binding applies only to the `concept` side; the `reference` side is constrained to `DocumentReference` by the type profile.
 
 #### Why HGNC for the concept side?
 
@@ -384,9 +395,14 @@ The `hgnc-vs` ValueSet is defined at `http://hl7.org/fhir/uv/genomics-reporting/
 
 If this dependency becomes undesirable in a future release (e.g., version skew between the two IGs), the incubator could mint its own equivalent HGNC ValueSet. For now, reuse is preferred to avoid duplication.
 
-#### `regionsUncalled` — new element
+#### Design rationale — backbone vs. three flat elements
 
-`regionsUncalled` has no equivalent in the FHIR R5/R6 core GenomicStudy resource but was present as an extension in the GRIG STU3 Procedure backport profiles. It is introduced here as a first-class element to explicitly document gaps in analytical coverage. Uncallable regions should always be recorded when known, to allow clinical consumers to distinguish a true negative result from an untested region — a distinction critical for variant interpretation.
+The previous design used three independent flat elements (`regionsStudied`, `regionsCalled`, `regionsUncalled`), each a `0..*` `CodeableReference`. The backbone approach was adopted because:
+
+- Each entry is self-describing — the `type` code explicitly classifies the region group without requiring consumers to cross-reference three parallel arrays.
+- It is extensible to new region-status concepts without a structural schema change.
+- It provides a natural home for per-group metadata via `genomicRegion.description`, particularly for `uncalled` entries where documenting the reason is clinically important.
+- Mixed-mode entries (one BED file reference plus several coded genes within the same group) are more naturally expressed as multiple `locus` sub-elements under a single `genomicRegion` entry than as separate top-level repetitions.
 
 ---
 

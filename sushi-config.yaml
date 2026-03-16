@@ -1,8 +1,6 @@
-# ╭─────────────────────────Commonly Used ImplementationGuide Properties───────────────────────────╮
-# │  The properties below are used to create the ImplementationGuide resource. The most commonly   │
-# │  used properties are included. For a list of all supported properties and their functions,     │
-# │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
-# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+# For a list of all supported properties and their functions,
+# see: https://fshschool.org/docs/sushi/configuration/.
+
 id: hl7.fhir.uv.cg-incubator
 canonical: http://hl7.org/fhir/uv/cg-incubator
 packageId: hl7.fhir.uv.cg-incubator
@@ -402,8 +400,8 @@ pages:
 # customize the menu for your IG as needed
 menu:
   Home: index.html
-  Guidance:
-    Terminology Considerations: terminology-considerations.html
   FHIR Artifacts:
     Artifacts: artifacts.html
     Change Log: changes.html
+  Guidance:
+    Terminology Considerations: terminology-considerations.html

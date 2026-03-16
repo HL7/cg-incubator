@@ -117,25 +117,55 @@
             </sequencingCoverage>
             <description value="120x average read depth with 98% coverage of target regions."/>
         </metrics>
-        <regionsStudied>
-            <reference>
-                <reference value="DocumentReference/WES-FullSequencedRegion-GRCh38"/>
-            </reference>
-        </regionsStudied>
-        <regionsCalled>
-            <reference>
-                <reference value="DocumentReference/SimpleVariantAnalysis-called"/>
-            </reference>
-        </regionsCalled>
-        <regionsUncalled>
-            <concept>
+        <!-- genomicRegion: studied scope = full exome BED file -->
+        <genomicRegion>
+            <type>
                 <coding>
-                    <system value="http://www.genenames.org"/>
-                    <code value="HGNC:8975"/>
-                    <display value="PIK3CA"/>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-regiontype"/>
+                    <code value="studied"/>
+                    <display value="Studied"/>
                 </coding>
-            </concept>
-        </regionsUncalled>
+            </type>
+            <locus>
+                <reference>
+                    <reference value="DocumentReference/WES-FullSequencedRegion-GRCh38"/>
+                </reference>
+            </locus>
+        </genomicRegion>
+        <!-- genomicRegion: called = variant-callable regions expressed as a BED file -->
+        <genomicRegion>
+            <type>
+                <coding>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-regiontype"/>
+                    <code value="called"/>
+                    <display value="Called"/>
+                </coding>
+            </type>
+            <locus>
+                <reference>
+                    <reference value="DocumentReference/SimpleVariantAnalysis-called"/>
+                </reference>
+            </locus>
+        </genomicRegion>
+        <!-- genomicRegion: uncalled = PIK3CA could not be called; no variant call is implied -->
+        <genomicRegion>
+            <type>
+                <coding>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-regiontype"/>
+                    <code value="uncalled"/>
+                    <display value="Uncalled"/>
+                </coding>
+            </type>
+            <locus>
+                <concept>
+                    <coding>
+                        <system value="http://www.genenames.org"/>
+                        <code value="HGNC:8975"/>
+                        <display value="PIK3CA"/>
+                    </coding>
+                </concept>
+            </locus>
+        </genomicRegion>
         <output>  <!-- 0..* outputs for the analysis event -->
             <!-- <file>
                 <reference value="DocumentReference/genomicVCFfile_simple"/>
@@ -212,28 +242,56 @@
             <reference value="Specimen/genomicSpecimen"/>
         </specimen>
         <date value="2019-03-01T01:01:10-06:00"/><!-- 0..1 The date of the analysis event -->
-        <note>
-            <text value="For technical reasons, PIK3CA was deemed uncallable using this method."/>
-        </note>
-        <regionsStudied>
-            <reference>
-                <reference value="DocumentReference/WES-FullSequencedRegion-GRCh38"/>
-            </reference>
-        </regionsStudied>
-        <regionsCalled>
-            <reference>
-                <reference value="DocumentReference/CNVAnalysis-called"/>
-            </reference>
-        </regionsCalled>
-        <regionsUncalled>
-            <concept>
+        <!-- genomicRegion: studied scope = full exome BED file -->
+        <genomicRegion>
+            <type>
                 <coding>
-                    <system value="http://www.genenames.org"/>
-                    <code value="HGNC:8975"/>
-                    <display value="PIK3CA"/>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-regiontype"/>
+                    <code value="studied"/>
+                    <display value="Studied"/>
                 </coding>
-            </concept>
-        </regionsUncalled>
+            </type>
+            <locus>
+                <reference>
+                    <reference value="DocumentReference/WES-FullSequencedRegion-GRCh38"/>
+                </reference>
+            </locus>
+        </genomicRegion>
+        <!-- genomicRegion: called = CNV-callable regions expressed as a BED file -->
+        <genomicRegion>
+            <type>
+                <coding>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-regiontype"/>
+                    <code value="called"/>
+                    <display value="Called"/>
+                </coding>
+            </type>
+            <locus>
+                <reference>
+                    <reference value="DocumentReference/CNVAnalysis-called"/>
+                </reference>
+            </locus>
+        </genomicRegion>
+        <!-- genomicRegion: uncalled = PIK3CA could not be called with this CNV method -->
+        <genomicRegion>
+            <type>
+                <coding>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-regiontype"/>
+                    <code value="uncalled"/>
+                    <display value="Uncalled"/>
+                </coding>
+            </type>
+            <locus>
+                <concept>
+                    <coding>
+                        <system value="http://www.genenames.org"/>
+                        <code value="HGNC:8975"/>
+                        <display value="PIK3CA"/>
+                    </coding>
+                </concept>
+            </locus>
+            <description value="PIK3CA was deemed uncallable using this CNV method due to technical limitations of the assay."/>
+        </genomicRegion>
         <output>  <!-- 0..* Inputs for the analysis event -->
             <!-- <file>
                 <reference value="DocumentReference/genomicVCFfile_cnv"/>

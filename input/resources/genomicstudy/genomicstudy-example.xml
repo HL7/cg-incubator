@@ -69,7 +69,9 @@
             <text value="This is a next generation sequencing analysis of a proband."/>
         </note>
         <!-- <protocolPerformed>0..1 Reference(Procedure|Task) The protocol that was performed for the analysis event</protocolPerformed> -->
-        <!-- <regionsCalled>0..1 Reference(DocumentReference) Genomic regions actually called in the analysis event (BED file)</regionsCalled> -->
+        <!-- <genomicRegion> 0..* Grouped genomic region sets by type (studied/called/uncalled)
+             Each repetition: <type> required code, <locus> 0..* CodeableReference(DocumentReference), <description> 0..1 string
+        </genomicRegion> -->
         <input>  <!-- 0..* Inputs for the analysis event of Child-->
             <file>
                 <reference value="DocumentReference/genomicFile1"/>

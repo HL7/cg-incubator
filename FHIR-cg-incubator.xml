@@ -44,6 +44,8 @@
 <artifact id="ValueSet/genomicstudy-methodtype" key="ValueSet-genomicstudy-methodtype" name="Genomic Study Method Type VS"/>
 <artifact id="List/GenomicStudy-operations" key="List-GenomicStudy-operations" name="Genomic Study Operations List"/>
 <artifact id="GenomicStudy/example-pgx" key="GenomicStudy-example-pgx" name="Genomic Study PGx Example"/>
+<artifact id="CodeSystem/genomicstudy-regiontype" key="CodeSystem-genomicstudy-regiontype" name="Genomic Study Region Type"/>
+<artifact id="ValueSet/genomicstudy-regiontype" key="ValueSet-genomicstudy-regiontype" name="Genomic Study Region Type VS"/>
 <artifact id="GenomicStudy/example-somaticStudy" key="GenomicStudy-example-somaticStudy" name="Genomic Study Somatic Study Example"/>
 <artifact id="CodeSystem/genomicstudy-status" key="CodeSystem-genomicstudy-status" name="Genomic Study Status"/>
 <artifact id="ValueSet/genomicstudy-status" key="ValueSet-genomicstudy-status" name="Genomic Study Status VS"/>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="genomicstudy-regiontype"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="cg"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="draft"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1"/>
+  </extension>
+  <url value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/genomicstudy-regiontype"/>
+  <version value="1.0.0"/>
+  <name value="GenomicStudyRegionTypeVS"/>
+  <title value="Genomic Study Region Type VS"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="HL7 International / Clinical Genomics"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/clingenomics"/>
+    </telecom>
+  </contact>
+  <description value="The type or status of a set of genomic regions within a GenomicStudy analysis (studied, called, or uncalled)."/>
+  <immutable value="false"/>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-regiontype"/>
+    </include>
+  </compose>
+</ValueSet>

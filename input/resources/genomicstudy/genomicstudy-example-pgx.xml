@@ -4,7 +4,7 @@
         Pharmacogenomics (PGX) targeted gene panel study.
         Germline sequencing of CYP2C19, CYP2C9, and VKORC1 protein-coding and
         exon-splicing regions to guide drug dosing decisions.
-        Demonstrates: coded gene regionsStudied (HGNC), metrics (sequencing coverage),
+        Demonstrates: coded gene genomicRegion.studied (HGNC), genomicRegion.called, metrics (sequencing coverage),
         germline genomicSourceClass.
     -->
 
@@ -104,65 +104,83 @@
             </sequencingCoverage>
             <description value="100% coverage of protein-coding and exon-splicing regions for all three genes."/>
         </metrics>
-        <!-- regionsStudied expressed as HGNC coded gene list (CodeableReference.concept) -->
-        <regionsStudied>
-            <concept>
+        <!-- genomicRegion: studied = all three PGx gene targets (protein-coding and exon-splicing regions) -->
+        <genomicRegion>
+            <type>
                 <coding>
-                    <system value="http://www.genenames.org"/>
-                    <code value="HGNC:2621"/>
-                    <display value="CYP2C19"/>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-regiontype"/>
+                    <code value="studied"/>
+                    <display value="Studied"/>
                 </coding>
-                <text value="protein-coding and exon-splicing regions of CYP2C19"/>
-            </concept>
-        </regionsStudied>
-        <regionsStudied>
-            <concept>
+            </type>
+            <locus>
+                <concept>
+                    <coding>
+                        <system value="http://www.genenames.org"/>
+                        <code value="HGNC:2621"/>
+                        <display value="CYP2C19"/>
+                    </coding>
+                    <text value="protein-coding and exon-splicing regions of CYP2C19"/>
+                </concept>
+            </locus>
+            <locus>
+                <concept>
+                    <coding>
+                        <system value="http://www.genenames.org"/>
+                        <code value="HGNC:2623"/>
+                        <display value="CYP2C9"/>
+                    </coding>
+                    <text value="protein-coding and exon-splicing regions of CYP2C9"/>
+                </concept>
+            </locus>
+            <locus>
+                <concept>
+                    <coding>
+                        <system value="http://www.genenames.org"/>
+                        <code value="HGNC:23663"/>
+                        <display value="VKORC1"/>
+                    </coding>
+                    <text value="protein-coding and exon-splicing regions of VKORC1"/>
+                </concept>
+            </locus>
+        </genomicRegion>
+        <!-- genomicRegion: called = same three genes, all achieved sufficient coverage to produce calls -->
+        <genomicRegion>
+            <type>
                 <coding>
-                    <system value="http://www.genenames.org"/>
-                    <code value="HGNC:2623"/>
-                    <display value="CYP2C9"/>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-regiontype"/>
+                    <code value="called"/>
+                    <display value="Called"/>
                 </coding>
-                <text value="protein-coding and exon-splicing regions of CYP2C9"/>
-            </concept>
-        </regionsStudied>
-        <regionsStudied>
-            <concept>
-                <coding>
-                    <system value="http://www.genenames.org"/>
-                    <code value="HGNC:23663"/>
-                    <display value="VKORC1"/>
-                </coding>
-                <text value="protein-coding and exon-splicing regions of VKORC1"/>
-            </concept>
-        </regionsStudied>
-        <!-- regionsCalled: same genes, all achieved sufficient coverage to be called -->
-        <regionsCalled>
-            <concept>
-                <coding>
-                    <system value="http://www.genenames.org"/>
-                    <code value="HGNC:2621"/>
-                    <display value="CYP2C19"/>
-                </coding>
-            </concept>
-        </regionsCalled>
-        <regionsCalled>
-            <concept>
-                <coding>
-                    <system value="http://www.genenames.org"/>
-                    <code value="HGNC:2623"/>
-                    <display value="CYP2C9"/>
-                </coding>
-            </concept>
-        </regionsCalled>
-        <regionsCalled>
-            <concept>
-                <coding>
-                    <system value="http://www.genenames.org"/>
-                    <code value="HGNC:23663"/>
-                    <display value="VKORC1"/>
-                </coding>
-            </concept>
-        </regionsCalled>
+            </type>
+            <locus>
+                <concept>
+                    <coding>
+                        <system value="http://www.genenames.org"/>
+                        <code value="HGNC:2621"/>
+                        <display value="CYP2C19"/>
+                    </coding>
+                </concept>
+            </locus>
+            <locus>
+                <concept>
+                    <coding>
+                        <system value="http://www.genenames.org"/>
+                        <code value="HGNC:2623"/>
+                        <display value="CYP2C9"/>
+                    </coding>
+                </concept>
+            </locus>
+            <locus>
+                <concept>
+                    <coding>
+                        <system value="http://www.genenames.org"/>
+                        <code value="HGNC:23663"/>
+                        <display value="VKORC1"/>
+                    </coding>
+                </concept>
+            </locus>
+        </genomicRegion>
         <output>
             <file>
                 <reference value="DocumentReference/pgxVCFfile"/>

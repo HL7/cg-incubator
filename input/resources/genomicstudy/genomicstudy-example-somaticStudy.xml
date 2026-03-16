@@ -6,7 +6,7 @@
           1. DNA panel (tumor + normal paired) - SNV, MNV, InDel, CNV, coding regions
           2. RNA panel - gene fusions and transcript variants
         Demonstrates: somatic genomicSourceClass, paired tumor/normal specimens,
-        mixed regionsStudied (BED file + coded HGNC genes), regionsUncallable (BED file),
+        mixed genomicRegion.studied (BED file + coded HGNC genes), genomicRegion.uncalled (coded HGNC gene with description),
         RNA analysis with fusion change types, two distinct analyses within one study.
     -->
 
@@ -137,55 +137,83 @@
             </sequencingCoverage>
             <description value="500x average tumor read depth, 97% target region coverage. Minimum allele frequency threshold 5%."/>
         </metrics>
-        <!-- regionsStudied: mixed - BED file for full panel + individual coded HGNC genes -->
-        <regionsStudied>
-            <reference>
-                <reference value="DocumentReference/WES-FullSequencedRegion-GRCh38"/>
-            </reference>
-        </regionsStudied>
-        <regionsStudied>
-            <concept>
+        <!-- genomicRegion: studied = full 700-gene panel BED file plus key individual HGNC genes -->
+        <genomicRegion>
+            <type>
                 <coding>
-                    <system value="http://www.genenames.org"/>
-                    <code value="HGNC:76"/>
-                    <display value="ABL1"/>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-regiontype"/>
+                    <code value="studied"/>
+                    <display value="Studied"/>
                 </coding>
-            </concept>
-        </regionsStudied>
-        <regionsStudied>
-            <concept>
+            </type>
+            <locus>
+                <reference>
+                    <reference value="DocumentReference/WES-FullSequencedRegion-GRCh38"/>
+                </reference>
+            </locus>
+            <locus>
+                <concept>
+                    <coding>
+                        <system value="http://www.genenames.org"/>
+                        <code value="HGNC:76"/>
+                        <display value="ABL1"/>
+                    </coding>
+                </concept>
+            </locus>
+            <locus>
+                <concept>
+                    <coding>
+                        <system value="http://www.genenames.org"/>
+                        <code value="HGNC:427"/>
+                        <display value="ALK"/>
+                    </coding>
+                </concept>
+            </locus>
+            <locus>
+                <concept>
+                    <coding>
+                        <system value="http://www.genenames.org"/>
+                        <code value="HGNC:583"/>
+                        <display value="APC"/>
+                    </coding>
+                </concept>
+            </locus>
+        </genomicRegion>
+        <!-- genomicRegion: called = all callable regions expressed as a BED file -->
+        <genomicRegion>
+            <type>
                 <coding>
-                    <system value="http://www.genenames.org"/>
-                    <code value="HGNC:427"/>
-                    <display value="ALK"/>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-regiontype"/>
+                    <code value="called"/>
+                    <display value="Called"/>
                 </coding>
-            </concept>
-        </regionsStudied>
-        <regionsStudied>
-            <concept>
+            </type>
+            <locus>
+                <reference>
+                    <reference value="DocumentReference/somaticCalledRegions"/>
+                </reference>
+            </locus>
+        </genomicRegion>
+        <!-- genomicRegion: uncalled = BCR could not be called; no variant call in BCR is implied -->
+        <genomicRegion>
+            <type>
                 <coding>
-                    <system value="http://www.genenames.org"/>
-                    <code value="HGNC:583"/>
-                    <display value="APC"/>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-regiontype"/>
+                    <code value="uncalled"/>
+                    <display value="Uncalled"/>
                 </coding>
-            </concept>
-        </regionsStudied>
-        <!-- regionsCalled: all callable regions expressed as a BED file -->
-        <regionsCalled>
-            <reference>
-                <reference value="DocumentReference/somaticCalledRegions"/>
-            </reference>
-        </regionsCalled>
-        <!-- regionsUncallable: BCR gene uncallable due to low coverage -->
-        <regionsUncalled>
-            <concept>
-                <coding>
-                    <system value="http://www.genenames.org"/>
-                    <code value="HGNC:1014"/>
-                    <display value="BCR"/>
-                </coding>
-            </concept>
-        </regionsUncalled>
+            </type>
+            <locus>
+                <concept>
+                    <coding>
+                        <system value="http://www.genenames.org"/>
+                        <code value="HGNC:1014"/>
+                        <display value="BCR"/>
+                    </coding>
+                </concept>
+            </locus>
+            <description value="BCR was not callable due to low sequencing coverage in this tumor sample."/>
+        </genomicRegion>
         <output>
             <file>
                 <reference value="DocumentReference/somaticVCFfile"/>
@@ -268,11 +296,20 @@
             <reference value="Specimen/tumorSpecimen"/>
         </specimen>
         <date value="2023-02-02T01:01:10-06:00"/>
-        <regionsStudied>
-            <reference>
-                <reference value="DocumentReference/somaticRNAstudiedRegions"/>
-            </reference>
-        </regionsStudied>
+        <genomicRegion>
+            <type>
+                <coding>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-regiontype"/>
+                    <code value="studied"/>
+                    <display value="Studied"/>
+                </coding>
+            </type>
+            <locus>
+                <reference>
+                    <reference value="DocumentReference/somaticRNAstudiedRegions"/>
+                </reference>
+            </locus>
+        </genomicRegion>
         <output>
             <file>
                 <reference value="DocumentReference/somaticFusionFile"/>

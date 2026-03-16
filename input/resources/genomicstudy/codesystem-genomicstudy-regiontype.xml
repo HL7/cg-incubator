@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="genomicstudy-regiontype"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="cg"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="draft"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1"/>
+  </extension>
+  <url value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-regiontype"/>
+  <version value="1.0.0"/>
+  <name value="GenomicStudyRegionType"/>
+  <title value="Genomic Study Region Type"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="HL7 International / Clinical Genomics"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/clingenomics"/>
+    </telecom>
+  </contact>
+  <description value="The type or status of a set of genomic regions within a GenomicStudy analysis, indicating the relationship of those regions to the analysis outcome."/>
+  <caseSensitive value="true"/>
+  <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/genomicstudy-regiontype"/>
+  <content value="complete"/>
+  <concept>
+    <code value="studied"/>
+    <display value="Studied"/>
+    <definition value="Genomic regions targeted by the analysis. This represents the full intended scope of the analysis (e.g., a gene panel, exome, or genome). May be expressed as a coded list of gene symbols or a reference to a BED file."/>
+  </concept>
+  <concept>
+    <code value="called"/>
+    <display value="Called"/>
+    <definition value="The subset of studied genomic regions where there was sufficient coverage and data quality to produce variant calls. Regions not represented here were either uncalled or not studied."/>
+  </concept>
+  <concept>
+    <code value="uncalled"/>
+    <display value="Uncalled"/>
+    <definition value="Genomic regions that were within the scope of the analysis (i.e., studied) but for which no variant calls were produced. This does not imply that a pathogenic variant was present or missed; it indicates that data quality was insufficient to make calls in these regions. Common reasons include low sequencing coverage, poor mapping quality, or technical limitations of the assay. Use the genomicRegion.description element to document the specific reason."/>
+  </concept>
+</CodeSystem>
