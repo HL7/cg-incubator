@@ -1,4 +1,4 @@
-### Changes
+## Change Log
 ---
 
 ## Initial Release of Incubator - Comparison to Previous FHIR Releases
@@ -11,11 +11,7 @@ This IG currently targets **FHIR 6.0.0-ballot3** as an intermediate step toward 
 
 ### GenomicStudy — Changes from FHIR R5
 
-GenomicStudy was introduced in FHIR R5 (5.0.0). The version in this IG targets FHIR 6.0.0-ballot3 (interim ballot toward FHIR R6) and incorporates the following changes, grouped by theme.
-
-#### FHIR Version Uplift
-
-- The resource definition is now published against FHIR 6.0.0-ballot3 (interim ballot toward FHIR R6), superseding the FHIR R5 (5.0.0) resource definition.
+GenomicStudy was introduced in FHIR R5 (5.0.0). The version in this IG will treat GenomicStudy as an 'Additional Resource' that targets FHIR 6.0.0-ballot3 (interim ballot toward FHIR R6) and incorporates the following changes, grouped by theme.
 
 #### Quality and Coverage Metrics
 
@@ -24,13 +20,13 @@ A new `analysis.metrics` backbone element has been added to support structured c
 | Element | Card. | Type | Description |
 |---|---|---|---|
 | `analysis.metrics` | 0..1 | BackboneElement | Quality metrics for the analysis |
-| `analysis.metrics.readDepth` | 0..1 | Quantity | Average read depth (e.g., 30x, 100x) |
-| `analysis.metrics.sequencingCoverage` | 0..1 | Quantity | Percentage of studied regions sequenced (e.g., 95%) |
+| `analysis.metrics.readDepth` | 0..1 | SimpleQuantity | Average read depth (e.g., 30x, 100x) |
+| `analysis.metrics.sequencingCoverage` | 0..1 | SimpleQuantity | Percentage of studied regions sequenced (e.g., 95%) |
 | `analysis.metrics.description` | 0..1 | string | Freetext coverage metrics description |
 
 #### Genomic Region Consolidation
 
-The two flat elements `analysis.regionsStudied` and `analysis.regionsCalled` (each a direct reference to `DocumentReference | Observation`) have been replaced by a unified `analysis.genomicRegion` backbone element. This refactoring:
+The flat elements `analysis.regionsStudied` and `analysis.regionsCalled` (each a direct reference to `DocumentReference | Observation`) have been replaced by a unified `analysis.genomicRegion` backbone element. This refactoring:
 
 - Reduces parallel element proliferation by using a type discriminator instead of separate paths.
 - Adds a third category, **uncalled**, which was not previously representable.
@@ -89,12 +85,11 @@ This IG promotes these metrics to a native `analysis.metrics` backbone element. 
 
 | Concept | GRIG STU3 (Extension Slice) | Card. | Type | Incubator (Native Element) | Card. | Type |
 |---|---|---|---|---|---|---|
-| Read depth | `extension[read-depth].valueQuantity` | 0..1 | SimpleQuantity | `analysis.metrics.readDepth` | 0..1 | Quantity |
-| Sequencing coverage | `extension[sequencing-coverage].valueQuantity` | 0..1 | SimpleQuantity | `analysis.metrics.sequencingCoverage` | 0..1 | Quantity |
+| Read depth | `extension[read-depth].valueQuantity` | 0..1 | SimpleQuantity | `analysis.metrics.readDepth` | 0..1 | SimpleQuantity |
+| Sequencing coverage | `extension[sequencing-coverage].valueQuantity` | 0..1 | SimpleQuantity | `analysis.metrics.sequencingCoverage` | 0..1 | SimpleQuantity |
 | Metrics description | `extension[metrics-description].valueString` | 0..1 | string | `analysis.metrics.description` | 0..1 | string |
 
 Notable structural differences:
-- The GRIG extension was typed as `SimpleQuantity` (which prohibits comparators); the Incubator uses the unrestricted `Quantity` type.
 - The GRIG extension allowed multiple instances of the parent extension on the resource (cardinality `0..*`); the Incubator `analysis.metrics` element is `0..1` — metrics for a given analysis are grouped into a single backbone instance.
 
 #### Genomic Regions — Separate Extension Slices to Unified Typed Backbone
