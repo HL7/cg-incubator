@@ -1,6 +1,3 @@
-## Change Log
----
-
 ## Initial Release of Incubator - Comparison to Previous FHIR Releases
 
 This Implementation Guide represents the initial release of the Clinical Genomics Resource Incubator, which publishes profiled versions of the **GenomicStudy** and **MolecularDefinition** resources. Both resources were previously published in FHIR core but continue to evolve. This section documents changes from their prior published forms.
