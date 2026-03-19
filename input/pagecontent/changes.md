@@ -176,3 +176,138 @@ Minor refinements have been made to element short descriptions to improve precis
 - `genomeAssembly.accession` is described as **"NCBI Assembly accession"** (more specific than ballot 3's generic "Accession").
 - `genomeAssembly.build` is described as **"Genome assembly build"** (vs ballot 3's "Build number").
 - `cytobandInterval.chromosome` is described as **"Human chromosome identifier"** (explicitly scoped to human use).
+
+---
+
+## Binding Comparison: cg-incubator vs. molecular-definition-data-types
+
+The **cg-incubator** IG defines bindings directly on the base `MolecularDefinition` resource StructureDefinition. The **molecular-definition-data-types** (MolDef DT) IG defines bindings on profiled versions of the resource (Allele, Sequence, Variation, Haplotype, Genotype) using FSH. The following analysis compares the two sets of bindings to inform a CG group decision about where CodeSystems and ValueSets should canonically live.
+
+### Binding Map — Element by Element
+
+| Element | cg-incubator VS | cg-incubator Strength | MolDef DT VS | MolDef DT Strength | Notes |
+|---|---|---|---|---|---|
+| `moleculeType` | `moleculardefinition-moleculetype` | **required** | *(not bound; `type` used instead)* | — | cg-incubator targets R6's dedicated `moleculeType` element; MolDef DT binds `type` for the same purpose |
+| `type` | `moleculardefinition-type` | **extensible** | `MoleculeTypeVS` | **required** | Different elements; different VS content (see §Code Source Strategy) |
+| `topology` | `moleculardefinition-topology` | **extensible** | `TopologyVS` | **required** | Same concept; different code sources; binding strength differs |
+| `location.sequenceLocation.strand` | `moleculardefinition-strand` | **required** | `StrandOrientationVS` | **required** | Same concept; different code sources |
+| `location.…coordinateSystem.origin` | `coordinatesystem-origin` | **required** | `CoordinateOriginVS` | **required** | Similar concept; local CS in both; content differs (see §Concept-Level Differences) |
+| `location.…coordinateSystem.normalizationMethod` | `coordinatesystem-normalizationmethod` | **extensible** | `NormalizationMethodVS` | **required** | Same concept; local CS in both; binding strength and content differ |
+| `location.…coordinateSystem.system` | LOINC `LL5323-2` | **extensible** | *(not bound)* | — | Only in cg-incubator |
+| `location.cytobandLocation.…organism` | `moleculardefinition-organism` → NCBI Taxonomy | **extensible** | *(not bound)* | — | Only in cg-incubator |
+| `location.cytobandLocation.…build` | LOINC `LL1040-6` | **extensible** | *(not bound)* | — | Only in cg-incubator |
+| `location.cytobandLocation.…chromosome` | LOINC `LL2938-0` | **preferred** | *(not bound)* | — | Only in cg-incubator |
+| `representation.focus` | `moleculardefinition-representation-focus` | **required** | *(fixed values on slices, no `from` binding)* | — | Same 4 codes defined in both; MolDef DT uses fixed-value slice discriminators rather than a binding |
+| `representation.code` | `moleculardefinition-representation-code` → RefSeq + LRG | **example** | *(not bound)* | — | Only in cg-incubator |
+| `representation.literal.encoding` | `moleculardefinition-literal-encoding` | **required** | `EncodingsVS` | **required** | Same concept; local CS in both; code granularity differs (see §Encoding) |
+
+*The `coordinateSystem.*` bindings repeat identically for `representation.extracted.*` and `representation.relative.edit.*` in cg-incubator.*
+
+### Code Source Strategy — Major Conceptual Difference
+
+A fundamental divergence between the two IGs is whether coded concepts anchor to external standard terminologies or to locally coined CodeSystems.
+
+| Concept | cg-incubator approach | MolDef DT approach |
+|---|---|---|
+| Molecule type (DNA/RNA/AA) | **Sequence Ontology** external codes: `SO:0000352`, `SO:0000356`, `SO:0000104` | **Local CodeSystem** `MoleculeType`: `#dna`, `#rna`, `#aa` |
+| Topology | **Sequence Ontology**: `SO:0000987` (linear), `SO:0000988` (circular) | **Local CodeSystem** `Topology`: `#linear`, `#linear-discontiguous`, `#circular`, `#branched` |
+| Strand | **Sequence Ontology**: `SO:0001030` (forward), `SO:0001031` (reverse) | **Local CodeSystem** `StrandOrientation`: `#forward`, `#reverse` |
+| Subtype (`type` element) | **Sequence Ontology** curated subset (extensible) | Not separately modeled — subtype subsumed into `type` |
+| Coordinate origin | **Local CodeSystem** (cg-incubator CS) | **Local CodeSystem** (MolDef DT CS) |
+| Normalization method | **Local CodeSystem** (cg-incubator CS) | **Local CodeSystem** (MolDef DT CS) |
+| Encoding | **Local CodeSystem** (cg-incubator CS) | **Local CodeSystem** (MolDef DT CS) + character-alphabet CSes |
+| Representation focus | **Local CodeSystem** (cg-incubator CS) | **Local CodeSystem** (MolDef DT CS) |
+
+**Key tension:** cg-incubator anchors molecule type, topology, and strand to Sequence Ontology. MolDef DT coins local codes — simpler and more controlled, but not interoperable with SO-based systems without a concept map.
+
+### Concept-Level Differences within Shared Domains
+
+#### Coordinate Origin
+
+| Code concept | cg-incubator CS | MolDef DT CS |
+|---|---|---|
+| Sequence start | ✅ (`#sequence-start`) | ✅ (`#sequence-start`) |
+| CDS start | ✅ (`#cds-start`) | ❌ not present |
+| Feature start | ✅ (`#feature-start`) | ✅ (`#feature-start`) |
+| Feature end | ✅ (`#feature-end`) | ✅ (`#feature-end`) |
+
+`#cds-start` (start of the coding sequence / ATG codon) is defined in cg-incubator but absent from MolDef DT. MolDef DT's `#feature-start` could cover this by convention, but the concepts are in tension.
+
+#### Normalization Method
+
+| Code concept | cg-incubator CS | MolDef DT CS |
+|---|---|---|
+| Left shift | ✅ (`#left-shift`) | ✅ (`#left-shift`) |
+| Right shift | ✅ (`#right-shift`) | ✅ (`#right-shift`) |
+| Fully justified | ✅ (`#fully-justified`) | ✅ (`#fully-justified`) |
+| No normalization | ✅ (`#no-normalization`) | ❌ not present |
+
+`#no-normalization` is defined in cg-incubator and absent from MolDef DT. Because MolDef DT binds `NormalizationMethodVS` at **required** strength, this concept cannot currently be expressed using MolDef DT profiles.
+
+#### Topology
+
+| Code concept | cg-incubator VS (SO codes) | MolDef DT CS |
+|---|---|---|
+| Linear | ✅ `SO:0000987` | ✅ `#linear` |
+| Circular | ✅ `SO:0000988` | ✅ `#circular` |
+| Linear discontiguous | ❌ not in VS | ✅ `#linear-discontiguous` |
+| Branched | ❌ not in VS | ✅ `#branched` |
+
+MolDef DT's topology coverage is richer at the code level. cg-incubator's **extensible** binding would allow additional SO codes or local codes to express these concepts, but they are not currently enumerated.
+
+#### Representation Focus
+
+All 4 codes are aligned in both IGs, though they live in separate local CodeSystems with different canonical URLs:
+
+| Code | cg-incubator | MolDef DT |
+|---|---|---|
+| `allele-state` | ✅ | ✅ |
+| `context-state` | ✅ | ✅ |
+| `reference-state` | ✅ | ✅ |
+| `alternative-state` | ✅ | ✅ |
+
+### Encoding (Literal Representation)
+
+cg-incubator defines encoding *schemes* as 9 category codes. MolDef DT also defines equivalent category codes in the `Encodings` CS, and additionally provides three character-alphabet CodeSystems (`NucleotideDNA`, `NucleotideRNA`, `AminoAcid`) with 8 corresponding ValueSets enabling validation of actual sequence string content.
+
+| Encoding category | cg-incubator code | MolDef DT code | Aligned? |
+|---|---|---|---|
+| Nucleotide DNA 1-letter unambiguous | `nuc-dna-1-noamb` | `nucleotide-dna-1letter-unambiguous` | ✅ same concept |
+| Nucleotide RNA 1-letter unambiguous | `nuc-rna-1-noamb` | `nucleotide-rna-1letter-unambiguous` | ✅ same concept |
+| Nucleotide DNA 1-letter with N | `nuc-dna-1-noamb-n` | `nucleotide-dna-1letter-with-n` | ✅ same concept |
+| Nucleotide DNA 1-letter ambiguous (IUPAC) | `nuc-dna-1-amb` | `nucleotide-dna-1letter-ambiguous` | ✅ same concept |
+| Nucleotide RNA 1-letter ambiguous | `nuc-rna-1-amb` | ❌ not present | cg-incubator only |
+| AA 1-letter unambiguous (20 standard) | `aa-1-noamb-20common` | `amino-acid-1letter-unambiguous` | ✅ same concept |
+| AA 3-letter unambiguous (20 standard) | `aa-3-noamb-20common` | `amino-acid-3letter-unambiguous` | ✅ same concept |
+| AA 1-letter ambiguous | `aa-1-amb` | `amino-acid-1letter-ambiguous` | ✅ same concept |
+| AA 3-letter ambiguous | `aa-3-amb` | `amino-acid-3letter-ambiguous` | ✅ same concept |
+
+### Bindings Only in cg-incubator
+
+The following bindings exist in cg-incubator with no equivalent in MolDef DT:
+
+| Element | ValueSet / System | Strength | Comment |
+|---|---|---|---|
+| `coordinateSystem.system` | LOINC `LL5323-2` | extensible | Coordinate numbering reference system (HGVS, VCF, etc.) |
+| `cytobandLocation.genomeAssembly.organism` | NCBI Taxonomy | extensible | Species for genome assembly |
+| `cytobandLocation.genomeAssembly.build` | LOINC `LL1040-6` | extensible | Reference genome build (GRCh38, etc.) |
+| `cytobandLocation.cytobandInterval.chromosome` | LOINC `LL2938-0` | preferred | Chromosome identifier |
+| `representation.code` | RefSeq + LRG | example | Accession-based reference to sequence databases |
+| `moleculeType` (R6 element) | Local CS → SO codes | required | R6-specific dedicated element; MolDef DT does not model this separation |
+| `type` (subtype element) | SO-based curated subset | extensible | Detailed subtype classes (mRNA, rRNA, genomic DNA, etc.) |
+
+### Experimental Status
+
+An asymmetry exists within MolDef DT: its CodeSystems are marked `experimental = false` (stable), while its ValueSets are marked `experimental = true`. cg-incubator does not explicitly set experimental flags on its terminology artifacts.
+
+### Open Questions for CG Group
+
+| Question | Status |
+|---|---|
+| **Where should shared CodeSystems live?** | Both IGs define the same logical concepts (strand, topology, coordinate origin, normalization, encoding, representation focus) in separate local CSes with different canonicals. These need to be merged into one canonical location — the MolDef base resource IG, a shared utility IG, or the FHIR core spec. |
+| **Should SO be used for molecule type, topology, and strand?** | cg-incubator uses Sequence Ontology; MolDef DT uses local codes. This is a core tension requiring a decision. |
+| **Character-alphabet CSes — scope?** | Only MolDef DT defines character-level CodeSystems for sequence validation. Should these be in scope for the base resource IG? |
+| **`cds-start` and `no-normalization` gaps** | These concepts are present in cg-incubator but absent from MolDef DT. MolDef DT's `required` binding on normalization method means `no-normalization` cannot currently be expressed in MolDef DT profiles. |
+| **Topology coverage** | MolDef DT has `#linear-discontiguous` and `#branched`; cg-incubator does not. The cg-incubator `extensible` binding accommodates these; MolDef DT's `required` binding would need new codes added to accommodate future concepts. |
+| **Binding strength for shared elements** | cg-incubator uses `extensible` for topology and normalization method; MolDef DT uses `required` for both. The right strength depends on whether local/SO codes will be permitted. |
+| **cytobandLocation bindings** | These are only modeled in cg-incubator; MolDef DT profiles do not cover cytogenomic scope. |
