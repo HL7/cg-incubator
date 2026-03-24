@@ -52,15 +52,7 @@
   </jurisdiction>
   <compose>
     <include>
-      <system value="http://www.sequenceontology.org"/>
-      <concept>
-        <code value="SO:0001030"/>
-        <display value="forward"/>
-      </concept>
-      <concept>
-        <code value="SO:0001031"/>
-        <display value="reverse"/>
-      </concept>
+      <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/moleculardefinition-strand"/>
     </include>
   </compose>
 </ValueSet>

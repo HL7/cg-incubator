@@ -3,9 +3,9 @@
     <id value="example"/>
     <moleculeType>
         <coding>
-            <system value="http://www.sequenceontology.org"/>
-            <code value="SO:0000352"/>
-            <display value="DNA"/>
+            <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/moleculardefinition-moleculetype"/>
+            <code value="dna"/>
+            <display value="DNA sequence"/>
         </coding>
     </moleculeType>
     <representation>

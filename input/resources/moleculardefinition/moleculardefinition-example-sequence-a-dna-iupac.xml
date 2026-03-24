@@ -4,14 +4,20 @@
 
     <moleculeType>
         <coding>
-            <system value="http://www.sequenceontology.org"/>
-            <code value="SO:0000352"/>
-            <display value="DNA"/>
+            <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/moleculardefinition-moleculetype"/>
+            <code value="dna"/>
+            <display value="DNA sequence"/>
         </coding>
     </moleculeType>
     <representation>
         <literal>
-            <encoding value="nuc-dna-1-noamb"/>
+            <encoding>
+                <coding>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/moleculardefinition-literal-encoding"/>
+                    <code value="nuc-dna-1-noamb"/>
+                    <display value="Nucleotide, 1-letter, no ambiguity, DNA residues"/>
+                </coding>
+            </encoding>
             <value value="A"/>
         </literal>
     </representation>

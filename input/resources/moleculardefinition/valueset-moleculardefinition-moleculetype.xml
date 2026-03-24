@@ -42,7 +42,7 @@
       <value value="http://www.hl7.org/Special/committees/clingenomics"/>
     </telecom>
   </contact>
-  <description value="The broad physical class of molecule represented by a MolecularDefinition resource instance: DNA, RNA, or polypeptide. This ValueSet is used for the moleculeType element and is intentionally limited to top-level molecule classes to support consistent searching and profiling across systems. For finer-grained classification, use the type element bound to MolecularDefinitionType."/>
+  <description value="The broad physical class of molecule represented by a MolecularDefinition resource instance: DNA, RNA, or amino acid (polypeptide). This ValueSet is used for the moleculeType element and is intentionally limited to top-level molecule classes to support consistent searching and profiling across systems. For finer-grained classification, use the type element bound to MolecularDefinitionType."/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -52,22 +52,7 @@
   </jurisdiction>
   <compose>
     <include>
-      <system value="http://www.sequenceontology.org"/>
-      <!-- DNA: An attribute describing a sequence consisting of deoxyribose-based nucleobases -->
-      <concept>
-        <code value="SO:0000352"/>
-        <display value="DNA"/>
-      </concept>
-      <!-- RNA: An attribute describing a sequence consisting of ribose-based nucleobases -->
-      <concept>
-        <code value="SO:0000356"/>
-        <display value="RNA"/>
-      </concept>
-      <!-- polypeptide: A sequence of amino acids linked by peptide bonds -->
-      <concept>
-        <code value="SO:0000104"/>
-        <display value="polypeptide"/>
-      </concept>
+      <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/moleculardefinition-moleculetype"/>
     </include>
   </compose>
 </ValueSet>

@@ -42,7 +42,7 @@
       <value value="http://www.hl7.org/Special/committees/clingenomics"/>
     </telecom>
   </contact>
-  <description value="The structural topology of a molecular entity as defined by the MolecularDefinition resource. Codes are drawn from the Sequence Ontology (SO) topology_attribute branch (SO:0000986): linear (SO:0000987) and circular (SO:0000988). The binding is extensible to allow additional topology concepts — such as supercoiled, relaxed-circular, or branched — to be expressed using local or future SO codes when no matching code exists in this set. Note: the SO topology_attribute is currently scoped to nucleotide polymers; polypeptide topology (e.g., quaternary structure) is outside the defined SO set and would require locally coined codes under the extensible binding."/>
+  <description value="The structural topology of a molecular entity as defined by the MolecularDefinition resource. Includes linear, circular, linear-discontiguous (gapped), and branched forms."/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -52,19 +52,7 @@
   </jurisdiction>
   <compose>
     <include>
-      <system value="http://www.sequenceontology.org"/>
-      <!-- linear: A quality of a nucleotide polymer that has a 3'-terminal residue  -->
-      <!-- and a 5'-terminal residue. Parent: topology_attribute (SO:0000986)         -->
-      <concept>
-        <code value="SO:0000987"/>
-        <display value="linear"/>
-      </concept>
-      <!-- circular: A quality of a nucleotide polymer that has no terminal            -->
-      <!-- nucleotide residues. Parent: topology_attribute (SO:0000986)                -->
-      <concept>
-        <code value="SO:0000988"/>
-        <display value="circular"/>
-      </concept>
+      <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/moleculardefinition-topology"/>
     </include>
   </compose>
 </ValueSet>

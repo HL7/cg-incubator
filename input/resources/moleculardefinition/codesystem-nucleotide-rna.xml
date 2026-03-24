@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="nucleotide-rna"/>
+  <meta>
+    <lastUpdated value="2026-03-23T00:00:00Z"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="cg"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="informative"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="0"/>
+  </extension>
+  <url value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/nucleotide-rna"/>
+  <version value="1.0.0"/>
+  <name value="NucleotideRNA"/>
+  <title value="Nucleotide RNA Symbols"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-03-23"/>
+  <publisher value="Clinical Genomics Working Group (HL7)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/clingenomics"/>
+    </telecom>
+  </contact>
+  <description value="Single-letter unambiguous symbols for RNA residues based on IUPAC nomenclature."/>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <concept>
+    <code value="G"/>
+    <display value="Guanine"/>
+    <definition value="G"/>
+  </concept>
+  <concept>
+    <code value="A"/>
+    <display value="Adenine"/>
+    <definition value="A"/>
+  </concept>
+  <concept>
+    <code value="U"/>
+    <display value="Uracil"/>
+    <definition value="U"/>
+  </concept>
+  <concept>
+    <code value="C"/>
+    <display value="Cytosine"/>
+    <definition value="C"/>
+  </concept>
+</CodeSystem>

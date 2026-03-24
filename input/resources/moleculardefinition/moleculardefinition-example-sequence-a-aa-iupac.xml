@@ -4,14 +4,20 @@
 
     <moleculeType>
         <coding>
-            <system value="http://www.sequenceontology.org"/>
-            <code value="SO:0000104"/>
-            <display value="polypeptide"/>
+            <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/moleculardefinition-moleculetype"/>
+            <code value="aa"/>
+            <display value="Amino acid sequence"/>
         </coding>
     </moleculeType>
     <representation>
         <literal>
-            <encoding value="aa-1-noamb-20common"/>
+            <encoding>
+                <coding>
+                    <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/moleculardefinition-literal-encoding"/>
+                    <code value="aa-1-noamb-20common"/>
+                    <display value="Amino acid, 1-letter, no ambiguity, 20 common"/>
+                </coding>
+            </encoding>
             <value value="A"/>
         </literal>
     </representation>

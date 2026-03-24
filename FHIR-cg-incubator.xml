@@ -5,6 +5,11 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="ValueSet/amino-acid-1letter-ambiguous" key="ValueSet-amino-acid-1letter-ambiguous" name="Amino Acid 1-letter Ambiguous Symbols ValueSet"/>
+<artifact id="ValueSet/amino-acid-1letter-unambiguous" key="ValueSet-amino-acid-1letter-unambiguous" name="Amino Acid 1-letter Unambiguous Symbols ValueSet"/>
+<artifact id="ValueSet/amino-acid-3letter-ambiguous" key="ValueSet-amino-acid-3letter-ambiguous" name="Amino Acid 3-letter Ambiguous Symbols ValueSet"/>
+<artifact id="ValueSet/amino-acid-3letter-unambiguous" key="ValueSet-amino-acid-3letter-unambiguous" name="Amino Acid 3-letter Unambiguous Symbols ValueSet"/>
+<artifact id="CodeSystem/amino-acid" key="CodeSystem-amino-acid" name="Amino Acid Symbols"/>
 <artifact id="DocumentReference/CNVAnalysis-called" key="DocumentReference-CNVAnalysis-called" name="CNVAnalysis-called"/>
 <artifact id="CodeSystem/coordinatesystem-normalizationmethod" key="CodeSystem-coordinatesystem-normalizationmethod" name="Coordinate System Normalization Method CodeSystem"/>
 <artifact id="ValueSet/coordinatesystem-normalizationmethod" key="ValueSet-coordinatesystem-normalizationmethod" name="Coordinate System Normalization Method ValueSet"/>
@@ -81,6 +86,7 @@
 <artifact id="CodeSystem/moleculardefinition-literal-encoding" key="CodeSystem-moleculardefinition-literal-encoding" name="Molecular Definition Literal Encoding"/>
 <artifact id="ValueSet/moleculardefinition-literal-encoding" key="ValueSet-moleculardefinition-literal-encoding" name="Molecular Definition Literal Encoding VS"/>
 <artifact id="ValueSet/moleculardefinition-moleculetype" key="ValueSet-moleculardefinition-moleculetype" name="Molecular Definition Molecule Type"/>
+<artifact id="CodeSystem/moleculardefinition-moleculetype" key="CodeSystem-moleculardefinition-moleculetype" name="Molecular Definition Molecule Type CodeSystem"/>
 <artifact id="List/MolecularDefinition-operations" key="List-MolecularDefinition-operations" name="Molecular Definition Operations List"/>
 <artifact id="ValueSet/moleculardefinition-organism" key="ValueSet-moleculardefinition-organism" name="Molecular Definition Organism"/>
 <artifact id="MolecularDefinition/example-replaced-sequence" key="MolecularDefinition-example-replaced-sequence" name="Molecular Definition Replaced Sequence"/>
@@ -120,8 +126,11 @@
 <artifact id="MolecularDefinition/example-starting-sequence-2b-extracted" key="MolecularDefinition-example-starting-sequence-2b-extracted" name="Molecular Definition Starting Sequence 2B Extracted"/>
 <artifact id="MolecularDefinition/example-starting-sequence-2b-relative" key="MolecularDefinition-example-starting-sequence-2b-relative" name="Molecular Definition Starting Sequence 2B Relative"/>
 <artifact id="ValueSet/moleculardefinition-strand" key="ValueSet-moleculardefinition-strand" name="Molecular Definition Strand"/>
+<artifact id="CodeSystem/moleculardefinition-strand" key="CodeSystem-moleculardefinition-strand" name="Molecular Definition Strand CodeSystem"/>
 <artifact id="ValueSet/moleculardefinition-topology" key="ValueSet-moleculardefinition-topology" name="Molecular Definition Topology"/>
+<artifact id="CodeSystem/moleculardefinition-topology" key="CodeSystem-moleculardefinition-topology" name="Molecular Definition Topology CodeSystem"/>
 <artifact id="ValueSet/moleculardefinition-type" key="ValueSet-moleculardefinition-type" name="Molecular Definition Type"/>
+<artifact id="CodeSystem/moleculardefinition-type" key="CodeSystem-moleculardefinition-type" name="Molecular Definition Type CodeSystem"/>
 <artifact id="MolecularDefinition/example-variation1" key="MolecularDefinition-example-variation1" name="Molecular Definition Variation 1"/>
 <artifact id="MolecularDefinition/example-variation-cyp2c19-1015-spdi" key="MolecularDefinition-example-variation-cyp2c19-1015-spdi" name="Molecular Definition Variation CYP2C19 1015 SPDI"/>
 <artifact id="MolecularDefinition/example-variation-cyp2c19-1015-vrs" key="MolecularDefinition-example-variation-cyp2c19-1015-vrs" name="Molecular Definition Variation CYP2C19 1015 VRS"/>
@@ -149,6 +158,12 @@
 <artifact id="CodeSystem/ncbi-taxonomy-fragment" key="CodeSystem-ncbi-taxonomy-fragment" name="NCBI Taxonomy (fragment)"/>
 <artifact id="Device/NGS-device" key="Device-NGS-device" name="NGS Sequencing Device"/>
 <artifact id="Specimen/normalSpecimen" key="Specimen-normalSpecimen" name="Normal Specimen"/>
+<artifact id="ValueSet/nucleotide-dna-1letter-ambiguous" key="ValueSet-nucleotide-dna-1letter-ambiguous" name="Nucleotide DNA 1-letter Ambiguous Symbols ValueSet"/>
+<artifact id="ValueSet/nucleotide-dna-1letter-with-n" key="ValueSet-nucleotide-dna-1letter-with-n" name="Nucleotide DNA 1-letter Unambiguous Symbols Including N ValueSet"/>
+<artifact id="ValueSet/nucleotide-dna-1letter-unambiguous" key="ValueSet-nucleotide-dna-1letter-unambiguous" name="Nucleotide DNA 1-letter Unambiguous Symbols ValueSet"/>
+<artifact id="CodeSystem/nucleotide-dna" key="CodeSystem-nucleotide-dna" name="Nucleotide DNA Symbols"/>
+<artifact id="ValueSet/nucleotide-rna-1letter-unambiguous" key="ValueSet-nucleotide-rna-1letter-unambiguous" name="Nucleotide RNA 1-letter Unambiguous Symbols ValueSet"/>
+<artifact id="CodeSystem/nucleotide-rna" key="CodeSystem-nucleotide-rna" name="Nucleotide RNA Symbols"/>
 <artifact id="Patient/pgxPatient" key="Patient-pgxPatient" name="PGx Patient"/>
 <artifact id="ServiceRequest/pgxServiceRequest" key="ServiceRequest-pgxServiceRequest" name="PGx Service Request"/>
 <artifact id="Specimen/pgxSpecimen" key="Specimen-pgxSpecimen" name="PGx Specimen"/>

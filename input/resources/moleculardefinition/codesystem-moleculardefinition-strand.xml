@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="moleculardefinition-strand"/>
+  <meta>
+    <lastUpdated value="2026-03-23T00:00:00Z"/>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="cg"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="informative"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="0"/>
+  </extension>
+  <url value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/moleculardefinition-strand"/>
+  <identifier>
+    <system value="urn:ietf:rfc:3986"/>
+    <value value="urn:oid:2.16.840.1.113883.4.642.4.3006"/>
+  </identifier>
+  <version value="1.0.0"/>
+  <name value="MolecularDefinitionStrand"/>
+  <title value="Molecular Definition Strand CodeSystem"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-03-23"/>
+  <publisher value="Clinical Genomics Working Group (HL7)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/clingenomics"/>
+    </telecom>
+  </contact>
+  <description value="The strand orientation of a sequenceLocation. Orientation of molecular sequences, indicating directionality for nucleotides (5' to 3' or 3' to 5') or amino acids (N to C terminus)."/>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <valueSet value="http://hl7.org/fhir/uv/cg-incubator/ValueSet/moleculardefinition-strand"/>
+  <concept>
+    <code value="forward"/>
+    <display value="Forward strand"/>
+    <definition value="5' to 3' for nucleotides or N-to-C for amino acids; also known as the positive/plus/sense/Watson strand. Single stranded sequences are conventionally represented in the forward direction."/>
+  </concept>
+  <concept>
+    <code value="reverse"/>
+    <display value="Reverse strand"/>
+    <definition value="3' to 5' orientation; also known as the negative/minus/antisense/Crick strand. Applicable only to double stranded sequences."/>
+  </concept>
+</CodeSystem>
