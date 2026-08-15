@@ -155,4 +155,23 @@
       </SearchParameter>
     </resource>
   </entry>
+  <entry>
+    <resource>
+      <SearchParameter>
+        <id value="GenomicStudy-analysis-output-file"/>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="draft"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
+          <valueString value="GenomicStudy.analysis.output.file"/>
+        </extension>
+        <url value="http://hl7.org/fhir/build/SearchParameter/GenomicStudy-analysis-output-file"/>
+        <description value="The DocumentReference resource(s) acting as output of this genomic analysis"/>
+        <code value="output-file"/>
+        <type value="reference"/>
+        <expression value="GenomicStudy.analysis.output.file"/>
+        <processingMode value="normal"/>
+      </SearchParameter>
+    </resource>
+  </entry>
 </Bundle>
