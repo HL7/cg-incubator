@@ -117,4 +117,23 @@
       </SearchParameter>
     </resource>
   </entry>
+  <entry>
+    <resource>
+      <SearchParameter>
+        <id value="GenomicStudy-analysis-specimen"/>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="draft"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
+          <valueString value="GenomicStudy.analysis.specimen"/>
+        </extension>
+        <url value="http://hl7.org/fhir/build/SearchParameter/GenomicStudy-analysis-specimen"/>
+        <description value="The Specimen resource(s) relevant to this genomic analysis"/>
+        <code value="specimen"/>
+        <type value="reference"/>
+        <expression value="GenomicStudy.analysis.specimen"/>
+        <processingMode value="normal"/>
+      </SearchParameter>
+    </resource>
+  </entry>
 </Bundle>
