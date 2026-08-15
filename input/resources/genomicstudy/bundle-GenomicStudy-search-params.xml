@@ -98,7 +98,7 @@
     </resource>
   </entry>
   <!-- new search Parameters -->
-    <entry>
+  <entry>
     <resource>
       <SearchParameter>
         <id value="GenomicStudy-analysis-basedOn"/>
