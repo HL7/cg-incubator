@@ -97,4 +97,81 @@
       </SearchParameter>
     </resource>
   </entry>
+  <!-- new search Parameters -->
+  <entry>
+    <resource>
+      <SearchParameter>
+        <id value="GenomicStudy-analysis-basedOn"/>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="draft"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
+          <valueString value="GenomicStudy.basedOn"/>
+        </extension>
+        <url value="http://hl7.org/fhir/build/SearchParameter/GenomicStudy-basedOn"/>
+        <description value="The Event resource(s) that the Genomic Study is initiated accordingly, that may be a ServiceRequest or a Task"/>
+        <code value="basedOn"/>
+        <type value="reference"/>
+        <expression value="GenomicStudy.basedOn"/>
+        <processingMode value="normal"/>
+      </SearchParameter>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <SearchParameter>
+        <id value="GenomicStudy-analysis-specimen"/>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="draft"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
+          <valueString value="GenomicStudy.analysis.specimen"/>
+        </extension>
+        <url value="http://hl7.org/fhir/build/SearchParameter/GenomicStudy-analysis-specimen"/>
+        <description value="The Specimen resource(s) relevant to this genomic analysis"/>
+        <code value="specimen"/>
+        <type value="reference"/>
+        <expression value="GenomicStudy.analysis.specimen"/>
+        <processingMode value="normal"/>
+      </SearchParameter>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <SearchParameter>
+        <id value="GenomicStudy-analysis-input-file"/>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="draft"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
+          <valueString value="GenomicStudy.analysis.input.file"/>
+        </extension>
+        <url value="http://hl7.org/fhir/build/SearchParameter/GenomicStudy-analysis-input-file"/>
+        <description value="The DocumentReference resource(s) acting as input to this genomic analysis"/>
+        <code value="input-file"/>
+        <type value="reference"/>
+        <expression value="GenomicStudy.analysis.input.file"/>
+        <processingMode value="normal"/>
+      </SearchParameter>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <SearchParameter>
+        <id value="GenomicStudy-analysis-output-file"/>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="draft"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
+          <valueString value="GenomicStudy.analysis.output.file"/>
+        </extension>
+        <url value="http://hl7.org/fhir/build/SearchParameter/GenomicStudy-analysis-output-file"/>
+        <description value="The DocumentReference resource(s) acting as output of this genomic analysis"/>
+        <code value="output-file"/>
+        <type value="reference"/>
+        <expression value="GenomicStudy.analysis.output.file"/>
+        <processingMode value="normal"/>
+      </SearchParameter>
+    </resource>
+  </entry>
 </Bundle>
