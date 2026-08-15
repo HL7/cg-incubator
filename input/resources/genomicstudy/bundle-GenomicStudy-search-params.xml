@@ -97,4 +97,24 @@
       </SearchParameter>
     </resource>
   </entry>
+  <!-- new search Parameters -->
+    <entry>
+    <resource>
+      <SearchParameter>
+        <id value="GenomicStudy-analysis-basedOn"/>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="draft"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
+          <valueString value="GenomicStudy.basedOn"/>
+        </extension>
+        <url value="http://hl7.org/fhir/build/SearchParameter/GenomicStudy-basedOn"/>
+        <description value="The Event resource that the Genomic Study is initiated accordingly. This may be a ServiceRequest or a Task"/>
+        <code value="basedOn"/>
+        <type value="reference"/>
+        <expression value="GenomicStudy.basedOn"/>
+        <processingMode value="normal"/>
+      </SearchParameter>
+    </resource>
+  </entry>
 </Bundle>
