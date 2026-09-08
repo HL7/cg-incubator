@@ -10,5 +10,5 @@ Reference to experimental CodeSystem http://hl7.org/fhir/%
 This element does not match any known slice defined in the profile http://hl7.org/fhir/%
 
 # out of our control?
-Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot5
 Reference to draft CodeSystem http://hl7.org/fhir/resource-security-category|5.2.0

@@ -2,13 +2,13 @@
 
 This Implementation Guide represents the initial release of the Clinical Genomics Resource Incubator, which publishes profiled versions of the **GenomicStudy** and **MolecularDefinition** resources. Both resources were previously published in FHIR core but continue to evolve. This section documents changes from their prior published forms.
 
-This IG currently targets **FHIR 6.0.0-ballot3** as an intermediate step toward the upcoming **FHIR R6** normative release. References to "6.0.0-ballot3" throughout this section should be understood in that context — ballot-cycle versions are used to align with the active development state of the base resources, with the expectation that this IG will be updated to target the R6 normative publication once available.
+This IG currently targets **FHIR 6.0.0-ballot5** as an intermediate step toward the upcoming **FHIR R6** normative release. References to "6.0.0-ballot5" throughout this section should be understood in that context — ballot-cycle versions are used to align with the active development state of the base resources, with the expectation that this IG will be updated to target the R6 normative publication once available.
 
 ---
 
 ### GenomicStudy — Changes from FHIR R5
 
-GenomicStudy was introduced in FHIR R5 (5.0.0). The version in this IG will treat GenomicStudy as an 'Additional Resource' that targets FHIR 6.0.0-ballot3 (interim ballot toward FHIR R6) and incorporates the following changes, grouped by theme.
+GenomicStudy was introduced in FHIR R5 (5.0.0). The version in this IG will treat GenomicStudy as an 'Additional Resource' that targets FHIR 6.0.0-ballot5 (interim ballot toward FHIR R6) and incorporates the following changes, grouped by theme.
 
 #### Quality and Coverage Metrics
 
@@ -66,7 +66,7 @@ The HL7 Genomics Reporting Implementation Guide (GRIG) STU3 (version 3.0.0, FHIR
 
 GRIG STU3 profiled the FHIR R4 `Procedure` resource as a backport to represent both the genomic study and the genomic study analysis, because the `GenomicStudy` resource did not exist in FHIR R4. This required extensive use of extensions to express concepts that are now native backbone elements.
 
-This IG uses the native `GenomicStudy` resource (targeting FHIR 6.0.0-ballot3 as an interim ballot toward FHIR R6), eliminating the need for `Procedure`-based backport profiling. All study and analysis concepts are now expressed using the resource's own element tree rather than extensions on a generic clinical action resource.
+This IG uses the native `GenomicStudy` resource (targeting FHIR 6.0.0-ballot5 as an interim ballot toward FHIR R6), eliminating the need for `Procedure`-based backport profiling. All study and analysis concepts are now expressed using the resource's own element tree rather than extensions on a generic clinical action resource.
 
 #### Study-to-Analysis Relationship
 
@@ -128,7 +128,7 @@ The GRIG STU3 `genomic-study` profile restricted the `Procedure.subject` element
 
 ### MolecularDefinition — Changes from FHIR R6 Ballot 3
 
-MolecularDefinition was introduced in FHIR R6 and was most recently published in R6 ballot 3 (`6.0.0-ballot3`). The version in this IG is currently published against `6.0.0-ballot3` as an interim ballot release targeting FHIR R6, and incorporates the following changes.
+MolecularDefinition was introduced in FHIR R6 and was most recently published in R6 ballot 3 (`6.0.0-ballot5`). The version in this IG is currently published against `6.0.0-ballot5` as an interim ballot release targeting FHIR R6, and incorporates the following changes.
 
 #### Simplified Cytogenetic Band Location
 

@@ -9,7 +9,7 @@ name: CGResourceIncubator
 title: Clinical Genomics Resource Incubator
 description: This incubator defines the usage of the Clinical Genomics FHIR resources which are evolving in their maturity until they are ready for inclusion in the Normative FHIR Core specification.
 status: active # draft | active | retired | unknown
-fhirVersion: 6.0.0-ballot3
+fhirVersion: 6.0.0-ballot5
 copyrightYear: 2026+
 releaseLabel: CI Build
 license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
