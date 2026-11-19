@@ -12,7 +12,7 @@
     <value value="NextSeq 550 Instrument"/>
 	  <type>
       <coding>
-        <system value="http://hl7.org/fhir/device-nametype"/>
+        <system value="http://terminology.hl7.org/CodeSystem/device-nametype"/>
           <code value="user-friendly-name"/>
       </coding>
     </type>	
