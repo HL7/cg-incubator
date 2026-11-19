@@ -1,8 +1,8 @@
 {
   "package-id" : "hl7.fhir.uv.cg-incubator",
-  "version" : "0.1.0-ci-build",
+  "version" : "1.0.0-ballot",
   "milestone" : false,
-  "path" : "http://hl7.org/fhir/uv/cg-incubator/STU1-snapshot",
+  "path" : "http://hl7.org/fhir/uv/cg-incubator/1.0.0-202701-ballot",
   "mode" : "working",
   "status" : "ballot",
   "sequence" : "STU1",
@@ -10,6 +10,9 @@
   "first" : true,
   "title" : "Clinical Genomics Incubator Implementation Guide for Additional Resources",
   "ci-build" : "http://build.fhir.org/ig/HL7/cg-incubator",
+  "registry-description": "The Clinical Genomics Incubator Implementation Guide provides a consolidated workspace for emerging FHIR resources, profiles, operations, vocabularies, and other artifacts developed by the HL7 Clinical Genomics Work Group. The content is actively evolving and supports trial use, pilot implementations, and community review.",
+  "registry-country": "uv",
+  "registry-authority": "HL7",
   "category" : "Diagnostics",
   "introduction" : "The Clinical Genomics Incubator Implementation Guide for Additional Resources hosts two main genomic resources, Genomic Study and Molecular Definition, to be leveraged by Genomics Reporting and Molecular Definition Data Types Implementation Guides."
 }
