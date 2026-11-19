@@ -44,6 +44,7 @@ parameters:
     - input/resources/moleculardefinition/StructureDefinition-MolecularDefinition.xml
   
   special-url-base: http://hl7.org/fhir
+  auto-oid-root: 2.16.840.1.113883.4.642.40.108
   special-url:
     - http://www.ncbi.nlm.nih.gov/taxonomy
 
@@ -77,6 +78,8 @@ resources:
   GenomicStudy/example-somaticStudy:
     name: Genomic Study Somatic Study Example
     description: Genomic Study Somatic Study Example
+  Group/groupDenovoFamily:
+    exampleBoolean: true
   List/GenomicStudy-examples:
     name: Genomic Study Examples List
     description: Genomic Study Examples List

@@ -12,7 +12,7 @@
         <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
           <valueString value="MolecularDefinition.identifier"/>
         </extension>
-        <url value="http://hl7.org/fhir/build/SearchParameter/MolecularDefinition-identifier"/>
+        <url value="http://hl7.org/fhir/SearchParameter/MolecularDefinition-identifier"/>
         <description value="The unique identity for a particular sequence"/>
         <code value="identifier"/>
         <type value="token"/>
@@ -24,14 +24,14 @@
   <entry>
     <resource>
       <SearchParameter>
-        <id value="MolecularDefinition-moleculeType"/>
+        <id value="MolecularDefinition-moleculetype"/>
         <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
           <valueCode value="draft"/>
         </extension>
         <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
           <valueString value="MolecularDefinition.moleculeType"/>
         </extension>
-        <url value="http://hl7.org/fhir/build/SearchParameter/MolecularDefinition-moleculeType"/>
+        <url value="http://hl7.org/fhir/SearchParameter/MolecularDefinition-moleculetype"/>
         <description value="Amino Acid Sequence/ DNA Sequence / RNA Sequence"/>
         <code value="moleculetype"/>
         <type value="token"/>
@@ -50,7 +50,7 @@
         <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
           <valueString value="MolecularDefinition.topology"/>
         </extension>
-        <url value="http://hl7.org/fhir/build/SearchParameter/MolecularDefinition-topology"/>
+        <url value="http://hl7.org/fhir/SearchParameter/MolecularDefinition-topology"/>
         <description value="The structural topology of the molecular entity (e.g., linear, circular)"/>
         <code value="topology"/>
         <type value="token"/>
@@ -69,7 +69,7 @@
         <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
           <valueString value="MolecularDefinition.member"/>
         </extension>
-        <url value="http://hl7.org/fhir/build/SearchParameter/MolecularDefinition-member"/>
+        <url value="http://hl7.org/fhir/SearchParameter/MolecularDefinition-member"/>
         <description value="Reference to the state of the molecular member"/>
         <code value="member"/>
         <type value="reference"/>
@@ -89,7 +89,7 @@
         <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
           <valueString value="MolecularDefinition.type"/>
         </extension>
-        <url value="http://hl7.org/fhir/build/SearchParameter/MolecularDefinition-type"/>
+        <url value="http://hl7.org/fhir/SearchParameter/MolecularDefinition-type"/>
         <description value="Classification of the molecule into types other than those defined by moleculeType"/>
         <code value="type"/>
         <type value="token"/>

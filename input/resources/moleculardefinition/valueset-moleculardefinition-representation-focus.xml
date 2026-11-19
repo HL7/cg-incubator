@@ -4,7 +4,6 @@
   <id value="moleculardefinition-representation-focus"/>
   <meta>
     <lastUpdated value="2025-01-30T00:00:00Z"/>
-    <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="cg"/>
