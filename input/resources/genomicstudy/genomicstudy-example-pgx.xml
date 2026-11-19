@@ -1,4 +1,4 @@
-<GenomicStudy xmlns="http://hl7.org/fhir" resourceDefinition="http://hl7.org/fhir/StructureDefinition/GenomicStudy|0.1.0-ci-build">
+<GenomicStudy xmlns="http://hl7.org/fhir" resourceDefinition="http://hl7.org/fhir/StructureDefinition/GenomicStudy|1.0.0-ballot">
     <id value="example-pgx"/>
     <!--
         Pharmacogenomics (PGX) targeted gene panel study.
