@@ -81,7 +81,7 @@
   <entry>
     <resource>
       <SearchParameter>
-        <id value="GenomicStudy-focus"/>
+        <id value="GenomicStudy-analysis-focus"/>
         <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
           <valueCode value="draft"/>
         </extension>
