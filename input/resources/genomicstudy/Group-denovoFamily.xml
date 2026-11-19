@@ -24,7 +24,7 @@
   </identifier>
   <name value="Denovo Mutation Example Group"/><!-- 0..1 Label for Group -->
   <status value="active"/>
-  <description value="[markdown]"/><!-- 0..1 Natural language description of the group -->
+  <description value="Example group for the de novo mutation study."/><!-- 0..1 Natural language description of the group -->
   <type value="person"/>
   <membership value="enumerated"/><!-- 1..1 definitional | enumerated -->
   <!-- <code></code> -->
