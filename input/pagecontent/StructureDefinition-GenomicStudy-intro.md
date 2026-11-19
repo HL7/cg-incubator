@@ -1,4 +1,4 @@
-## Scope and Usage
+### Scope and Usage
 
 GenomicStudy resource aims at delineating relevant information of a genomic study. A genomic study might comprise one or more analyses, each serving a specific purpose. These analyses may vary in method (e.g., karyotyping, CNV, or SNV detection), performer, software, devices used, or regions targeted.
 
@@ -12,7 +12,7 @@ The `analysis.genomicRegion` backbone element groups genomic regions by their re
 
 Detailed information about the results of the analyses may be represented by [Observations]({{site.data.fhir.path}}observation.html) and gathered in a [DiagnosticReport]({{site.data.fhir.path}}diagnosticreport.html). Both resources may refer back to the originating GenomicStudy to allow navigation.
 
-## Boundaries and Relationships
+### Boundaries and Relationships
 
 A main function of GenomicStudy is to provide additional metadata for one or more clinical genomic analysis pipelines where [DocumentReference]({{site.data.fhir.path}}documentreference.html) instances are used to track inputs and outputs of those pipelines. [Device]({{site.data.fhir.path}}device.html) is used to represent both hardware and software used in the sequencing and in the analyses.
 

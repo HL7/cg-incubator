@@ -1,5 +1,9 @@
 <Group xmlns="http://hl7.org/fhir">
   <id value="groupDenovoFamily"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="cg"/>
+  </extension>
+  <url value="http://hl7.org/fhir/uv/cg-incubator/Group/groupDenovoFamily"/>
   <identifier>
     <use value="temp"/>
     <type>
