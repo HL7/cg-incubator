@@ -10,6 +10,7 @@
   "first" : true,
   "title" : "Clinical Genomics Incubator Implementation Guide for Additional Resources",
   "ci-build" : "http://build.fhir.org/ig/HL7/cg-incubator",
+  "registry-description": "The Clinical Genomics Incubator Implementation Guide provides a consolidated workspace for emerging FHIR resources, profiles, operations, vocabularies, and other artifacts developed by the HL7 Clinical Genomics Work Group. The content is actively evolving and supports trial use, pilot implementations, and community review.",
   "registry-country": "uv",
   "registry-authority": "HL7",
   "category" : "Diagnostics",
