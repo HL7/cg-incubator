@@ -11,7 +11,7 @@ description: This incubator defines the usage of the Clinical Genomics FHIR reso
 status: active # draft | active | retired | unknown
 fhirVersion: 6.0.0-snapshot1
 copyrightYear: 2026+
-releaseLabel: CI Build
+releaseLabel: STU 1 Ballot
 license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
