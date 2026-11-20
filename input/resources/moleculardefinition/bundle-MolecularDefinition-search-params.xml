@@ -24,14 +24,14 @@
   <entry>
     <resource>
       <SearchParameter>
-        <id value="MolecularDefinition-moleculeType"/>
+        <id value="MolecularDefinition-moleculetype"/>
         <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
           <valueCode value="draft"/>
         </extension>
         <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
           <valueString value="MolecularDefinition.moleculeType"/>
         </extension>
-        <url value="http://hl7.org/fhir/SearchParameter/MolecularDefinition-moleculeType"/>
+        <url value="http://hl7.org/fhir/SearchParameter/MolecularDefinition-moleculetype"/>
         <description value="Amino Acid Sequence/ DNA Sequence / RNA Sequence"/>
         <code value="moleculetype"/>
         <type value="token"/>
