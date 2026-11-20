@@ -57,7 +57,7 @@
 <artifact id="GenomicStudy/example-trio2" key="GenomicStudy-example-trio2" name="Genomic Study Trio Example"/>
 <artifact id="CodeSystem/genomicstudy-type" key="CodeSystem-genomicstudy-type" name="Genomic Study Type"/>
 <artifact id="ValueSet/genomicstudy-type" key="ValueSet-genomicstudy-type" name="Genomic Study Type VS"/>
-<artifact id="SearchParameter/GenomicStudy-analysis-focus" key="SearchParameter-GenomicStudy-analysis-focus" name="GenomicStudyAnalysisFocusSearchParam"/>
+<artifact id="SearchParameter/GenomicStudy-focus" key="SearchParameter-GenomicStudy-focus" name="GenomicStudyFocusSearchParam"/>
 <artifact id="SearchParameter/GenomicStudy-identifier" key="SearchParameter-GenomicStudy-identifier" name="GenomicStudyIdentifierSearchParam"/>
 <artifact id="SearchParameter/GenomicStudy-patient" key="SearchParameter-GenomicStudy-patient" name="GenomicStudyPatientSearchParam"/>
 <artifact id="SearchParameter/GenomicStudy-status" key="SearchParameter-GenomicStudy-status" name="GenomicStudyStatusSearchParam"/>
