@@ -4,7 +4,7 @@
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
-# References to CodeSystems that the R6 core publishes as experimental, e.g. fhirpath-types for the FHIRPath system types in the snapshots
+# References to experimental CodeSystems: the R6 core publishes fhirpath-types (FHIRPath system types in the snapshots) as experimental, and this IG marks its own CodeSystems as experimental while the resources are incubated
 Reference to experimental CodeSystem http://hl7.org/fhir/%
 
 # External genomics code systems (SO, HGNC, PharmVar, IPD-IMGT/HLA, RefSeq) are not supported by tx.fhir.org, so their codes cannot be validated and value sets drawing on them cannot be expanded
@@ -31,3 +31,6 @@ Reference to draft CodeSystem http://hl7.org/fhir/spdx-license%
 
 # GenomicStudy examples deliberately use Sequence Ontology variant types for analysis.changeType (GRIG STU3 alignment); the preferred value set still holds the change categories from R6, pending a work group decision on moving it to SO
 None of the codings provided are in the value set 'Genomic Study Change Type VS'%
+
+# The CG CodeSystems of the incubated resources keep their cg-incubator URLs for now; a move to THO will be agreed with TSMG when the resources move into the FHIR core
+Most code systems defined in HL7 IGs will need to move to THO later during the process.%
