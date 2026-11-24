@@ -6,7 +6,7 @@ canonical: http://hl7.org/fhir/uv/cg-incubator
 packageId: hl7.fhir.uv.cg-incubator
 version: 1.0.0-ballot
 name: CGResourceIncubator
-title: Clinical Genomics Resource Incubator
+title: Clinical Genomics Incubator Implementation Guide
 description: This incubator defines the usage of the Clinical Genomics FHIR resources which are evolving in their maturity until they are ready for inclusion in the Normative FHIR Core specification.
 status: active # draft | active | retired | unknown
 fhirVersion: 6.0.0-snapshot1

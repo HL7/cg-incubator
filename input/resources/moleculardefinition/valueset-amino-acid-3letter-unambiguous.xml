@@ -25,7 +25,7 @@
     </telecom>
     <telecom>
       <system value="email"/>
-      <value value="fhir@lists.hl7.org"/>
+      <value value="clingenomics@lists.hl7.org"/>
     </telecom>
   </contact>
   <contact>

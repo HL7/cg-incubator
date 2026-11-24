@@ -5,13 +5,13 @@
   "mode" : "working",
   "status" : "ballot",
   "sequence" : "STU 1",
-  "desc" : "This is the initial release of the Clinical Genomics Incubator Implementation Guide for Additional Resources for initial ballot January 2027.",
+  "desc" : "This is the initial release of the Clinical Genomics Incubator Implementation Guide for initial ballot January 2027.",
   "first" : true,
-  "title" : "Clinical Genomics Incubator Implementation Guide for Additional Resources",
+  "title" : "Clinical Genomics Incubator Implementation Guide",
   "ci-build" : "http://build.fhir.org/ig/HL7/cg-incubator",
   "registry-description": "The Clinical Genomics Incubator Implementation Guide provides a consolidated workspace for emerging FHIR resources, profiles, operations, vocabularies, and other artifacts developed by the HL7 Clinical Genomics Work Group. The content is actively evolving and supports trial use, pilot implementations, and community review.",
   "registry-country": "uv",
   "registry-authority": "HL7",
   "category" : "Diagnostics",
-  "introduction" : "The Clinical Genomics Incubator Implementation Guide for Additional Resources hosts two main genomic resources, Genomic Study and Molecular Definition, to be leveraged by Genomics Reporting and Molecular Definition Data Types Implementation Guides."
+  "introduction" : "The Clinical Genomics Incubator Implementation Guide hosts two main genomic resources, Genomic Study and Molecular Definition, to be leveraged by Genomics Reporting and Molecular Definition Data Types Implementation Guides."
 }
