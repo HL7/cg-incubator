@@ -20,9 +20,6 @@ Constraint failed: eld-31: 'additionalBindings should have a key (key.exists())'
 # Group is a canonical resource in R6 but has no jurisdiction element (only useContext), so the example Group cannot declare one; all other canonical resources declare jurisdiction 001 (World)
 The resource should declare its jurisdiction to match the package id%
 
-# The JIRA spec artifact is maintained in https://github.com/HL7/JIRA-Spec-Artifacts and is updated by pull request at publication time, using the proposal in FHIR-cg-incubator.xml
-The jira specification file appears to be out of date with the versions, artifacts and pages currently defined in the IG.%
-
 # The organism value set draws on NCBI Taxonomy through the ncbi-taxonomy-fragment CodeSystem, which is intentionally published as a fragment
 The value set references CodeSystem 'http://www.ncbi.nlm.nih.gov/taxonomy' which has status 'fragment'
 
