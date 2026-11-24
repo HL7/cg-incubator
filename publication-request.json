@@ -1,11 +1,10 @@
 {
   "package-id" : "hl7.fhir.uv.cg-incubator",
   "version" : "1.0.0-ballot",
-  "milestone" : false,
   "path" : "http://hl7.org/fhir/uv/cg-incubator/1.0.0-202701-ballot",
   "mode" : "working",
   "status" : "ballot",
-  "sequence" : "STU1",
+  "sequence" : "STU 1",
   "desc" : "This is the initial release of the Clinical Genomics Incubator Implementation Guide for Additional Resources for initial ballot January 2027.",
   "first" : true,
   "title" : "Clinical Genomics Incubator Implementation Guide for Additional Resources",
