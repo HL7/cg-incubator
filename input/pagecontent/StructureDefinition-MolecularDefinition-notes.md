@@ -201,7 +201,7 @@ Note that `representation.code` does not guarantee that the repository is public
 
 ##### Resolvable
 
-The resolvable element can be used to represent a sequence by reference, but it also implies that the sequence is accessible and SHOULD be resolvable (although a security layer may be present). This element makes use of the Document Reference resource, which contains the content.attachment element. The Attachment datatype can be used to represent sequences that are captured as a formatted file (using .contentType and .data) or as a URL (using .contentType and .url).
+§moldef-resolvable:The resolvable element can be used to represent a sequence by reference, but it also implies that the sequence is accessible and SHOULD be resolvable (although a security layer may be present).§ This element makes use of the Document Reference resource, which contains the content.attachment element. The Attachment datatype can be used to represent sequences that are captured as a formatted file (using .contentType and .data) or as a URL (using .contentType and .url).
 
 ##### Extracted
 

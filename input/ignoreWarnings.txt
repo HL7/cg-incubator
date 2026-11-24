@@ -4,23 +4,27 @@
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
-# Suppressing various information messages (for now just to keep QA easier to review)
+# References to CodeSystems that the R6 core publishes as experimental, e.g. fhirpath-types for the FHIRPath system types in the snapshots
 Reference to experimental CodeSystem http://hl7.org/fhir/%
 
-# External genomics code systems (SO, HGNC, PharmVar, IPD-IMGT/HLA, RefSeq) are not supported by tx.fhir.org,
-# so codes from them cannot be validated and value sets drawing on them cannot be expanded.
-# One line per code system covers both the validation and the expansion message.
+# External genomics code systems (SO, HGNC, PharmVar, IPD-IMGT/HLA, RefSeq) are not supported by tx.fhir.org, so their codes cannot be validated and value sets drawing on them cannot be expanded
 %A definition for CodeSystem 'http://www.sequenceontology.org' could not be found%
 %A definition for CodeSystem 'http://www.genenames.org' could not be found%
 %A definition for CodeSystem 'http://www.pharmvar.org' could not be found%
 %A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' could not be found%
 %A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/refseq' could not be found%
 
-# eld-31 fires on <Resource>.language, whose additional binding without a key is inherited from the
-# R6 core (DomainResource.language). The IG defines no additional bindings of its own.
+# eld-31 fires on <Resource>.language, whose additional binding is inherited without a key from the R6 core (DomainResource.language); this IG defines no additional bindings of its own
 Constraint failed: eld-31: 'additionalBindings should have a key (key.exists())' at %
 
-# Group is a canonical resource in R6 but has no jurisdiction element (only useContext), so the
-# example Group cannot declare one. Currently the only resource raising this; all other canonical
-# resources in the IG declare jurisdiction 001 (World).
+# Group is a canonical resource in R6 but has no jurisdiction element (only useContext), so the example Group cannot declare one; all other canonical resources declare jurisdiction 001 (World)
 The resource should declare its jurisdiction to match the package id%
+
+# The JIRA spec artifact is maintained in https://github.com/HL7/JIRA-Spec-Artifacts and is updated by pull request at publication time, using the proposal in FHIR-cg-incubator.xml
+The jira specification file appears to be out of date with the versions, artifacts and pages currently defined in the IG.%
+
+# The organism value set draws on NCBI Taxonomy through the ncbi-taxonomy-fragment CodeSystem, which is intentionally published as a fragment
+The value set references CodeSystem 'http://www.ncbi.nlm.nih.gov/taxonomy' which has status 'fragment'
+
+# The spdx-license CodeSystem is published as draft in the R6 core; this IG only uses its license code CC0-1.0
+Reference to draft CodeSystem http://hl7.org/fhir/spdx-license%
