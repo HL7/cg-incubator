@@ -6,7 +6,7 @@
   "mode" : "working",
   "status" : "ballot",
   "sequence" : "STU1",
-  "desc" : "This is the initial release of the Clinical Genomics Incubator Implementation Guide for Additional Resources for initial ballot May 2026.",
+  "desc" : "This is the initial release of the Clinical Genomics Incubator Implementation Guide for Additional Resources for initial ballot January 2027.",
   "first" : true,
   "title" : "Clinical Genomics Incubator Implementation Guide for Additional Resources",
   "ci-build" : "http://build.fhir.org/ig/HL7/cg-incubator",

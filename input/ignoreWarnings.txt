@@ -5,10 +5,22 @@
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
 # Suppressing various information messages (for now just to keep QA easier to review)
-Pinned the version of http://hl7.org/fhir/%
 Reference to experimental CodeSystem http://hl7.org/fhir/%
-This element does not match any known slice defined in the profile http://hl7.org/fhir/%
 
-# out of our control?
-Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot5
-Reference to draft CodeSystem http://hl7.org/fhir/resource-security-category|5.2.0
+# External genomics code systems (SO, HGNC, PharmVar, IPD-IMGT/HLA, RefSeq) are not supported by tx.fhir.org,
+# so codes from them cannot be validated and value sets drawing on them cannot be expanded.
+# One line per code system covers both the validation and the expansion message.
+%A definition for CodeSystem 'http://www.sequenceontology.org' could not be found%
+%A definition for CodeSystem 'http://www.genenames.org' could not be found%
+%A definition for CodeSystem 'http://www.pharmvar.org' could not be found%
+%A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' could not be found%
+%A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/refseq' could not be found%
+
+# eld-31 fires on <Resource>.language, whose additional binding without a key is inherited from the
+# R6 core (DomainResource.language). The IG defines no additional bindings of its own.
+Constraint failed: eld-31: 'additionalBindings should have a key (key.exists())' at %
+
+# Group is a canonical resource in R6 but has no jurisdiction element (only useContext), so the
+# example Group cannot declare one. Currently the only resource raising this; all other canonical
+# resources in the IG declare jurisdiction 001 (World).
+The resource should declare its jurisdiction to match the package id%
