@@ -17,7 +17,7 @@ Use cases supported by this resource include but are not limited to:
 
 Use cases often require expression of the same genomic concept in different ways. Since the concept is the same and only the serialization of it differs, the Molecular Definition resource supports multiple approaches to representing molecular sequences. This allows senders and receivers of messages to choose a sequence representation that is most intuitive for the particular use case.
 
-It is important to note that all representations of a given sequence MUST resolve to the exact same primary sequence. Therefore, if a single instance of MolecularDefinition contains one `literal`, two `resolvable` files, and a `code`, all four of those representations must represent the same sequence. Note that this equivalence does not apply to metadata or annotations that are outside the scope of the Molecular Definition resource, since those data are not definitional to the molecule.
+It is important to note that §moldef-representation-equivalence:all representations of a given sequence SHALL resolve to the exact same primary sequence§. Therefore, if a single instance of MolecularDefinition contains one `literal`, two `resolvable` files, and a `code`, all four of those representations must represent the same sequence. Note that this equivalence does not apply to metadata or annotations that are outside the scope of the Molecular Definition resource, since those data are not definitional to the molecule.
 
 ### Boundaries and Relationships
 
