@@ -28,3 +28,6 @@ The value set references CodeSystem 'http://www.ncbi.nlm.nih.gov/taxonomy' which
 
 # The spdx-license CodeSystem is published as draft in the R6 core; this IG only uses its license code CC0-1.0
 Reference to draft CodeSystem http://hl7.org/fhir/spdx-license%
+
+# GenomicStudy examples deliberately use Sequence Ontology variant types for analysis.changeType (GRIG STU3 alignment); the preferred value set still holds the change categories from R6, pending a work group decision on moving it to SO
+None of the codings provided are in the value set 'Genomic Study Change Type VS'%
