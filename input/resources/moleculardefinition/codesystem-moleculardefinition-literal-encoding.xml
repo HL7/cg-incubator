@@ -29,7 +29,7 @@
         </telecom>
         <telecom>
             <system value="email"/>
-            <value value="fhir@lists.hl7.org"/>
+            <value value="clingenomics@lists.hl7.org"/>
         </telecom>
     </contact>
     <description value="Codes for the encoding used in molecular definition literal representations, based on IUPAC standards for nucleotide and amino acid sequences."/>

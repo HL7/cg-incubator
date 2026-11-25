@@ -58,6 +58,11 @@
                 <code value="117040002"/>
                 <display value="Nucleic acid sequencing (procedure)"/>
             </coding>
+            <coding>
+                <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-methodtype"/>
+                <code value="ngs-mps"/>
+                <display value="Next-Generation (NGS)/Massively parallel sequencing (MPS)"/>
+            </coding>
         </methodType>
         <changeType>
             <coding>
@@ -214,6 +219,11 @@
                 <system value="http://snomed.info/sct"/>
                 <code value="117040002"/>
                 <display value="Nucleic acid sequencing (procedure)"/>
+            </coding>
+            <coding>
+                <system value="http://hl7.org/fhir/uv/cg-incubator/CodeSystem/genomicstudy-methodtype"/>
+                <code value="ngs-mps"/>
+                <display value="Next-Generation (NGS)/Massively parallel sequencing (MPS)"/>
             </coding>
         </methodType>
         <changeType>

@@ -1,6 +1,6 @@
 ## Initial Release of CG Incubator - Comparison to Previous Releases
 
-This Implementation Guide represents the initial release of the Clinical Genomics Resource Incubator, which publishes profiled versions of the **GenomicStudy** and **MolecularDefinition** resources. Both resources were previously published in FHIR core but continue to evolve. This section documents changes from their prior published forms.
+This Implementation Guide represents the initial release of the Clinical Genomics Incubator Implementation Guide, which publishes profiled versions of the **GenomicStudy** and **MolecularDefinition** resources. Both resources were previously published in FHIR core but continue to evolve. This section documents changes from their prior published forms.
 
 This IG currently targets **FHIR 6.0.0-ballot5** as an intermediate step toward the upcoming **FHIR R6** normative release. References to "6.0.0-ballot5" throughout this section should be understood in that context — ballot-cycle versions are used to align with the active development state of the base resources, with the expectation that this IG will be updated to target the R6 normative publication once available.
 

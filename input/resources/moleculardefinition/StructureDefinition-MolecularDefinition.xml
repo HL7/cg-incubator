@@ -498,7 +498,7 @@
     <element id="MolecularDefinition.representation.focus">
       <path value="MolecularDefinition.representation.focus"/>
       <short value="Representation focus concept"/>
-      <definition value="Identifies which domain concept a given representation instance describes. When multiple representations are present on a single MolecularDefinition instance, this element is the machine-readable discriminator classifying each by role: allele-state (the specific allele being described), reference-state (the reference sequence at this location), alternative-state (an alternate sequence at this location), or context-state (the surrounding genomic sequence context that frames the allele). This element uses a required binding; implementations shall use a code from the MolecularDefinitionRepresentationFocus CodeSystem."/>
+      <definition value="Identifies which domain concept a given representation instance describes. When multiple representations are present on a single MolecularDefinition instance, this element is the machine-readable discriminator classifying each by role: allele-state (the specific allele being described), reference-state (the reference sequence at this location), alternative-state (an alternate sequence at this location), or context-state (the surrounding genomic sequence context that frames the allele). This element uses a required binding; implementations SHALL use a code from the MolecularDefinitionRepresentationFocus CodeSystem."/>
       <min value="0"/>
       <max value="1"/>
       <type>
